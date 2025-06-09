@@ -1,0 +1,37 @@
+{
+	"name": "asimov.systems",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.2.9",
+		"@eslint/js": "^9.28.0",
+		"@sveltejs/vite-plugin-svelte": "^5.1.0",
+		"@tailwindcss/vite": "^4.1.8",
+		"@tsconfig/svelte": "^5.0.4",
+		"eslint": "^9.28.0",
+		"eslint-config-prettier": "^10.1.5",
+		"eslint-plugin-svelte": "^3.9.1",
+		"globals": "^16.2.0",
+		"husky": "^9.1.7",
+		"phosphor-svelte": "^3.0.1",
+		"prettier": "^3.5.3",
+		"prettier-plugin-svelte": "^3.4.0",
+		"prettier-plugin-tailwindcss": "^0.6.12",
+		"svelte": "^5.33.18",
+		"svelte-check": "^4.2.1",
+		"tailwindcss": "^4.1.8",
+		"typescript": "~5.8.3",
+		"typescript-eslint": "^8.33.1",
+		"vite": "^6.3.5"
+	}
+}
