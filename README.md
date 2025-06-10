@@ -23,34 +23,40 @@ A modern, responsive landing page for ASIMOV.Systems built with Svelte, TypeScri
 ## 🎨 Design System
 
 ### Color Palette
+
 - **sSlate**: Primary blue shades (100-950)
 - **oOrange**: Accent orange (#f37021)
 - **gGray**: Neutral grays (100-500)
 
 ### Typography
+
 - **SuisseIntl**: Primary font family (Regular, Medium, Bold)
 - **Arges**: Secondary font family (Medium, Black)
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 22+ (see `.nvmrc`)
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/asimov-systems/asimov.systems
    cd asimov.systems
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
