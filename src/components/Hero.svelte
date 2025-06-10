@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let heroSection: HTMLElement;
 	let titleVisible = false;
 	let subtitleVisible = false;
 	let buttonsVisible = false;
@@ -14,7 +13,6 @@
 </script>
 
 <section
-	bind:this={heroSection}
 	class="relative flex h-screen items-center bg-cover bg-center bg-no-repeat"
 	style="background-image: url('/src/assets/hero-cover.png');"
 >
@@ -61,6 +59,7 @@
 			<a
 				href="https://www.asimovprotocol.org"
 				target="_blank"
+				rel="noopener noreferrer"
 				class="bg-oOrange-500 hover:bg-oOrange-600 font-arges hover:shadow-oOrange-500/25 flex transform cursor-pointer items-center justify-center rounded-lg px-10 py-4 text-2xl font-bold tracking-wider text-white uppercase shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
 			>
 				Learn More
@@ -68,6 +67,7 @@
 			<a
 				href="https://github.com/asimov-platform"
 				target="_blank"
+				rel="noopener noreferrer"
 				class="hover:text-sSlate-900 font-arges flex transform cursor-pointer items-center justify-center rounded-lg border-2 border-white px-10 py-4 text-2xl font-bold tracking-wider text-white uppercase backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl"
 			>
 				View Projects

@@ -59,14 +59,16 @@
 						href="https://x.com/ASIMOV_Protocol"
 						class="text-sSlate-300 hover:text-oOrange-500 transition-colors duration-200"
 						target="_blank"
+						rel="noopener noreferrer"
 					>
-						<span class="sr-only">Twitter</span>
+						<span class="sr-only">X (formerly Twitter)</span>
 						<XLogo size={28} />
 					</a>
 					<a
 						href="https://github.com/asimov-platform"
 						class="text-sSlate-300 hover:text-oOrange-500 transition-colors duration-200"
 						target="_blank"
+						rel="noopener noreferrer"
 					>
 						<span class="sr-only">GitHub</span>
 						<GithubLogo size={28} />
@@ -75,6 +77,7 @@
 						href="https://www.linkedin.com/company/asimov-protocol"
 						class="text-sSlate-300 hover:text-oOrange-500 transition-colors duration-200"
 						target="_blank"
+						rel="noopener noreferrer"
 					>
 						<span class="sr-only">LinkedIn</span>
 						<LinkedinLogo size={28} />
@@ -93,15 +96,21 @@
 						<a
 							href="https://www.asimovprotocol.org/about"
 							class="text-sSlate-300 hover:text-oOrange-500 text-lg transition-all duration-300 hover:translate-x-2"
-							target="_blank">About</a
+							target="_blank"
+							rel="noopener noreferrer"
 						>
+							About
+						</a>
 					</li>
 					<li>
 						<a
 							href="https://github.com/asimov-platform"
 							class="text-sSlate-300 hover:text-oOrange-500 text-lg transition-all duration-300 hover:translate-x-2"
-							target="_blank">Projects</a
+							target="_blank"
+							rel="noopener noreferrer"
 						>
+							Projects
+						</a>
 					</li>
 				</ul>
 			</div>
