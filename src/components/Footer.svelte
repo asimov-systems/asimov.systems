@@ -12,9 +12,11 @@
 		<div class="grid grid-cols-1 gap-12 md:grid-cols-4">
 			<div class="col-span-1 md:col-span-2">
 				<Logo />
-				<p class="text-sSlate-300 mt-6 mb-8 max-w-md text-lg leading-relaxed">
-					Pioneering intelligent systems that transform ideas into reality. Building the future, one
-					innovation at a time.
+				<p class="text-white mt-6 mb-2 max-w-md text-lg leading-relaxed">
+					AI that remembers what matters and respects your data
+				</p>
+				<p class="text-sSlate-300 mb-8 max-w-md text-lg leading-relaxed">
+					Built on verifiable knowledge, not black-box hallucinations.
 				</p>
 				<div class="flex space-x-6">
 					<a
