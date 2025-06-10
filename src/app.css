@@ -1,10 +1,9 @@
 @import 'tailwindcss';
 
-/* Custom Font Definitions */
 @font-face {
 	font-family: 'SuisseIntl';
 	src: url('/fonts/SuisseIntl-Regular.woff2') format('woff2');
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
@@ -12,7 +11,7 @@
 @font-face {
 	font-family: 'SuisseIntl';
 	src: url('/fonts/SuisseIntl-Medium.woff2') format('woff2');
-	font-weight: medium;
+	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
@@ -20,14 +19,15 @@
 @font-face {
 	font-family: 'SuisseIntl';
 	src: url('/fonts/SuisseIntl-Bold.woff2') format('woff2');
-	font-weight: bold;
+	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Arges';
-	src: url('/fonts/Arges-NormalBlack.woff2') format('woff2'),
+	src:
+		url('/fonts/Arges-NormalBlack.woff2') format('woff2'),
 		url('/fonts/Arges-NormalBlack.woff') format('woff');
 	font-weight: 900;
 	font-style: normal;
@@ -36,7 +36,8 @@
 
 @font-face {
 	font-family: 'Arges';
-	src: url('/fonts/Arges-NormalMedium.woff2') format('woff2'),
+	src:
+		url('/fonts/Arges-NormalMedium.woff2') format('woff2'),
 		url('/fonts/Arges-NormalMedium.woff') format('woff');
 	font-weight: medium;
 	font-style: normal;
