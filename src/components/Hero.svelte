@@ -14,7 +14,7 @@
 
 <section
 	class="relative flex h-screen items-center bg-cover bg-center bg-no-repeat"
-	style="background-image: url('/src/assets/hero-cover.png');"
+	style="background-image: url('/hero-cover.png');"
 >
 	<div class="bg-sSlate-950 absolute inset-0 opacity-35"></div>
 
