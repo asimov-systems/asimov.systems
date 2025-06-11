@@ -2,7 +2,7 @@
 	import Logo from './Logo.svelte';
 	import { onMount } from 'svelte';
 
-	const CONTACT_US_EMAIL = import.meta.env.VITE_CONTACT_US_EMAIL || '';
+	const CONTACT_US_EMAIL = 'talal@asimov.systems';
 	let navVisible = false;
 
 	onMount(() => {
