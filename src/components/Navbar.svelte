@@ -17,7 +17,7 @@
 >
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-20 items-center justify-between">
-			<div class="flex-shrink-0 transform transition-all duration-300 hover:scale-105">
+			<div class="flex-shrink-0">
 				<Logo />
 			</div>
 
