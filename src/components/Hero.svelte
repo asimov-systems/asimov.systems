@@ -12,10 +12,7 @@
 	});
 </script>
 
-<section
-	class="relative flex h-screen items-center bg-cover bg-center bg-no-repeat"
-	style="background-image: url('/hero-cover.png');"
->
+<section class="hero-bg relative flex h-screen items-center">
 	<div class="bg-sSlate-950 absolute inset-0 opacity-35"></div>
 
 	<div class="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-4">
@@ -77,3 +74,12 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.hero-bg {
+		background:
+			linear-gradient(to bottom, #000216 0%, rgba(192, 192, 192, 0.3) 50%, #000216 100%),
+			radial-gradient(circle at 70% 30%, rgba(99, 102, 241, 0.15), transparent 60%),
+			radial-gradient(circle at 30% 70%, rgba(168, 85, 247, 0.15), transparent 60%);
+	}
+</style>
