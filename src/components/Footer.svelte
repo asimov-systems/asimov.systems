@@ -45,7 +45,7 @@
 					? 'translate-y-0 opacity-100'
 					: 'translate-y-6 opacity-0'}"
 			>
-				<div class="transform transition-all duration-300 hover:scale-105">
+				<div class="transform transition-all duration-300">
 					<Logo />
 				</div>
 				<p class="mt-6 mb-2 max-w-md text-lg leading-relaxed text-white">
@@ -133,7 +133,11 @@
 					<li
 						class="hover:text-oOrange-500 cursor-default transition-all duration-300 hover:translate-x-2"
 					>
-						599 Fairchild Dr, Mountain View, CA 94043
+						<address class="not-italic">
+							131 Continental Dr<br />
+							Suite 305<br />
+							Newark, DE 19713
+						</address>
 					</li>
 				</ul>
 			</div>

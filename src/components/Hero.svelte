@@ -27,11 +27,13 @@
 			Welcome to
 			<br />
 			<span
-				class="font-arges text-oOrange-500 mt-12 inline-block transform text-7xl uppercase transition-all delay-300 duration-1000 ease-out {titleVisible
+				class="font-arges mt-12 inline-flex transform text-7xl uppercase transition-all delay-300 duration-1000 ease-out {titleVisible
 					? 'translate-y-0 scale-100 opacity-100'
 					: 'translate-y-8 scale-95 opacity-0'}"
 			>
-				ASIMOV.Systems
+				<span class="text-oOrange-500">ASIMOV</span>
+				<span>.</span>
+				<span class="font-normal text-white">Systems</span>
 			</span>
 		</h1>
 
