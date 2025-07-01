@@ -1,7 +1,25 @@
 {
 	"name": "ASIMOV.Systems",
 	"short_name": "ASIMOV",
+	"description": "Tools for thinking better, working faster, and cutting through the noise. Built for people who want more clarity and less chaos.",
+	"start_url": "/",
+	"scope": "/",
 	"icons": [
+		{
+			"src": "/favicon-16x16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "/favicon-32x32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "/apple-touch-icon.png",
+			"sizes": "180x180",
+			"type": "image/png"
+		},
 		{
 			"src": "/android-chrome-192x192.png",
 			"sizes": "192x192",
