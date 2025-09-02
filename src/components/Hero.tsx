@@ -1,8 +1,8 @@
-import { ArrowRight } from 'lucide-react';
+// import { ArrowRight } from 'lucide-react';
 
 import { Globe } from '@/components/magicui/globe';
 import { Meteors } from '@/components/magicui/meteors';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
@@ -17,13 +17,13 @@ const Hero = () => {
 
         <Meteors number={30} />
 
-        <Button
+        {/* <Button
           variant="secondary"
           className="group text-md mt-10 flex w-fit items-center justify-center gap-2 rounded-full px-4 py-1 tracking-tight"
         >
           Get Started
           <ArrowRight className="size-4 -rotate-45 transition-all ease-out group-hover:ml-3 group-hover:rotate-0" />
-        </Button>
+        </Button> */}
         <div className="relative h-115 w-full overflow-y-clip">
           <Globe className="translate-y-40 scale-175" />
         </div>
