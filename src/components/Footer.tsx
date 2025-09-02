@@ -5,6 +5,7 @@ interface MenuItem {
   links: {
     text: string;
     url: string;
+    target?: string;
   }[];
 }
 
@@ -34,47 +35,47 @@ const Footer = ({
     {
       title: 'Product',
       links: [
-        { text: 'Overview', url: '#' },
-        { text: 'Pricing', url: '#' },
-        { text: 'Marketplace', url: '#' },
-        { text: 'Features', url: '#' },
-        { text: 'Integrations', url: '#' },
-        { text: 'Pricing', url: '#' }
+        { text: 'Overview', url: 'https://getasimov.ai', target: '_blank' },
+        // { text: 'Pricing', url: '#' },
+        // { text: 'Marketplace', url: '#' },
+        // { text: 'Features', url: '#' },
+        // { text: 'Integrations', url: '#' },
+        // { text: 'Pricing', url: '#' }
       ]
     },
     {
       title: 'Company',
       links: [
-        { text: 'About', url: '#' },
-        { text: 'Team', url: '#' },
-        { text: 'Blog', url: '#' },
-        { text: 'Careers', url: '#' },
-        { text: 'Contact', url: '#' },
-        { text: 'Privacy', url: '#' }
+        { text: 'About', url: 'https://www.asimovprotocol.org/about', target: '_blank' },
+        // { text: 'Team', url: '#' },
+        { text: 'Blog', url: 'https://asimov.blog', target: '_blank' },
+        // { text: 'Careers', url: '#' },
+        { text: 'Contact', url: '/contact' },
+        // { text: 'Privacy', url: '#' }
       ]
     },
     {
       title: 'Resources',
       links: [
-        { text: 'Help', url: '#' },
-        { text: 'Sales', url: '#' },
-        { text: 'Advertise', url: '#' }
+        { text: 'Docs', url: 'https://asimov-specs.github.io', target: '_blank' },
+        // { text: 'Sales', url: '#' },
+        // { text: 'Advertise', url: '#' }
       ]
     },
     {
       title: 'Social',
       links: [
-        { text: 'Twitter', url: '#' },
-        { text: 'Instagram', url: '#' },
-        { text: 'LinkedIn', url: '#' }
+        { text: 'Twitter', url: 'https://x.com/ASIMOV_Protocol', target: '_blank' },
+        { text: 'GitHub', url: 'https://github.com/asimov-platform', target: '_blank' },
+        { text: 'LinkedIn', url: 'https://www.linkedin.com/company/asimov-protocol', target: '_blank' }
       ]
     }
   ],
   copyright = '© 2025 ASIMOV Systems Inc.',
-  bottomLinks = [
-    { text: 'Terms and Conditions', url: '#' },
-    { text: 'Privacy Policy', url: '#' }
-  ]
+  // bottomLinks = [
+  //   { text: 'Terms and Conditions', url: '#' },
+  //   { text: 'Privacy Policy', url: '#' }
+  // ]
 }: FooterProps) => {
   return (
     <section className="py-32">
@@ -95,7 +96,7 @@ const Footer = ({
                 <ul className="text-muted-foreground space-y-4">
                   {section.links.map((link, linkIdx) => (
                     <li key={linkIdx} className="hover:text-primary font-medium">
-                      <a href={link.url}>{link.text}</a>
+                      <a href={link.url} target={link.target}>{link.text}</a>
                     </li>
                   ))}
                 </ul>
@@ -104,13 +105,13 @@ const Footer = ({
           </div>
           <div className="text-muted-foreground mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium md:flex-row md:items-center">
             <p>{copyright}</p>
-            <ul className="flex gap-4">
+            {/* <ul className="flex gap-4">
               {bottomLinks.map((link, linkIdx) => (
                 <li key={linkIdx} className="hover:text-primary underline">
                   <a href={link.url}>{link.text}</a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </footer>
       </div>
