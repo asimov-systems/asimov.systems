@@ -17,5 +17,13 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
+  "registries": {
+    "@shadcnblocks": {
+      "url": "https://shadcnblocks.com/r/{name}",
+      "headers": {
+        "Authorization": "Bearer ${SHADCNBLOCKS_API_KEY}"
+      }
+    }
+  },
   "iconLibrary": "lucide"
 }
