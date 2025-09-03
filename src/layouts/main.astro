@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
+import { ClientRouter } from 'astro:transitions';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'ASIMOV.Systems - AI Tools for Thinking Better & Working Faster',
+  description = 'Tools for thinking better, working faster, and cutting through the noise. Built for people who want more clarity and less chaos. AI that remembers what matters and respects your data.'
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <ClientRouter />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ASIMOV.Systems",
+        "url": "https://asimov.systems",
+        "logo": "https://asimov.systems/logo.svg",
+        "description": "Tools for thinking better, working faster, and cutting through the noise. Built for people who want more clarity and less chaos.",
+        "foundingDate": "2025",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "talal@asimov.systems",
+          "contactType": "customer service"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "131 Continental Dr, Suite 305",
+          "addressLocality": "Newark",
+          "addressRegion": "DE",
+          "postalCode": "19713",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://x.com/ASIMOV_Protocol",
+          "https://github.com/asimov-platform",
+          "https://www.linkedin.com/company/asimov-protocol",
+          "https://www.asimovprotocol.org"
+        ]
+      }
+    </script>
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="bb1d9d85-eb5b-4b47-9e01-0c2083a05187"></script>
+  </head>
+  <body>
+    <Navbar client:load />
+    <main>
+      <slot />
+    </main>
+    <Footer client:load />
+  </body>
+</html>

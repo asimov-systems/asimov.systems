@@ -1,0 +1,10 @@
+---
+import Layout from '@/layouts/main.astro';
+import { InvestorIntro } from '@/components/InvestorIntro';
+import { InvestorForm } from '@/components/InvestorForm';
+---
+
+<Layout title="Investors - ASIMOV Systems">
+  <InvestorIntro client:load />
+  <InvestorForm client:load />
+</Layout>
