@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 
 import { Button } from '@/components/ui/button';
+import { Cta } from '@/components/CTA';
 
 import { formSchema } from '@/lib/utils';
 
@@ -81,17 +82,22 @@ const steps = [
 
 const InvestorForm = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const ctaRef = useRef<HTMLDivElement>(null);
   const methods = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       investorType: [],
       interestedRounds: [],
       deploymentHorizon: [],
+      tokenEquityInterest: [],
       whyAsimov: [],
       investingExperience: [],
       supportBeyondCapital: [],
       kpis: [],
-      diligenceDocs: []
+      moveForwardTime: [],
+      diligenceDocs: [],
+      investorUpdatesChannel: []
     },
     mode: 'onChange'
   });
@@ -115,12 +121,52 @@ const InvestorForm = () => {
     }
   };
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log('Form submitted:', data);
-    alert('Form submitted successfully! Check the console for the data.');
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    try {
+      console.log('Submitting investor form:', data);
+
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit form');
+      }
+
+      const result = await response.json();
+      console.log('Form submitted successfully:', result);
+
+      // Mark as submitted
+      setIsSubmitted(true);
+
+      // Scroll to CTA section smoothly
+      setTimeout(() => {
+        ctaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert(`Error submitting form: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again.`);
+    }
   };
 
   const CurrentStepComponent = steps[currentStep].component;
+
+  if (isSubmitted) {
+    const formData = methods.getValues();
+    return (
+      <div ref={ctaRef}>
+        <Cta
+          heading={`Welcome, ${formData.firstName || ''} ${formData.lastName || ''}`.trim()}
+        />
+      </div>
+    );
+  }
 
   return (
     <section className="py-32">

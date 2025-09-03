@@ -6,7 +6,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Define Zod schema for validation for all form fields
 export const formSchema = z.object({
   // Step 1: Basic Details
   firstName: z.string().min(1, 'First name is required.'),
@@ -18,7 +17,7 @@ export const formSchema = z.object({
   location: z.string().optional(),
 
   // Step 2: Investor Profile
-  howHeardAboutUs: z.string().optional(),
+  howHeardAboutUs: z.string({ required_error: 'This field is required.' }),
   howHeardOther: z.string().optional(),
   investorType: z.array(z.string()).min(1, 'Select at least one option.'),
   investorTypeOther: z.string().optional(),
@@ -36,7 +35,6 @@ export const formSchema = z.object({
 
   // Step 4: Why ASIMOV
   whyAsimov: z.array(z.string()).min(1, 'Select at least one option.'),
-  // whyAsimovOther: z.string().optional(),
   whyAsimovElaborate: z.string().optional(),
 
   // Step 5: Track Record & Value Add
@@ -51,7 +49,7 @@ export const formSchema = z.object({
   kpis: z.array(z.string()).min(1, 'Select at least one option.'),
   kpisOther: z.string().optional(),
   moveForwardTime: z.array(z.string()).min(1, 'Select at least one option.'),
-  decisionMakers: z.coerce.number().min(1, 'Must be at least 1.').optional(),
+  decisionMakers: z.coerce.number().min(1, 'Must be at least 1.'),
 
   // Step 7: Admin & Final Details
   diligenceDocs: z.array(z.string()).min(1, 'Select at least one option.'),
