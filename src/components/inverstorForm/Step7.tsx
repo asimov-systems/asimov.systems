@@ -25,7 +25,10 @@ export const Step7 = () => {
         render={() => (
           <FormItem>
             <div className="mb-4">
-              <FormLabel>What documents do you require for due diligence? <span className="text-red-500">*</span></FormLabel>
+              <FormLabel>
+                What documents do you require for due diligence?{' '}
+                <span className="text-red-500">*</span>
+              </FormLabel>
               <FormDescription>Select all that apply.</FormDescription>
             </div>
             {[
@@ -85,7 +88,10 @@ export const Step7 = () => {
         render={() => (
           <FormItem>
             <div className="mb-4">
-              <FormLabel>What documents do you require for due diligence? <span className="text-red-500">*</span></FormLabel>
+              <FormLabel>
+                What documents do you require for due diligence?{' '}
+                <span className="text-red-500">*</span>
+              </FormLabel>
               <FormDescription>Select all that apply.</FormDescription>
             </div>
             {['Email', 'Signal', 'WhatsApp', 'Telegram', 'Private folder/access'].map((item) => (

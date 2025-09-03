@@ -67,10 +67,16 @@ export const POST: APIRoute = async ({ request }) => {
 
       // Step 3: Investment Interests
       cheque_size: formData.chequeSize,
-      interested_rounds: Array.isArray(formData.interestedRounds) ? formData.interestedRounds.join(', ') : '',
+      interested_rounds: Array.isArray(formData.interestedRounds)
+        ? formData.interestedRounds.join(', ')
+        : '',
       interested_rounds_other: formData.interestedRoundsOther,
-      deployment_horizon: Array.isArray(formData.deploymentHorizon) ? formData.deploymentHorizon.join(', ') : '',
-      token_equity_interest: Array.isArray(formData.tokenEquityInterest) ? formData.tokenEquityInterest.join(', ') : '',
+      deployment_horizon: Array.isArray(formData.deploymentHorizon)
+        ? formData.deploymentHorizon.join(', ')
+        : '',
+      token_equity_interest: Array.isArray(formData.tokenEquityInterest)
+        ? formData.tokenEquityInterest.join(', ')
+        : '',
       current_funding_rounds: formData.currentFundingRounds,
       beta_access: formData.betaAccess,
 
@@ -79,9 +85,13 @@ export const POST: APIRoute = async ({ request }) => {
       why_asimov_elaborate: formData.whyAsimovElaborate,
 
       // Step 5: Track Record & Value Add
-      investing_experience: Array.isArray(formData.investingExperience) ? formData.investingExperience.join(', ') : '',
+      investing_experience: Array.isArray(formData.investingExperience)
+        ? formData.investingExperience.join(', ')
+        : '',
       investing_experience_other: formData.investingExperienceOther,
-      support_beyond_capital: Array.isArray(formData.supportBeyondCapital) ? formData.supportBeyondCapital.join(', ') : '',
+      support_beyond_capital: Array.isArray(formData.supportBeyondCapital)
+        ? formData.supportBeyondCapital.join(', ')
+        : '',
       support_beyond_capital_other: formData.supportBeyondCapitalOther,
       notable_investments: formData.notableInvestments,
       relevant_networks: formData.relevantNetworks,
@@ -89,13 +99,19 @@ export const POST: APIRoute = async ({ request }) => {
       // Step 6: KPIs & Operational Priorities
       kpis: Array.isArray(formData.kpis) ? formData.kpis.join(', ') : '',
       kpis_other: formData.kpisOther,
-      move_forward_time: Array.isArray(formData.moveForwardTime) ? formData.moveForwardTime.join(', ') : '',
+      move_forward_time: Array.isArray(formData.moveForwardTime)
+        ? formData.moveForwardTime.join(', ')
+        : '',
       decision_makers: formData.decisionMakers ? String(formData.decisionMakers) : '',
 
       // Step 7: Admin & Final Details
-      diligence_docs: Array.isArray(formData.diligenceDocs) ? formData.diligenceDocs.join(', ') : '',
+      diligence_docs: Array.isArray(formData.diligenceDocs)
+        ? formData.diligenceDocs.join(', ')
+        : '',
       diligence_docs_other: formData.diligenceDocsOther,
-      investor_updates_channel: Array.isArray(formData.investorUpdatesChannel) ? formData.investorUpdatesChannel.join(', ') : '',
+      investor_updates_channel: Array.isArray(formData.investorUpdatesChannel)
+        ? formData.investorUpdatesChannel.join(', ')
+        : '',
       open_to_feedback: formData.openToFeedback,
       time_zone: formData.timeZone,
       additional_info: formData.additionalInfo
@@ -103,7 +119,9 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Filter out undefined values from metadata
     const cleanMetadata = Object.fromEntries(
-      Object.entries(metadata).filter(([_, value]) => value !== undefined && value !== null && value !== '')
+      Object.entries(metadata).filter(
+        ([_, value]) => value !== undefined && value !== null && value !== ''
+      )
     );
 
     console.log('Cleaned Metadata:', cleanMetadata);
@@ -136,10 +154,13 @@ export const POST: APIRoute = async ({ request }) => {
     if (!response.ok) {
       const errorText = await response.text();
       console.error('GetWaitlist API error:', response.status, errorText);
-      return new Response(JSON.stringify({ error: 'Failed to submit investor form. Please try again.' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' }
-      });
+      return new Response(
+        JSON.stringify({ error: 'Failed to submit investor form. Please try again.' }),
+        {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
     }
 
     const signupData = await response.json();

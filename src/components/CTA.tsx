@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 
 interface Cta12Props {
   heading: string;
@@ -16,18 +16,18 @@ interface Cta12Props {
 }
 
 const Cta = ({
-  heading = "Welcome",
+  heading = 'Welcome',
   description = "You are officially in our investor relations contacts. We'll be in touch with updates and next steps.",
   buttons = {
     primary: {
-      text: "Home",
-      url: "/",
+      text: 'Home',
+      url: '/'
     },
     secondary: {
-      text: "Contact Us",
-      url: "/contact",
-    },
-  },
+      text: 'Contact Us',
+      url: '/contact'
+    }
+  }
 }: Cta12Props) => {
   return (
     <section className="py-32">
@@ -47,12 +47,7 @@ const Cta = ({
                 </Button>
               )}
               {buttons.secondary && (
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                  asChild
-                >
+                <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
                   <a href={buttons.secondary.url}>{buttons.secondary.text}</a>
                 </Button>
               )}

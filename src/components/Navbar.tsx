@@ -61,7 +61,7 @@ const Navbar = ({
     },
     {
       title: 'Investors',
-      url: '/investors',
+      url: '/investors'
     }
   ],
   rightMenu = {

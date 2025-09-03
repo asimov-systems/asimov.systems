@@ -39,7 +39,8 @@ export interface WaitlistMetadata {
   open_to_feedback?: string;
   time_zone?: string;
   additional_info?: string;
-}export interface WaitlistAnswer {
+}
+export interface WaitlistAnswer {
   question_value: string;
   optional: boolean;
   answer_value: string | null;

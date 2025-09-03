@@ -128,9 +128,9 @@ const InvestorForm = () => {
       const response = await fetch('/api/waitlist', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
       });
 
       if (!response.ok) {
@@ -148,10 +148,11 @@ const InvestorForm = () => {
       setTimeout(() => {
         ctaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
-
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert(`Error submitting form: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again.`);
+      alert(
+        `Error submitting form: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again.`
+      );
     }
   };
 
@@ -161,9 +162,7 @@ const InvestorForm = () => {
     const formData = methods.getValues();
     return (
       <div ref={ctaRef}>
-        <Cta
-          heading={`Welcome, ${formData.firstName || ''} ${formData.lastName || ''}`.trim()}
-        />
+        <Cta heading={`Welcome, ${formData.firstName || ''} ${formData.lastName || ''}`.trim()} />
       </div>
     );
   }

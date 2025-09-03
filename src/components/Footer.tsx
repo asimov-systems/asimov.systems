@@ -35,7 +35,7 @@ const Footer = ({
     {
       title: 'Product',
       links: [
-        { text: 'Overview', url: 'https://getasimov.ai', target: '_blank' },
+        { text: 'Overview', url: 'https://getasimov.ai', target: '_blank' }
         // { text: 'Pricing', url: '#' },
         // { text: 'Marketplace', url: '#' },
         // { text: 'Features', url: '#' },
@@ -50,14 +50,14 @@ const Footer = ({
         // { text: 'Team', url: '#' },
         { text: 'Blog', url: 'https://asimov.blog', target: '_blank' },
         // { text: 'Careers', url: '#' },
-        { text: 'Contact', url: '/contact' },
+        { text: 'Contact', url: '/contact' }
         // { text: 'Privacy', url: '#' }
       ]
     },
     {
       title: 'Resources',
       links: [
-        { text: 'Docs', url: 'https://asimov-specs.github.io', target: '_blank' },
+        { text: 'Docs', url: 'https://asimov-specs.github.io', target: '_blank' }
         // { text: 'Sales', url: '#' },
         // { text: 'Advertise', url: '#' }
       ]
@@ -67,11 +67,15 @@ const Footer = ({
       links: [
         { text: 'Twitter', url: 'https://x.com/ASIMOV_Protocol', target: '_blank' },
         { text: 'GitHub', url: 'https://github.com/asimov-platform', target: '_blank' },
-        { text: 'LinkedIn', url: 'https://www.linkedin.com/company/asimov-protocol', target: '_blank' }
+        {
+          text: 'LinkedIn',
+          url: 'https://www.linkedin.com/company/asimov-protocol',
+          target: '_blank'
+        }
       ]
     }
   ],
-  copyright = '© 2025 ASIMOV Systems Inc.',
+  copyright = '© 2025 ASIMOV Systems Inc.'
   // bottomLinks = [
   //   { text: 'Terms and Conditions', url: '#' },
   //   { text: 'Privacy Policy', url: '#' }
@@ -96,7 +100,9 @@ const Footer = ({
                 <ul className="text-muted-foreground space-y-4">
                   {section.links.map((link, linkIdx) => (
                     <li key={linkIdx} className="hover:text-primary font-medium">
-                      <a href={link.url} target={link.target}>{link.text}</a>
+                      <a href={link.url} target={link.target}>
+                        {link.text}
+                      </a>
                     </li>
                   ))}
                 </ul>
