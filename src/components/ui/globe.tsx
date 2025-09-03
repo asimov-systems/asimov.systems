@@ -1,8 +1,8 @@
-import createGlobe, { type COBEOptions } from 'cobe';
-import { useMotionValue, useSpring } from 'motion/react';
-import { useEffect, useRef } from 'react';
+import createGlobe, { type COBEOptions } from "cobe";
+import { useMotionValue, useSpring } from "motion/react";
+import { useEffect, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 const MOVEMENT_DAMPING = 1400;
 
@@ -30,13 +30,13 @@ const GLOBE_CONFIG: COBEOptions = {
     { location: [19.4326, -99.1332], size: 0.1 },
     { location: [40.7128, -74.006], size: 0.1 },
     { location: [34.6937, 135.5022], size: 0.05 },
-    { location: [41.0082, 28.9784], size: 0.06 }
-  ]
+    { location: [41.0082, 28.9784], size: 0.06 },
+  ],
 };
 
 export function Globe({
   className,
-  config = GLOBE_CONFIG
+  config = GLOBE_CONFIG,
 }: {
   className?: string;
   config?: COBEOptions;
@@ -51,13 +51,13 @@ export function Globe({
   const rs = useSpring(r, {
     mass: 1,
     damping: 30,
-    stiffness: 100
+    stiffness: 100,
   });
 
   const updatePointerInteraction = (value: number | null) => {
     pointerInteracting.current = value;
     if (canvasRef.current) {
-      canvasRef.current.style.cursor = value !== null ? 'grabbing' : 'grab';
+      canvasRef.current.style.cursor = value !== null ? "grabbing" : "grab";
     }
   };
 
@@ -77,7 +77,7 @@ export function Globe({
       }
     };
 
-    window.addEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
     onResize();
 
     const globe = createGlobe(canvasRef.current!, {
@@ -90,21 +90,26 @@ export function Globe({
         state.phi = phi + rs.get();
         state.width = width * 2;
         state.height = width * 2;
-      }
+      },
     });
 
-    setTimeout(() => (canvasRef.current!.style.opacity = '1'), 0);
+    setTimeout(() => (canvasRef.current!.style.opacity = "1"), 0);
     return () => {
       globe.destroy();
-      window.removeEventListener('resize', onResize);
+      window.removeEventListener("resize", onResize);
     };
   }, [rs, config]);
 
   return (
-    <div className={cn('absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]', className)}>
+    <div
+      className={cn(
+        "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]",
+        className,
+      )}
+    >
       <canvas
         className={cn(
-          'size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]'
+          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
         )}
         ref={canvasRef}
         onPointerDown={(e) => {
@@ -114,7 +119,9 @@ export function Globe({
         onPointerUp={() => updatePointerInteraction(null)}
         onPointerOut={() => updatePointerInteraction(null)}
         onMouseMove={(e) => updateMovement(e.clientX)}
-        onTouchMove={(e) => e.touches[0] && updateMovement(e.touches[0].clientX)}
+        onTouchMove={(e) =>
+          e.touches[0] && updateMovement(e.touches[0].clientX)
+        }
       />
     </div>
   );
