@@ -25,7 +25,7 @@ export const Step5 = () => {
         render={() => (
           <FormItem>
             <div className="mb-4">
-              <FormLabel>Why are you interested in ASIMOV Systems?</FormLabel>
+              <FormLabel>Why are you interested in ASIMOV Systems? <span className="text-red-500">*</span></FormLabel>
               <FormDescription>Check any that apply.</FormDescription>
             </div>
             {[
@@ -87,7 +87,7 @@ export const Step5 = () => {
         render={() => (
           <FormItem>
             <div className="mb-4">
-              <FormLabel>How can you support ASIMOV beyond capital?</FormLabel>
+              <FormLabel>How can you support ASIMOV beyond capital? <span className="text-red-500">*</span></FormLabel>
               <FormDescription>Select all that apply.</FormDescription>
             </div>
             {[

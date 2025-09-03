@@ -23,7 +23,7 @@ export const Step4 = () => {
         render={() => (
           <FormItem>
             <div className="mb-4">
-              <FormLabel>Why are you interested in ASIMOV Systems?</FormLabel>
+              <FormLabel>Why are you interested in ASIMOV Systems? <span className="text-red-500">*</span></FormLabel>
               <FormDescription>Select any that apply.</FormDescription>
             </div>
             {[

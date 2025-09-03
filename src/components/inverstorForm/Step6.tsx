@@ -22,7 +22,7 @@ export const Step6 = () => {
         render={() => (
           <FormItem>
             <div className="mb-4">
-              <FormLabel>Which KPIs matter most to you?</FormLabel>
+              <FormLabel>Which KPIs matter most to you? <span className="text-red-500">*</span></FormLabel>
               <FormDescription>Select all that apply.</FormDescription>
             </div>
             {['DAU/MAU', 'Retention', 'CAC:LTV', 'Viral coefficient', 'Revenue', 'Other'].map(
@@ -81,7 +81,7 @@ export const Step6 = () => {
         render={() => (
           <FormItem>
             <div className="mb-4">
-              <FormLabel>How soon could you move forward if there&apos;s a fit?</FormLabel>
+              <FormLabel>How soon could you move forward if there&apos;s a fit? <span className="text-red-500">*</span></FormLabel>
               <FormDescription>Select all that apply.</FormDescription>
             </div>
             {[
@@ -125,7 +125,7 @@ export const Step6 = () => {
         name="decisionMakers"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>How many decision-makers are involved on your side?</FormLabel>
+            <FormLabel>How many decision-makers are involved on your side? <span className="text-red-500">*</span></FormLabel>
             <FormControl>
               <Input placeholder="E.g. 1" {...field} />
             </FormControl>

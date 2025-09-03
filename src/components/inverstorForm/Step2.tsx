@@ -40,7 +40,7 @@ export const Step2 = () => {
         name="howHeardAboutUs"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>How did you hear about us?</FormLabel>
+            <FormLabel>How did you hear about us? <span className="text-red-500">*</span></FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
                 <SelectTrigger>
@@ -88,7 +88,7 @@ export const Step2 = () => {
         render={() => (
           <FormItem>
             <div className="mb-4">
-              <FormLabel>Investor Type</FormLabel>
+              <FormLabel>Investor Type <span className="text-red-500">*</span></FormLabel>
               <FormDescription>Select all that apply.</FormDescription>
             </div>
             {[...investorTypeOptions, 'Other'].map((item) => (

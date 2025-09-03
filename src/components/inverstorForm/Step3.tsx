@@ -24,7 +24,7 @@ export const Step3 = () => {
         name="chequeSize"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Typical cheque size per investment:</FormLabel>
+            <FormLabel>Typical cheque size per investment: <span className="text-red-500">*</span></FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
                 <SelectTrigger>
@@ -51,7 +51,7 @@ export const Step3 = () => {
         name="interestedRounds"
         render={() => (
           <FormItem>
-            <FormLabel>Which rounds are you interested in?</FormLabel>
+            <FormLabel>Which rounds are you interested in? <span className="text-red-500">*</span></FormLabel>
             {['Strategic/Pre-seed', 'Seed', 'Series A', 'Series B or later', 'Other'].map(
               (item) => (
                 <FormField
@@ -107,7 +107,7 @@ export const Step3 = () => {
         name="deploymentHorizon"
         render={() => (
           <FormItem>
-            <FormLabel>Deployment horizon:</FormLabel>
+            <FormLabel>Deployment horizon: <span className="text-red-500">*</span></FormLabel>
             {['Less than 3 months', '3–6 months', '6–12 months', 'Exploratory only'].map((item) => (
               <FormField
                 key={item}
@@ -144,7 +144,7 @@ export const Step3 = () => {
         name="tokenEquityInterest"
         render={() => (
           <FormItem>
-            <FormLabel>Deployment horizon:</FormLabel>
+            <FormLabel>Deployment horizon: <span className="text-red-500">*</span></FormLabel>
             {['Very interested in both', 'Equity only', 'Token only', 'Undecided/open'].map(
               (item) => (
                 <FormField
