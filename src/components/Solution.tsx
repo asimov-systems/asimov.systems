@@ -1,26 +1,26 @@
-import { Network, Shield, Workflow } from "lucide-react";
+import { Network, Shield, Workflow } from 'lucide-react';
 
-import { Separator } from "@/components/ui/separator";
+import { Separator } from '@/components/ui/separator';
 
 const integrartions = [
   {
-    title: "Verifiable Knowledge Graphs",
+    title: 'Verifiable Knowledge Graphs',
     description:
-      "Grounding AI in facts, not hallucinations. Every response is rooted in structured, provable data, delivering clarity and context you can trust.",
-    icon: Network,
+      'Grounding AI in facts, not hallucinations. Every response is rooted in structured, provable data, delivering clarity and context you can trust.',
+    icon: Network
   },
   {
-    title: "Cryptographic Provenance",
+    title: 'Cryptographic Provenance',
     description:
-      "On-chain proof of reasoning and source integrity. Every step, every reference is transparent, audit-ready, and tamper-proof.",
-    icon: Shield,
+      'On-chain proof of reasoning and source integrity. Every step, every reference is transparent, audit-ready, and tamper-proof.',
+    icon: Shield
   },
   {
-    title: "Modular Agent Workflows",
+    title: 'Modular Agent Workflows',
     description:
-      "Flexible systems that orchestrate tasks with logic and oversight. Automation is powerful—but humans stay in command.",
-    icon: Workflow,
-  },
+      'Flexible systems that orchestrate tasks with logic and oversight. Automation is powerful—but humans stay in command.',
+    icon: Workflow
+  }
 ];
 
 const Solution = () => {
@@ -33,8 +33,9 @@ const Solution = () => {
             <br />
             Built for Speed, Trust, and Clarity
           </h1>
-          <p className="text-center text-lg text-muted-foreground lg:col-span-2 lg:text-left">
-            ASIMOV isn&apos;t another black-box AI. We&apos;re engineering intelligence that is fast, verifiable, and always under human control.
+          <p className="text-muted-foreground text-center text-lg lg:col-span-2 lg:text-left">
+            ASIMOV isn&apos;t another black-box AI. We&apos;re engineering intelligence that is
+            fast, verifiable, and always under human control.
           </p>
         </div>
         <Separator className="mt-8 mb-12" />
@@ -44,11 +45,9 @@ const Solution = () => {
             return (
               <li key={i}>
                 <div>
-                  <IconComponent className="h-16 w-16 mb-4 text-primary" strokeWidth={1.5} />
+                  <IconComponent className="text-primary mb-4 h-16 w-16" strokeWidth={1.5} />
                   <h3 className="my-2 text-2xl font-bold">{integration.title}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {integration.description}
-                  </p>
+                  <p className="text-muted-foreground text-sm">{integration.description}</p>
                 </div>
               </li>
             );

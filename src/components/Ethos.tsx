@@ -1,24 +1,24 @@
 // import { ArrowRight } from "lucide-react";
-import React from "react";
+import React from 'react';
 
-import { Globe } from "@/components/magicui/globe";
+import { Globe } from '@/components/magicui/globe';
 // import { Button } from "@/components/ui/button";
 
 const Ethos = () => {
   return (
     <section className="py-32">
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="relative flex h-92 w-full flex-col justify-between overflow-hidden rounded-4xl border bg-muted p-8 md:flex-row">
+        <div className="bg-muted relative flex h-92 w-full flex-col justify-between overflow-hidden rounded-4xl border p-8 md:flex-row">
           <div className="flex h-full max-w-lg flex-col justify-center gap-4">
-            <h1 className="text-4xl font-medium tracking-tighter md:text-6xl">
-              ETHOS
-            </h1>
+            <h1 className="text-4xl font-medium tracking-tighter md:text-6xl">ETHOS</h1>
             <h4 className="text-lg font-medium tracking-tighter md:text-xl">
               We believe technology should amplify, not replace, humanity.
             </h4>
 
             <p className="text-muted-foreground/70">
-              ASIMOV is built by and for humans: a culture where intellectual honesty, openness, and real-world impact matter most. We champion diverse perspectives because we believe the best technology always serves and empowers people first.
+              ASIMOV is built by and for humans: a culture where intellectual honesty, openness, and
+              real-world impact matter most. We champion diverse perspectives because we believe the
+              best technology always serves and empowers people first.
             </p>
             {/* <Button
               variant="default"

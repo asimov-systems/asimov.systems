@@ -33,6 +33,7 @@ A modern, responsive landing page for ASIMOV.Systems built with Astro, React, Ty
 ## 📋 Key Features
 
 ### Investor Form
+
 - **7-Step Process**: Comprehensive investor profiling
   1. Basic Details (Contact information)
   2. Investor Profile (Type, accreditation status)
@@ -43,12 +44,14 @@ A modern, responsive landing page for ASIMOV.Systems built with Astro, React, Ty
   7. Admin & Final Details (Documentation, preferences)
 
 ### Form Validation
+
 - **Zod Schema**: Type-safe validation for all form fields
 - **Real-time Validation**: Field-level validation with error messages
 - **Progress Tracking**: Visual progress bar through form steps
 - **Smooth Navigation**: Step-by-step navigation with animations
 
 ### API Integration
+
 - **GetWaitlist Integration**: Automated investor data submission
 - **Metadata Mapping**: Comprehensive field mapping for investor profiles
 - **Error Handling**: Robust error handling and user feedback
@@ -57,11 +60,13 @@ A modern, responsive landing page for ASIMOV.Systems built with Astro, React, Ty
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Slate**: Primary blue shades (100-950)
 - **Orange**: Accent orange (#f37021)
 - **Gray**: Neutral grays (100-500)
 
 ### Typography
+
 - **SuisseIntl**: Primary font family (Regular, Medium, Bold)
 - **Arges**: Secondary font family (Medium, Black)
 
@@ -75,24 +80,28 @@ A modern, responsive landing page for ASIMOV.Systems built with Astro, React, Ty
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/asimov-systems/asimov.systems
    cd asimov.systems
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Environment Setup**
    Create a `.env` file with required variables:
+
    ```env
    GETWAITLIST_ID=your_waitlist_id
    GETWAITLIST_API_URL=https://api.getwaitlist.com/api/v1/signup
    ```
 
 4. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -136,12 +145,16 @@ src/
 ## 🔧 Configuration
 
 ### Environment Variables
+
 Required for production deployment:
+
 - `GETWAITLIST_ID`: Your GetWaitlist project ID
 - `GETWAITLIST_API_URL`: GetWaitlist API endpoint
 
 ### Form Schema
+
 The investor form uses a comprehensive Zod schema with validation for:
+
 - Contact information and social profiles
 - Investor type and accreditation status
 - Investment preferences and timeline

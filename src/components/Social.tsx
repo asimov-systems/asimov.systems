@@ -1,8 +1,8 @@
-import { Users } from "lucide-react";
-import { FaLinkedin, FaXTwitter, FaTelegram } from "react-icons/fa6";
+import { Users } from 'lucide-react';
+import { FaLinkedin, FaXTwitter, FaTelegram } from 'react-icons/fa6';
 
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
 
 const Social = () => {
   return (
@@ -15,7 +15,7 @@ const Social = () => {
           </Badge>
 
           {/* Heading */}
-          <h4 className="mt-4 text-[28px] leading-[36px] font-semibold tracking-tight text-foreground md:text-center md:text-3xl xl:text-[48px] xl:leading-[56px]">
+          <h4 className="text-foreground mt-4 text-[28px] leading-[36px] font-semibold tracking-tight md:text-center md:text-3xl xl:text-[48px] xl:leading-[56px]">
             Join the Ecosystem
           </h4>
 
@@ -31,7 +31,7 @@ const Social = () => {
                 <FaXTwitter className="mb-4 h-8 w-8 md:h-12 md:w-12 xl:h-16 xl:w-16" />
                 <div className="space-y-2 text-center">
                   <h5 className="text-sm font-medium md:text-lg">Twitter</h5>
-                  <p className="text-sm text-balance text-muted-foreground">
+                  <p className="text-muted-foreground text-sm text-balance">
                     Follow @ASIMOV_Protocol
                   </p>
                 </div>
@@ -49,7 +49,7 @@ const Social = () => {
                 <FaTelegram className="mb-4 h-8 w-8 md:h-12 md:w-12 xl:h-16 xl:w-16" />
                 <div className="space-y-2 text-center">
                   <h5 className="text-sm font-medium md:text-lg">Telegram</h5>
-                  <p className="text-sm text-balance text-muted-foreground">
+                  <p className="text-muted-foreground text-sm text-balance">
                     Join our Telegram community
                   </p>
                 </div>
@@ -67,9 +67,7 @@ const Social = () => {
                 <FaLinkedin className="mb-4 h-8 w-8 md:h-12 md:w-12 xl:h-16 xl:w-16" />
                 <div className="space-y-2 text-center">
                   <h5 className="text-sm font-medium md:text-lg">LinkedIn</h5>
-                  <p className="text-sm text-balance text-muted-foreground">
-                    Connect
-                  </p>
+                  <p className="text-muted-foreground text-sm text-balance">Connect</p>
                 </div>
               </a>
             </Card>

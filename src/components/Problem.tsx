@@ -1,11 +1,22 @@
-"use client";
-import { AudioLines, TrendingDown, Clock, Database, AlertTriangle, CheckCircle } from "lucide-react";
+'use client';
+import {
+  AudioLines,
+  TrendingDown,
+  Clock,
+  Database,
+  AlertTriangle,
+  CheckCircle
+} from 'lucide-react';
 
-const Highlight = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+const Highlight = ({
+  children,
+  className = ''
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <span className={`text-black dark:text-white font-semibold ${className}`}>
-      {children}
-    </span>
+    <span className={`font-semibold text-black dark:text-white ${className}`}>{children}</span>
   );
 };
 
@@ -26,49 +37,50 @@ const Problem = () => {
                 {/* Key Statistics */}
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <TrendingDown className="size-6 text-destructive mt-1 flex-shrink-0" />
+                    <TrendingDown className="text-destructive mt-1 size-6 flex-shrink-0" />
                     <div>
                       <p className="text-lg">
-                        <Highlight>Gartner predicts 40% of enterprise</Highlight> abandoned AI due to lack of trust/auditability by 2026.
+                        <Highlight>Gartner predicts 40% of enterprise</Highlight> abandoned AI due
+                        to lack of trust/auditability by 2026.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <Clock className="size-6 text-destructive mt-1 flex-shrink-0" />
+                    <Clock className="text-destructive mt-1 size-6 flex-shrink-0" />
                     <div>
                       <p className="text-lg">
-                        <Highlight>&ldquo;Professionals spend 30% of their day</Highlight> verifying and searching for information.&rdquo;
+                        <Highlight>&ldquo;Professionals spend 30% of their day</Highlight> verifying
+                        and searching for information.&rdquo;
                       </p>
                     </div>
                   </div>
                 </div>
 
                 {/* Problem Points */}
-                <div className="space-y-4 pl-4 border-l-2 border-muted">
+                <div className="border-muted space-y-4 border-l-2 pl-4">
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="size-4 text-amber-500 mt-1 flex-shrink-0" />
+                    <AlertTriangle className="mt-1 size-4 flex-shrink-0 text-amber-500" />
                     <p className="text-muted-foreground">
                       AI is everywhere, but trust is rare. Black-box answers are now the norm.
                     </p>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="size-4 text-amber-500 mt-1 flex-shrink-0" />
+                    <AlertTriangle className="mt-1 size-4 flex-shrink-0 text-amber-500" />
                     <p className="text-muted-foreground">
                       Information overload costs billions in lost time and poor decisions.
                     </p>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Database className="size-4 text-amber-500 mt-1 flex-shrink-0" />
+                    <Database className="mt-1 size-4 flex-shrink-0 text-amber-500" />
                     <p className="text-muted-foreground">
                       Too many siloed apps - none unify, explain, or prove.
                     </p>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
           <div className="mx-auto">
@@ -102,22 +114,18 @@ const Problem = () => {
               <div className="bg-muted col-[1/3] overflow-hidden rounded-3xl">
                 <div className="p-5 xl:p-7">
                   <div className="flex gap-7">
-                    <div className="text-foreground text-4xl leading-none xl:text-7xl">
-                      100%
-                    </div>
+                    <div className="text-foreground text-4xl leading-none xl:text-7xl">100%</div>
                     <CheckCircle className="stroke-foreground h-9 w-9 xl:h-14 xl:w-14" />
                   </div>
                   <p className="text-foreground mt-3 text-xs md:text-sm xl:mt-7 xl:text-xl">
-                    Verifiable{" "}
-                    <span className="text-muted-2-foreground font-bold">
-                      AI provenance
-                    </span>{" "}
-                    with ASIMOV transparency
+                    Verifiable{' '}
+                    <span className="text-muted-2-foreground font-bold">AI provenance</span> with
+                    ASIMOV transparency
                   </p>
                 </div>
               </div>
               <div className="bg-muted col-[2/3] row-[-3/-1] flex h-full w-full items-center justify-center overflow-hidden rounded-3xl">
-                <AudioLines className="stroke-foreground xl:size-27 mx-auto size-16" />
+                <AudioLines className="stroke-foreground mx-auto size-16 xl:size-27" />
               </div>
               <div className="bg-muted relative col-[3/4] row-[2/4] rounded-3xl">
                 <div className="h-full w-full overflow-hidden rounded-3xl">
@@ -128,7 +136,7 @@ const Problem = () => {
                   />
                 </div>
                 <svg
-                  className="fill-muted-foreground absolute -bottom-20 -right-10 w-12 rotate-45 xl:-bottom-24 xl:-right-14 xl:w-16"
+                  className="fill-muted-foreground absolute -right-10 -bottom-20 w-12 rotate-45 xl:-right-14 xl:-bottom-24 xl:w-16"
                   viewBox="0 0 90 184"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
