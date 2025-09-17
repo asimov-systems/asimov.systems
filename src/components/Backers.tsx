@@ -1,7 +1,6 @@
 import AutoScroll from 'embla-carousel-auto-scroll';
 
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
-import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 
 const Backers = () => {
@@ -135,7 +134,6 @@ const Backers = () => {
         <div className="from-background absolute inset-y-0 left-0 w-12 bg-linear-to-r to-transparent"></div>
         <div className="from-background absolute inset-y-0 right-0 w-12 bg-linear-to-l to-transparent"></div>
       </div>
-      <Separator className="mx-auto my-15 max-w-5xl" />
     </section>
   );
 };
