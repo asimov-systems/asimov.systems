@@ -1,77 +1,16 @@
-import { Github, Twitter, Users } from 'lucide-react';
+import { Users, Globe } from 'lucide-react';
+import { FaXTwitter as Twitter, FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa6';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { teamMembers } from '@/lib/members';
 
-const teamMembers = [
-  {
-    name: 'Talal Thabet',
-    role: 'Commercial Founder',
-    image: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp',
-
-    bio: '“I’ve seen how noise and hype derail great ideas. For me, commercial success isn’t just about big vision - but about turning it into real-world, trusted, actionable clarity and credibility.”',
-    social: {
-      twitter: '#',
-      github: '#'
-    }
-  },
-  {
-    name: 'Arto Bendiken',
-    role: 'Tech Founder',
-    image: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp',
-
-    bio: "“For 25 years, I've built systems that respect knowledge, privacy, and agency. I'm building ASIMOV because intelligence without provenance is propaganda.”",
-    social: {
-      twitter: '#'
-    }
-  },
-  {
-    name: 'Renan Khoury',
-    role: 'Head of HR & Talent',
-    image: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-3.webp',
-
-    bio: '“I believe teams thrive when every person’s skill and story are valued. I’m here so the next wave of AI is built with human purpose, not just code.”',
-    social: {
-      twitter: '#',
-      github: '#'
-    }
-  },
-  {
-    name: 'Emma Rymer',
-    role: 'Head of Comms',
-    image: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-4.webp',
-
-    bio: '“I’ve shaped stories across three continents and dozens of industries - if people can’t understand it or trust it, it doesn’t matter how clever your tech is.”',
-    social: {
-      twitter: '#'
-    }
-  },
-  {
-    name: 'Reid Fletcher',
-    role: 'Head of Community',
-    image: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-4.webp',
-
-    bio: '“Community is more than a KPI; it’s how ideas are stress-tested, improved, and made inclusive. That’s how real adoption happens.”',
-    social: {
-      twitter: '#'
-    }
-  },
-  {
-    name: 'Stephen Cobb',
-    role: 'Senior AI Ethicist',
-    image: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-4.webp',
-
-    bio: "“My career in safety and governance taught me: if you can't explain and defend a system, it will never serve everyone fairly.”",
-    social: {
-      twitter: '#'
-    }
-  }
-];
+const members = teamMembers.filter((member) => member?.quote);
 
 const Team = () => {
   return (
-    <section className="py-32">
+    <section id="#team" className="py-32">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex flex-col gap-6 py-4 lg:py-8">
           <Badge
@@ -93,30 +32,60 @@ const Team = () => {
         </div>
 
         <div className="mt-10 grid gap-x-12 gap-y-16 sm:grid-cols-2 md:mt-14 lg:grid-cols-4">
-          {teamMembers.map((member) => (
+          {members.map((member) => (
             <div key={member.name} className="group flex flex-col">
               <img
                 src={member.image}
                 alt={member.name}
                 width={80}
                 height={80}
-                className="rounded-full object-contain"
+                className="rounded-full object-contain brightness-100 grayscale"
               />
               <div className="mt-6 flex flex-col tracking-[-0.32px]">
                 <h3 className="text-lg">{member.name}</h3>
                 <p className="text-muted-foreground-subtle">{member.role}</p>
                 <p className="text-muted-foreground mt-4 text-sm tracking-[-0.36px] italic">
-                  {member.bio}
+                  {member.quote}
                 </p>
                 <div className="mt-6 flex gap-2">
-                  {member.social.twitter && (
-                    <a href={member.social.twitter} className="hover:text-foreground">
-                      <Twitter />
+                  {member.links.twitter && (
+                    <a
+                      href={member.links.twitter}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-foreground"
+                    >
+                      <Twitter className="size-5" />
                     </a>
                   )}
-                  {member.social.github && (
-                    <a href={member.social.github} className="hover:text-foreground">
-                      <Github />
+                  {member.links.github && (
+                    <a
+                      href={member.links.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-foreground"
+                    >
+                      <Github className="size-5" />
+                    </a>
+                  )}
+                  {member.links.linkedin && (
+                    <a
+                      href={member.links.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-foreground"
+                    >
+                      <Linkedin className="size-5" />
+                    </a>
+                  )}
+                  {member.links.website && (
+                    <a
+                      href={member.links.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-foreground"
+                    >
+                      <Globe className="size-5" />
                     </a>
                   )}
                 </div>
@@ -130,13 +99,7 @@ const Team = () => {
           <div className="mt-4 flex items-center justify-between gap-4">
             <Separator className="shrink" />
             <Button size="lg" asChild>
-              <a
-                href="#top"
-                // target="_blank"
-                // rel="noreferrer"
-              >
-                Meet the Full Team
-              </a>
+              <a href="/team">Meet the Full Team</a>
             </Button>
             <Separator className="shrink" />
           </div>
