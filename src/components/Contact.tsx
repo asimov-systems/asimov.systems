@@ -24,8 +24,14 @@ const Contact = () => {
               <p className="text-2xl">Office</p>
               <div className="grid gap-8 md:grid-cols-2 md:gap-4">
                 <div>
-                  <p className="text-muted-foreground mb-2 text-xl md:mb-4">Newark</p>
-                  <p>131 Continental Dr, Suite 305, Newark, DE 19713, USA</p>
+                  <p className="text-muted-foreground mb-2 text-xl md:mb-4">Mountain View</p>
+                  <a
+                    href="https://maps.app.goo.gl/647DrHP2FCv71UeH6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    599 Fairchild Dr, Mountain View, CA 94043
+                  </a>
                 </div>
               </div>
             </div>
