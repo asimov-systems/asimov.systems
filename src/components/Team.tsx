@@ -2,8 +2,8 @@ import { Users, Globe } from 'lucide-react';
 import { FaXTwitter as Twitter, FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa6';
 
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+// import { Button } from '@/components/ui/button';
+// import { Separator } from '@/components/ui/separator';
 import { teamMembers } from '@/lib/members';
 
 const members = teamMembers.filter((member) => member?.quote);
@@ -94,7 +94,8 @@ const Team = () => {
           ))}
         </div>
 
-        <div className="py-32">
+        {/* TODO: remove this after the team page is live */}
+        {/* <div className="py-32">
           <p className="text-center text-sm">Ready to build the future with us?</p>
           <div className="mt-4 flex items-center justify-between gap-4">
             <Separator className="shrink" />
@@ -103,7 +104,7 @@ const Team = () => {
             </Button>
             <Separator className="shrink" />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

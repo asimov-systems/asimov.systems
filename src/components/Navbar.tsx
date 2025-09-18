@@ -59,6 +59,7 @@ const Navbar = ({
       url: 'https://asimov.blog',
       target: '_blank'
     },
+    // TODO: check the Team.tsx file before enabling the Team link
     // {
     //   title: 'Team',
     //   url: '/team'
