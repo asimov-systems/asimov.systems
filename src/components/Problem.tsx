@@ -83,7 +83,7 @@ const Problem = () => {
               </div>
             </div>
           </div>
-          <div className="mx-auto">
+          <div className="mx-auto overflow-hidden md:overflow-visible">
             <div className="grid grid-cols-[4.8rem_5.625rem_10.75rem] grid-rows-[9.3rem_8.68rem_1.125rem_3.875rem] gap-[0.625rem] sm:grid-cols-[5.3rem_6.25rem_12rem] sm:grid-rows-[10.3rem_9.625rem_1.25rem_4.3rem] sm:gap-[0.8rem] xl:grid-cols-[8.5rem_10rem_19.3rem] xl:grid-rows-[16.625rem_15.5rem_1.375rem_6.9rem] xl:gap-[1.25rem]">
               <div className="col-[2/-1] overflow-hidden rounded-3xl bg-blue-200">
                 <img
