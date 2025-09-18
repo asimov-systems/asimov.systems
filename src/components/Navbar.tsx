@@ -59,6 +59,10 @@ const Navbar = ({
       url: 'https://asimov.blog',
       target: '_blank'
     },
+    // {
+    //   title: 'Team',
+    //   url: '/team'
+    // },
     {
       title: 'Investors',
       url: '/investors'
