@@ -50,8 +50,8 @@ const Footer = ({
         // { text: 'Team', url: '#' },
         { text: 'Blog', url: 'https://asimov.blog', target: '_blank' },
         // { text: 'Careers', url: '#' },
-        { text: 'Contact', url: '/contact' }
-        // { text: 'Privacy', url: '#' }
+        { text: 'Contact', url: '/contact' },
+        { text: 'Events', url: 'https://luma.com/asimov', target: '_blank' }
       ]
     },
     {
