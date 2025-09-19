@@ -60,10 +60,10 @@ const Navbar = ({
       target: '_blank'
     },
     // TODO: check the Team.tsx file before enabling the Team link
-    // {
-    //   title: 'Team',
-    //   url: '/team'
-    // },
+    {
+      title: 'Team',
+      url: '#team'
+    },
     {
       title: 'Investors',
       url: '/investors'

@@ -10,9 +10,9 @@ const members = teamMembers.filter((member) => member?.quote);
 
 const Team = () => {
   return (
-    <section id="#team" className="py-32">
+    <section className="py-32">
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="flex flex-col gap-6 py-4 lg:py-8">
+        <div id="team" className="flex flex-col gap-6 py-4 lg:py-8">
           <Badge
             variant="outline"
             className="bg-card w-fit gap-1 px-3 text-sm font-normal tracking-tight shadow-sm"
