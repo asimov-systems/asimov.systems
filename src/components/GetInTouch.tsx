@@ -22,7 +22,7 @@ const GetInTouch = () => {
               Need help or have questions? Our support team is here for you 24/7. Feel free to reach
               out via email.
             </p>
-            <a href="/contact" className="font-semibold hover:underline">
+            <a href="/contact" className="font-semibold underline">
               Contact support
             </a>
           </div>
@@ -33,7 +33,7 @@ const GetInTouch = () => {
               Interested in investment opportunities or want to learn more about our token launch?
               Connect with our investor relations team for detailed information.
             </p>
-            <a href="/investors" className="font-semibold hover:underline">
+            <a href="/investors" className="font-semibold underline">
               Investor portal
             </a>
           </div>
@@ -44,7 +44,7 @@ const GetInTouch = () => {
               Interested in joining our team? We&apos;re always looking for talented individuals who
               share our vision for trustworthy AI. Send us your resume and let&apos;s talk.
             </p>
-            <a href="mailto:talent@asimov.systems" className="font-semibold hover:underline">
+            <a href="mailto:talent@asimov.systems" className="font-semibold underline">
               Join our team
             </a>
           </div>
