@@ -1,11 +1,34 @@
 ---
 import Layout from '../layouts/main.astro';
 import { Hero } from '@/components/Hero';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Problem } from '@/components/Problem';
+import { Solution } from '@/components/Solution';
+import { Social } from '@/components/Social';
+import { ProofInAction } from '@/components/ProofInAction';
+import { WhyGraphs } from '@/components/WhyGraphs';
+import { Ethos } from '@/components/Ethos';
+import { Team } from '@/components/Team';
+import { Brands } from '@/components/Brands';
+import { Backers } from '@/components/Backers';
+import { Resources } from '@/components/Resources';
+// import { RecentPosts } from '@/components/RecentPosts';
+import { TGE } from '@/components/TGE';
+import { GetInTouch } from '@/components/GetInTouch';
 ---
 
 <Layout>
   <Hero client:load />
+  <Problem />
+  <Solution />
+  <Social />
+  <ProofInAction />
+  <WhyGraphs />
+  <Ethos client:load />
+  <Brands client:load />
+  <Team />
+  <Backers client:load />
+  <Resources />
+  <!-- <RecentPosts client:load /> -->
+  <TGE />
+  <GetInTouch />
 </Layout>
