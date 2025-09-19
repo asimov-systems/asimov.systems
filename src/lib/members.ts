@@ -55,22 +55,22 @@ const teamMembers = [
       'Advocates for integrating AI into recruitment processes'
     ]
   },
-  {
-    name: 'Matt Hamilton',
-    role: 'Head of Developer Growth & Engineering',
-    bio: 'Veteran DevRel leader and engineer with 20+ years of experience in software development, blockchain, and AI/ML. Has built and led global developer communities for major protocols including Arbitrum, Bittensor, Protocol Labs, and Ripple.',
-    image: '/team/img_mh.jpeg',
-    links: {
-      twitter: 'https://x.com/hammertoe',
-      linkedin: 'https://linkedin.com/in/matthamilton77'
-    },
-    highlights: [
-      "Launched and scaled XRP Ledger's developer program",
-      "Worked on Filecoin's Virtual Machine (FVM) and Interplanetary Consensus (IPC)",
-      'Led developer onboarding for Arbitrum L2/L3 solutions',
-      'Pioneer in decentralized compute and storage solutions'
-    ]
-  },
+  // {
+  //   name: 'Matt Hamilton',
+  //   role: 'Head of Developer Growth & Engineering',
+  //   bio: 'Veteran DevRel leader and engineer with 20+ years of experience in software development, blockchain, and AI/ML. Has built and led global developer communities for major protocols including Arbitrum, Bittensor, Protocol Labs, and Ripple.',
+  //   image: '/team/img_mh.jpeg',
+  //   links: {
+  //     twitter: 'https://x.com/hammertoe',
+  //     linkedin: 'https://linkedin.com/in/matthamilton77'
+  //   },
+  //   highlights: [
+  //     "Launched and scaled XRP Ledger's developer program",
+  //     "Worked on Filecoin's Virtual Machine (FVM) and Interplanetary Consensus (IPC)",
+  //     'Led developer onboarding for Arbitrum L2/L3 solutions',
+  //     'Pioneer in decentralized compute and storage solutions'
+  //   ]
+  // },
   {
     name: 'Emma Rymer',
     role: 'Head of Comms',

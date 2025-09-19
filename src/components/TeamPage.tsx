@@ -4,6 +4,7 @@ import { Fragment } from 'react';
 
 import { Separator } from '@/components/ui/separator';
 import { teamMembers, advisors } from '@/lib/members';
+import { socialLinks } from '@/lib/consts';
 
 const TeamPage = () => {
   return (
@@ -193,7 +194,7 @@ const TeamPage = () => {
                 <ExternalLink className="size-4" />
               </a>
               <a
-                href="https://linkedin.com/company/asimov-systems"
+                href={socialLinks.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="border-border hover:bg-muted inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 transition-colors"

@@ -1,4 +1,5 @@
 import { Logo, LogoImage } from '@/components/shadcnblocks/logo';
+import { socialLinks } from '@/lib/consts';
 
 interface MenuItem {
   title: string;
@@ -46,7 +47,7 @@ const Footer = ({
     {
       title: 'Company',
       links: [
-        { text: 'About', url: 'https://www.asimovprotocol.org/about', target: '_blank' },
+        // { text: 'About', url: 'https://www.asimovprotocol.org/about', target: '_blank' },
         // { text: 'Team', url: '#' },
         { text: 'Blog', url: 'https://asimov.blog', target: '_blank' },
         // { text: 'Careers', url: '#' },
@@ -65,13 +66,9 @@ const Footer = ({
     {
       title: 'Social',
       links: [
-        { text: 'Twitter', url: 'https://x.com/ASIMOV_Protocol', target: '_blank' },
-        { text: 'GitHub', url: 'https://github.com/asimov-platform', target: '_blank' },
-        {
-          text: 'LinkedIn',
-          url: 'https://www.linkedin.com/company/asimov-protocol',
-          target: '_blank'
-        }
+        { text: 'Twitter', url: socialLinks.twitter, target: '_blank' },
+        { text: 'GitHub', url: socialLinks.github, target: '_blank' },
+        { text: 'LinkedIn', url: socialLinks.linkedin, target: '_blank' }
       ]
     }
   ],
