@@ -14,9 +14,36 @@ import { Resources } from '@/components/Resources';
 // import { RecentPosts } from '@/components/RecentPosts';
 import { TGE } from '@/components/TGE';
 import { GetInTouch } from '@/components/GetInTouch';
+
+const title = 'ASIMOV.Systems - AI Tools for Thinking Better & Working Faster';
+const description =
+  'Tools for thinking better, working faster, and cutting through the noise. Built for people who want more clarity and less chaos. AI that remembers what matters and respects your data.';
+const canonicalUrl = 'https://asimov.systems/';
 ---
 
-<Layout>
+<Layout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://asimov.systems/og-image.png" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://asimov.systems/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="ASIMOV Systems - AI Tools for Thinking Better & Working Faster"
+    />
+    <meta name="twitter:site" content="@ASIMOV_Protocol" />
+  </Fragment>
+
   <Hero client:load />
   <Problem />
   <Solution />
