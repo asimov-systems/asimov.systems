@@ -32,20 +32,12 @@ const {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://asimov.systems/og-image.png" />
-    <meta property="og:url" content="https://asimov.systems/" />
-    <meta property="og:type" content="website" />
+    <!-- Default meta tags (can be overridden by pages) -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://asimov.systems/og-image.png" />
-    <meta name="twitter:site" content="@ASIMOV_Protocol" />
     <ClientRouter />
+    <slot name="head" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

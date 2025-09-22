@@ -2,9 +2,33 @@
 import Layout from '@/layouts/main.astro';
 import { InvestorIntro } from '@/components/InvestorIntro';
 import { InvestorForm } from '@/components/InvestorForm';
+
+const title = 'Investors - ASIMOV Systems';
+const description =
+  'Join ASIMOV Systems as an investor. Learn about our mission to build verifiable AI tools for thinking better and working faster.';
+const canonicalUrl = 'https://asimov.systems/investors';
 ---
 
-<Layout title="Investors - ASIMOV Systems">
+<Layout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://asimov.systems/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://asimov.systems/og-image.png" />
+    <meta name="twitter:image:alt" content="ASIMOV Systems Investors" />
+    <meta name="twitter:site" content="@ASIMOV_Protocol" />
+  </Fragment>
+
   <InvestorIntro client:load />
   <InvestorForm client:load />
 </Layout>
