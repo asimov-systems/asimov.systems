@@ -4,7 +4,7 @@ const teamMembers = [
     role: 'Commercial Founder',
     bio: 'Serial entrepreneur and strategic operator with nine startups under his belt, including five successful exits across multiple industries. Brings deep expertise in economics, go-to-market strategy, perception management, strategic investment, FDI, and high-performance team design.',
     quote:
-      '“I’ve seen how noise and hype derail great ideas. For me, commercial success isn’t just about big vision - but about turning it into real-world, trusted, actionable clarity and credibility.”',
+      '“I’ve learned that turning bold vision into opportunity takes timing, grit, and patience. At ASIMOV, we’re focused on building the conditions for real impact, not just the next headline.”',
     image: '/team/img_tt.jpg',
     links: {
       twitter: 'https://x.com/TalalThabet',
