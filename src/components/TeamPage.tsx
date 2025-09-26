@@ -130,13 +130,12 @@ const TeamPage = () => {
               <div key={idx} className="group">
                 <div className="bg-card/50 border-border hover:bg-card/80 h-full rounded-xl border p-6 transition-all duration-300">
                   {/* Advisor Image */}
-                  <div className="bg-muted mb-4 flex h-20 w-20 items-center justify-center rounded-lg">
-                    <span className="text-primary text-lg font-bold">
-                      {advisor.name
-                        .split(' ')
-                        .map((n) => n[0])
-                        .join('')}
-                    </span>
+                  <div className="bg-muted mb-4 h-20 w-20 overflow-hidden rounded-lg">
+                    <img
+                      src={advisor.image}
+                      alt={advisor.name}
+                      className="h-full w-full object-cover brightness-100 grayscale"
+                    />
                   </div>
 
                   {/* Advisor Info */}
