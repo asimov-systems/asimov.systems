@@ -133,7 +133,7 @@ const advisors = [
     role: 'Blackcoin, NEAR',
     title: '"Godfather of Proof-of-Stake"',
     bio: 'Known as the "Godfather of Proof-of-Stake" for co-founding Blackcoin, the first PoS blockchain. Core contributor on NEAR Protocol\'s EVM team and headed Aurora\'s development.',
-    image: '/advisors/joshua-bouw.jpg',
+    image: '/advisors/img_jb.jpeg',
     links: {
       twitter: 'https://x.com/JoshuaJBouw',
       linkedin: 'https://linkedin.com/in/joshuajbouw'
@@ -144,7 +144,7 @@ const advisors = [
     role: 'Republic Crypto',
     title: 'Hokage',
     bio: 'Seasoned expert in blockchain economics serving as Hokage at Republic Crypto. Leads early-stage research, investments, and economic design.',
-    image: '/advisors/alex-ye.jpg',
+    image: '/advisors/img_ay.jpeg',
     links: {
       twitter: 'https://x.com/laoganpapi',
       linkedin: 'https://linkedin.com/in/laoganpapi'
@@ -155,7 +155,7 @@ const advisors = [
     role: 'Miden, Morph, Gitcoin',
     title: '"2023 Face of Crypto Philanthropy"',
     bio: 'Recognized as one of the "2023 Faces of Crypto Philanthropy." Co-Founder of Miden, a privacy-first blockchain protocol backed by $25M seed round co-led by a16z crypto.',
-    image: '/advisors/azeem-khan.jpg',
+    image: '/advisors/img_ak.jpeg',
     links: {
       twitter: 'https://x.com/azeemk_',
       linkedin: 'https://linkedin.com/in/theazeemkhan'
@@ -166,7 +166,7 @@ const advisors = [
     role: 'Aurora',
     title: 'Co-founder',
     bio: 'Seasoned innovator with background spanning over two decades at intersection of innovation, technology, and design. Co-founded Aurora EVM blockchain built on NEAR Protocol.',
-    image: '/advisors/matt-henderson.jpg',
+    image: '/advisors/img_mhe.jpeg',
     links: {
       twitter: 'https://x.com/dafacto',
       linkedin: 'https://linkedin.com/in/dafacto'
@@ -177,7 +177,7 @@ const advisors = [
     role: 'AusDeFi, NotCentralized',
     title: 'Co-founder',
     bio: 'Co-founder of NotCentralised and Australian DeFi Association with over 20 years of experience in tech, capital markets, and data science.',
-    image: '/advisors/arturo-rodriguez.jpg',
+    image: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-4.webp',
     links: {
       twitter: 'https://x.com/NumbersDeFi',
       linkedin: 'https://linkedin.com/in/ar-code'
@@ -188,7 +188,7 @@ const advisors = [
     role: 'Sike, AusDeFi',
     title: 'Co-founder & President',
     bio: 'Co-founder of NotCentralised and president of Australian DeFi Association. Board member of Data Science and AI Association of Australia.',
-    image: '/advisors/mark-monfort.jpg',
+    image: '/advisors/img_mm.jpeg',
     links: {
       twitter: 'https://x.com/CaptDeFi',
       linkedin: 'https://linkedin.com/in/markmonfort'
