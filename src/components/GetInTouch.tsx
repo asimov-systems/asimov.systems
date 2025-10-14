@@ -56,30 +56,21 @@ const GetInTouch = () => {
               developments from ASIMOV Systems.
             </p>
             <div className="flex gap-4">
-              <a
-                href={socialLinks.twitter}
-                target="_blank"
-                rel="noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <FaXTwitter className="h-6 w-6" />
-              </a>
-              <a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <FaLinkedin className="h-6 w-6" />
-              </a>
-              <a
-                href={socialLinks.github}
-                target="_blank"
-                rel="noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <FaGithub className="h-6 w-6" />
-              </a>
+              {[
+                { icon: FaXTwitter, link: socialLinks.twitter },
+                { icon: FaLinkedin, link: socialLinks.linkedin },
+                { icon: FaGithub, link: socialLinks.github }
+              ].map(({ icon: Icon, link }) => (
+                <a
+                  key={link}
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Icon className="h-6 w-6" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
