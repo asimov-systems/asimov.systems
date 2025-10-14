@@ -6,4 +6,8 @@ const socialLinks = {
   telegram: 'https://t.me/asimovprotocol'
 };
 
-export { socialLinks };
+const calendarLinks = {
+  sfEvents: 'https://luma.com/asimov-sf'
+};
+
+export { socialLinks, calendarLinks };
