@@ -1,5 +1,5 @@
 import { Logo, LogoImage } from '@/components/shadcnblocks/logo';
-import { socialLinks } from '@/lib/consts';
+import { socialLinks, calendarLinks } from '@/lib/consts';
 
 interface MenuItem {
   title: string;
@@ -52,7 +52,7 @@ const Footer = ({
         { text: 'Blog', url: 'https://asimov.blog', target: '_blank' },
         // { text: 'Careers', url: '#' },
         { text: 'Contact', url: '/contact' },
-        { text: 'Events', url: 'https://luma.com/asimov', target: '_blank' }
+        { text: 'Events', url: calendarLinks.sfEvents, target: '_blank' }
       ]
     },
     {
