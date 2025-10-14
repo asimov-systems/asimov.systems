@@ -1,4 +1,5 @@
 import { Menu } from 'lucide-react';
+import { FaXTwitter, FaLinkedin, FaGithub } from 'react-icons/fa6';
 
 import {
   Accordion,
@@ -16,6 +17,7 @@ import {
   NavigationMenuTrigger
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { socialLinks } from '@/lib/consts';
 
 interface MenuItem {
   title: string;
@@ -89,6 +91,11 @@ const Navbar = ({
             </div>
           </div>
           <div className="flex gap-2">
+            <Button variant="ghost" size="sm" asChild>
+              <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer">
+                <FaXTwitter className="size-4" />
+              </a>
+            </Button>
             <Button asChild size="sm">
               <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
                 {rightMenu.asimov.title}
@@ -124,6 +131,19 @@ const Navbar = ({
                   </Accordion>
 
                   <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-center gap-3">
+                      {[
+                        { icon: FaXTwitter, link: socialLinks.twitter },
+                        { icon: FaGithub, link: socialLinks.github },
+                        { icon: FaLinkedin, link: socialLinks.linkedin }
+                      ].map(({ icon: Icon, link }) => (
+                        <Button variant="ghost" size="sm" asChild key={`navbar_link_${link}`}>
+                          <a href={link} target="_blank" rel="noopener noreferrer">
+                            <Icon className="size-4" />
+                          </a>
+                        </Button>
+                      ))}
+                    </div>
                     <Button asChild>
                       <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
                         {rightMenu.asimov.title}
