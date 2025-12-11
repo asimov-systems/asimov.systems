@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/main.astro';
+import { SignIn } from '@clerk/astro/components';
+
+const title = 'Sign In - ASIMOV.Systems';
+const description = 'Sign in to your ASIMOV account';
+---
+
+<Layout title={title} description={description}>
+  <div class="flex min-h-screen items-center justify-center bg-gradient-to-b from-slate-900 to-slate-950 px-4 py-16">
+    <div class="w-full max-w-md">
+      <div class="mb-8 text-center">
+        <h1 class="mb-2 text-4xl font-bold text-white">Welcome Back</h1>
+        <p class="text-slate-400">Sign in to access your ASIMOV account</p>
+      </div>
+      <SignIn 
+        appearance={{
+          elements: {
+            rootBox: "mx-auto",
+            card: "bg-slate-800/50 backdrop-blur-lg border border-slate-700",
+          }
+        }}
+      />
+    </div>
+  </div>
+</Layout>
+
