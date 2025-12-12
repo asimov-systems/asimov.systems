@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "npm run lint && npm run format:check",
-    "prepare": "husky",
+    "prepare": "node -e \"try { require('husky').install() } catch (e) { if (e.code !== 'MODULE_NOT_FOUND') throw e }\"",
     "setup:data": "mkdir -p data && echo '{\"users\":{},\"reservedNames\":{}}' > data/database.json",
     "stripe:listen": "stripe listen --forward-to localhost:4321/api/stripe-webhook"
   },
