@@ -1,4 +1,4 @@
-import { Menu } from 'lucide-react';
+import { Menu, User } from 'lucide-react';
 import { FaXTwitter, FaLinkedin, FaGithub } from 'react-icons/fa6';
 
 import {
@@ -42,6 +42,7 @@ interface Navbar1Props {
       target?: string;
     };
   };
+  isSignedIn?: boolean;
 }
 
 const Navbar = ({
@@ -72,7 +73,8 @@ const Navbar = ({
   ],
   rightMenu = {
     asimov: { title: 'ASIMOV', url: 'https://getasimov.ai', target: '_blank' }
-  }
+  },
+  isSignedIn = false
 }: Navbar1Props) => {
   return (
     <section className="py-4">
@@ -90,12 +92,24 @@ const Navbar = ({
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" asChild>
               <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer">
                 <FaXTwitter className="size-4" />
               </a>
             </Button>
+            {!isSignedIn ? (
+              <Button variant="outline" size="sm" asChild>
+                <a href="/sign-in">
+                  <User className="mr-1 size-4" />
+                  Sign In
+                </a>
+              </Button>
+            ) : (
+              <Button variant="outline" size="sm" asChild>
+                <a href="/dashboard">Dashboard</a>
+              </Button>
+            )}
             <Button asChild size="sm">
               <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
                 {rightMenu.asimov.title}
@@ -144,6 +158,18 @@ const Navbar = ({
                         </Button>
                       ))}
                     </div>
+                    {!isSignedIn ? (
+                      <Button variant="outline" asChild>
+                        <a href="/sign-in">
+                          <User className="mr-1 size-4" />
+                          Sign In
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button variant="outline" asChild>
+                        <a href="/dashboard">Dashboard</a>
+                      </Button>
+                    )}
                     <Button asChild>
                       <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
                         {rightMenu.asimov.title}

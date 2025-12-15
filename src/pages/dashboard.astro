@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/main.astro';
+import { Dashboard } from '@/components/Dashboard';
+import { clerkClient } from '@clerk/astro/server';
+
+const title = 'Dashboard - ASIMOV.Systems';
+const description = 'Manage your ASIMOV account and reserved names';
+
+// Get user data server-side
+const auth = Astro.locals.auth();
+if (!auth.userId) {
+  return Astro.redirect('/sign-in');
+}
+
+const user = await clerkClient(Astro).users.getUser(auth.userId);
+---
+
+<Layout title={title} description={description}>
+  <Dashboard 
+    user={{
+      id: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.emailAddresses[0]?.emailAddress || '',
+      imageUrl: user.imageUrl,
+    }}
+    client:load 
+  />
+</Layout>
+

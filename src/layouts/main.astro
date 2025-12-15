@@ -13,6 +13,10 @@ const {
   title = 'ASIMOV.Systems - AI Tools for Thinking Better & Working Faster',
   description = 'Tools for thinking better, working faster, and cutting through the noise. Built for people who want more clarity and less chaos. AI that remembers what matters and respects your data.'
 } = Astro.props;
+
+// Check auth status server-side
+const auth = Astro.locals.auth();
+const isSignedIn = !!auth.userId;
 ---
 
 <html lang="en">
@@ -74,7 +78,7 @@ const {
       data-website-id="bb1d9d85-eb5b-4b47-9e01-0c2083a05187"></script>
   </head>
   <body>
-    <Navbar client:load />
+    <Navbar isSignedIn={isSignedIn} client:load />
     <main>
       <slot />
     </main>
