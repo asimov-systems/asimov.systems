@@ -1,4 +1,4 @@
-import { Menu, User } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { FaXTwitter, FaLinkedin, FaGithub } from 'react-icons/fa6';
 
 import {
@@ -17,6 +17,8 @@ import {
   NavigationMenuTrigger
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { ClerkProvider } from '@/components/ClerkProvider';
+import { UserMenu } from '@/components/UserMenu';
 import { socialLinks } from '@/lib/consts';
 
 interface MenuItem {
@@ -42,7 +44,7 @@ interface Navbar1Props {
       target?: string;
     };
   };
-  isSignedIn?: boolean;
+  isSignedIn?: boolean; // Deprecated - UserMenu handles auth state client-side
 }
 
 const Navbar = ({
@@ -74,7 +76,7 @@ const Navbar = ({
   rightMenu = {
     asimov: { title: 'ASIMOV', url: 'https://getasimov.ai', target: '_blank' }
   },
-  isSignedIn = false
+  isSignedIn: _isSignedIn = false // Deprecated - UserMenu handles auth state client-side
 }: Navbar1Props) => {
   return (
     <section className="py-4">
@@ -98,18 +100,9 @@ const Navbar = ({
                 <FaXTwitter className="size-4" />
               </a>
             </Button>
-            {!isSignedIn ? (
-              <Button variant="outline" size="sm" asChild>
-                <a href="/sign-in">
-                  <User className="mr-1 size-4" />
-                  Sign In
-                </a>
-              </Button>
-            ) : (
-              <Button variant="outline" size="sm" asChild>
-                <a href="/sign-out">Sign Out</a>
-              </Button>
-            )}
+            <ClerkProvider>
+              <UserMenu />
+            </ClerkProvider>
             <Button asChild size="sm">
               <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
                 {rightMenu.asimov.title}
@@ -158,18 +151,9 @@ const Navbar = ({
                         </Button>
                       ))}
                     </div>
-                    {!isSignedIn ? (
-                      <Button variant="outline" asChild>
-                        <a href="/sign-in">
-                          <User className="mr-1 size-4" />
-                          Sign In
-                        </a>
-                      </Button>
-                    ) : (
-                      <Button variant="outline" asChild>
-                        <a href="/sign-out">Sign Out</a>
-                      </Button>
-                    )}
+                    <ClerkProvider>
+                      <UserMenu />
+                    </ClerkProvider>
                     <Button asChild>
                       <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
                         {rightMenu.asimov.title}
