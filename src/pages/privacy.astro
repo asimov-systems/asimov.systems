@@ -1,0 +1,302 @@
+---
+import Layout from '../layouts/main.astro';
+
+const title = 'Privacy Policy - ASIMOV.Systems';
+const description =
+  'Privacy Policy for ASIMOV.Systems - Learn how we collect, use, and protect your personal information.';
+---
+
+<Layout title={title} description={description}>
+  <div class="container mx-auto max-w-4xl px-4 py-16">
+    <h1 class="mb-8 text-4xl font-bold text-black">Privacy Policy</h1>
+    <p class="mb-8 text-sm text-slate-600">
+      Last updated: {
+        new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+      }
+    </p>
+
+    <div class="prose prose-slate max-w-none">
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">1. Introduction</h2>
+        <p class="mb-4 text-slate-700">
+          ASIMOV.Systems ("we," "our," or "us") is committed to protecting your privacy. This
+          Privacy Policy explains how we collect, use, disclose, and safeguard your information when
+          you visit our website at <a
+            href="https://asimov.systems"
+            class="text-orange-500 hover:underline">asimov.systems</a
+          >.
+        </p>
+        <p class="mb-4 text-slate-700">
+          By using our website, you consent to the data practices described in this Privacy Policy.
+          If you do not agree with the practices described in this policy, please do not use our
+          website.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">2. Information We Collect</h2>
+
+        <h3 class="mb-3 text-xl font-semibold text-black">2.1 Information You Provide</h3>
+        <p class="mb-4 text-slate-700">
+          We collect information that you voluntarily provide to us when you:
+        </p>
+        <ul class="mb-4 ml-6 list-disc text-slate-700">
+          <li>Create an account or sign in to our services</li>
+          <li>Contact us through our contact forms</li>
+          <li>Subscribe to our newsletter or communications</li>
+          <li>Participate in surveys or provide feedback</li>
+        </ul>
+        <p class="mb-4 text-slate-700">This information may include:</p>
+        <ul class="mb-4 ml-6 list-disc text-slate-700">
+          <li>Name and contact information (email address, phone number)</li>
+          <li>Account credentials and authentication information</li>
+          <li>Profile information and preferences</li>
+          <li>Any other information you choose to provide</li>
+        </ul>
+
+        <h3 class="mb-3 text-xl font-semibold text-black">
+          2.2 Automatically Collected Information
+        </h3>
+        <p class="mb-4 text-slate-700">
+          When you visit our website, we automatically collect certain information about your device
+          and usage patterns, including:
+        </p>
+        <ul class="mb-4 ml-6 list-disc text-slate-700">
+          <li>IP address and location data</li>
+          <li>Browser type and version</li>
+          <li>Operating system</li>
+          <li>Pages visited and time spent on pages</li>
+          <li>Referring website addresses</li>
+          <li>Device identifiers</li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">3. How We Use Your Information</h2>
+        <p class="mb-4 text-slate-700">We use the information we collect to:</p>
+        <ul class="mb-4 ml-6 list-disc text-slate-700">
+          <li>Provide, maintain, and improve our services</li>
+          <li>Authenticate your identity and manage your account</li>
+          <li>Respond to your inquiries and provide customer support</li>
+          <li>Send you administrative information, updates, and security alerts</li>
+          <li>Analyze website usage and trends to improve user experience</li>
+          <li>Detect, prevent, and address technical issues and security threats</li>
+          <li>Comply with legal obligations and enforce our terms of service</li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">4. Third-Party Services</h2>
+        <p class="mb-4 text-slate-700">
+          We use third-party services to help us operate our website and provide services to you.
+          These services may collect and process your information:
+        </p>
+
+        <h3 class="mb-3 text-xl font-semibold text-black">4.1 Authentication Services</h3>
+        <p class="mb-4 text-slate-700">
+          We use <strong>Clerk</strong> for user authentication and account management. Clerk processes
+          your authentication credentials and profile information. For more information about how Clerk
+          handles your data, please review their Privacy Policy at <a
+            href="https://clerk.com/legal/privacy"
+            class="text-orange-500 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer">https://clerk.com/legal/privacy</a
+          >.
+        </p>
+        <p class="mb-4 text-slate-700">
+          Your authentication is shared with <strong>id.asimov.nexus</strong>, which serves as our
+          primary account management platform. Both sites use the same Clerk instance to provide
+          seamless authentication across our services.
+        </p>
+
+        <h3 class="mb-3 text-xl font-semibold text-black">4.2 Analytics</h3>
+        <p class="mb-4 text-slate-700">
+          We use <strong>Umami</strong>, a privacy-focused analytics service, to understand how
+          visitors interact with our website. Umami collects anonymized usage statistics and does
+          not use cookies or track individual users. For more information, visit <a
+            href="https://umami.is"
+            class="text-orange-500 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer">https://umami.is</a
+          >.
+        </p>
+
+        <h3 class="mb-3 text-xl font-semibold text-black">4.3 Database Services</h3>
+        <p class="mb-4 text-slate-700">
+          We may use <strong>Supabase</strong> to store and manage user data and application information.
+          Supabase processes data in accordance with their Privacy Policy at <a
+            href="https://supabase.com/privacy"
+            class="text-orange-500 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer">https://supabase.com/privacy</a
+          >.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">5. Cookies and Tracking Technologies</h2>
+        <p class="mb-4 text-slate-700">We use cookies and similar tracking technologies to:</p>
+        <ul class="mb-4 ml-6 list-disc text-slate-700">
+          <li>Maintain your authentication session</li>
+          <li>Remember your preferences and settings</li>
+          <li>Analyze website traffic and usage patterns</li>
+          <li>Improve website functionality and user experience</li>
+        </ul>
+        <p class="mb-4 text-slate-700">
+          You can control cookies through your browser settings. However, disabling cookies may
+          limit your ability to use certain features of our website, including authentication.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">6. Data Security</h2>
+        <p class="mb-4 text-slate-700">
+          We implement appropriate technical and organizational security measures to protect your
+          personal information against unauthorized access, alteration, disclosure, or destruction.
+          These measures include:
+        </p>
+        <ul class="mb-4 ml-6 list-disc text-slate-700">
+          <li>Encryption of data in transit and at rest</li>
+          <li>Regular security assessments and updates</li>
+          <li>Access controls and authentication requirements</li>
+          <li>Secure hosting infrastructure</li>
+        </ul>
+        <p class="mb-4 text-slate-700">
+          However, no method of transmission over the Internet or electronic storage is 100% secure.
+          While we strive to use commercially acceptable means to protect your information, we
+          cannot guarantee absolute security.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">7. Data Retention</h2>
+        <p class="mb-4 text-slate-700">
+          We retain your personal information for as long as necessary to fulfill the purposes
+          outlined in this Privacy Policy, unless a longer retention period is required or permitted
+          by law. When we no longer need your information, we will securely delete or anonymize it.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">8. Your Rights and Choices</h2>
+        <p class="mb-4 text-slate-700">
+          Depending on your location, you may have certain rights regarding your personal
+          information, including:
+        </p>
+        <ul class="mb-4 ml-6 list-disc text-slate-700">
+          <li><strong>Access:</strong> Request access to your personal information</li>
+          <li>
+            <strong>Correction:</strong> Request correction of inaccurate or incomplete information
+          </li>
+          <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+          <li><strong>Portability:</strong> Request transfer of your data to another service</li>
+          <li><strong>Objection:</strong> Object to processing of your personal information</li>
+          <li><strong>Restriction:</strong> Request restriction of processing</li>
+          <li>
+            <strong>Withdrawal:</strong> Withdraw consent where processing is based on consent
+          </li>
+        </ul>
+        <p class="mb-4 text-slate-700">
+          To exercise these rights, please contact us using the information provided in the "Contact
+          Us" section below.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">9. Children's Privacy</h2>
+        <p class="mb-4 text-slate-700">
+          Our website is not intended for children under the age of 13. We do not knowingly collect
+          personal information from children under 13. If you believe we have collected information
+          from a child under 13, please contact us immediately, and we will take steps to delete
+          such information.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">10. International Data Transfers</h2>
+        <p class="mb-4 text-slate-700">
+          Your information may be transferred to and processed in countries other than your country
+          of residence. These countries may have data protection laws that differ from those in your
+          country. By using our website, you consent to the transfer of your information to these
+          countries.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">11. Changes to This Privacy Policy</h2>
+        <p class="mb-4 text-slate-700">
+          We may update this Privacy Policy from time to time to reflect changes in our practices or
+          for other operational, legal, or regulatory reasons. We will notify you of any material
+          changes by posting the new Privacy Policy on this page and updating the "Last updated"
+          date.
+        </p>
+        <p class="mb-4 text-slate-700">
+          We encourage you to review this Privacy Policy periodically to stay informed about how we
+          protect your information.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">12. Contact Us</h2>
+        <p class="mb-4 text-slate-700">
+          If you have any questions, concerns, or requests regarding this Privacy Policy or our data
+          practices, please contact us:
+        </p>
+        <div class="mb-4 rounded-lg bg-slate-50 p-6">
+          <p class="mb-2 text-slate-700">
+            <strong>ASIMOV.Systems</strong>
+          </p>
+          <p class="mb-2 text-slate-700">
+            131 Continental Dr, Suite 305<br />
+            Newark, DE 19713<br />
+            United States
+          </p>
+          <p class="mb-2 text-slate-700">
+            Email: <a href="mailto:talal@asimov.systems" class="text-orange-500 hover:underline"
+              >talal@asimov.systems</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">
+          13. Additional Information for EU Residents
+        </h2>
+        <p class="mb-4 text-slate-700">
+          If you are located in the European Union, you have additional rights under the General
+          Data Protection Regulation (GDPR). We process your personal information based on:
+        </p>
+        <ul class="mb-4 ml-6 list-disc text-slate-700">
+          <li>Your consent</li>
+          <li>Performance of a contract</li>
+          <li>Compliance with legal obligations</li>
+          <li>Legitimate interests</li>
+        </ul>
+        <p class="mb-4 text-slate-700">
+          You have the right to lodge a complaint with your local data protection authority if you
+          believe we have violated your data protection rights.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-semibold text-black">
+          14. Additional Information for California Residents
+        </h2>
+        <p class="mb-4 text-slate-700">
+          If you are a California resident, you have additional rights under the California Consumer
+          Privacy Act (CCPA), including:
+        </p>
+        <ul class="mb-4 ml-6 list-disc text-slate-700">
+          <li>The right to know what personal information we collect, use, and disclose</li>
+          <li>The right to delete your personal information</li>
+          <li>
+            The right to opt-out of the sale of personal information (we do not sell personal
+            information)
+          </li>
+          <li>The right to non-discrimination for exercising your privacy rights</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</Layout>
