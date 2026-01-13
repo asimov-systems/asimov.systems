@@ -30,12 +30,12 @@ export function Dashboard({ user }: DashboardProps) {
 
     // Check URL params
     const params = new URLSearchParams(window.location.search);
-    
+
     // VIP upgrade flow
     if (params.get('upgrade') === 'vip') {
       setShowUpgradeModal(true);
     }
-    
+
     // Standard reservation flow from onboarding
     const reserveParam = params.get('reserve');
     if (reserveParam) {
@@ -90,9 +90,9 @@ export function Dashboard({ user }: DashboardProps) {
             <h1 className="text-4xl font-bold text-white">Dashboard</h1>
             <p className="mt-2 text-slate-400">Manage your ASIMOV identity</p>
           </div>
-          <Button 
+          <Button
             onClick={handleSignOut}
-            variant="outline" 
+            variant="outline"
             className="border-slate-600 text-slate-300 hover:bg-slate-700"
           >
             Sign Out
@@ -158,15 +158,15 @@ export function Dashboard({ user }: DashboardProps) {
                     <Crown className="mr-2 h-4 w-4" />
                     Upgrade to VIP Membership
                   </Button>
-                  <p className="text-xs text-slate-400 text-center mt-2">
+                  <p className="mt-2 text-center text-xs text-slate-400">
                     One-time $100 - All your names get VIP benefits
                   </p>
                 </>
               )}
               {hasVipName && (
-                <div className="rounded-lg bg-green-500/10 border border-green-500/30 p-3 text-center">
-                  <p className="text-sm text-green-400 font-semibold">✓ VIP Member</p>
-                  <p className="text-xs text-slate-400 mt-1">All your names have VIP status</p>
+                <div className="rounded-lg border border-green-500/30 bg-green-500/10 p-3 text-center">
+                  <p className="text-sm font-semibold text-green-400">✓ VIP Member</p>
+                  <p className="mt-1 text-xs text-slate-400">All your names have VIP status</p>
                 </div>
               )}
             </CardContent>
@@ -292,11 +292,11 @@ export function Dashboard({ user }: DashboardProps) {
                   </div>
                 </div>
               </div>
-              <div className="mt-6 rounded-lg bg-slate-900/50 border border-slate-700 p-4">
-                <p className="text-sm text-slate-300 mb-2">
+              <div className="mt-6 rounded-lg border border-slate-700 bg-slate-900/50 p-4">
+                <p className="mb-2 text-sm text-slate-300">
                   <strong className="text-white">How it works:</strong>
                 </p>
-                <ul className="text-sm text-slate-400 space-y-1">
+                <ul className="space-y-1 text-sm text-slate-400">
                   <li>• Pay $100 once to become a VIP member</li>
                   <li>• All your reserved names get VIP status</li>
                   <li>• Additional names cost $50 each (but still VIP)</li>
@@ -316,7 +316,7 @@ export function Dashboard({ user }: DashboardProps) {
             <CardHeader>
               <CardTitle className="flex items-center text-white">
                 <Crown className="mr-2 h-5 w-5 text-yellow-500" />
-                You're a VIP Member! 🎉
+                You&apos;re a VIP Member! 🎉
               </CardTitle>
               <CardDescription className="text-slate-300">
                 All your names have VIP status and benefits
@@ -358,7 +358,7 @@ export function Dashboard({ user }: DashboardProps) {
         onSuccess={handleUpgradeSuccess}
         isVip={true}
       />
-      
+
       {/* Standard Payment Modal */}
       <VipUpgradeModal
         open={showStandardModal}
@@ -370,4 +370,3 @@ export function Dashboard({ user }: DashboardProps) {
     </div>
   );
 }
-

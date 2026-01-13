@@ -3,18 +3,21 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
 const supabaseServiceKey = import.meta.env.SUPABASE_SERVICE_KEY;
 
-if (!supabaseUrl || !supabaseServiceKey) {
-  throw new Error('Missing Supabase environment variables. Please add PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_KEY to your .env file');
-}
+// Supabase is optional - only needed if using database features
+// If not provided, supabase client will be undefined and database functions will fail gracefully
 
 // Server-side client with service key (full admin access, bypasses RLS)
 // Note: This is the same as "service_role" key in Supabase dashboard
-export const supabase = createClient(supabaseUrl, supabaseServiceKey, {
-  auth: {
-    autoRefreshToken: false,
-    persistSession: false
-  }
-});
+// Only created if both URL and key are provided
+export const supabase =
+  supabaseUrl && supabaseServiceKey
+    ? createClient(supabaseUrl, supabaseServiceKey, {
+        auth: {
+          autoRefreshToken: false,
+          persistSession: false
+        }
+      })
+    : null;
 
 export interface Database {
   users: {
@@ -41,4 +44,3 @@ export interface Database {
     created_at: string;
   };
 }
-

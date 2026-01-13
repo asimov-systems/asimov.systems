@@ -1,20 +1,19 @@
 ---
-const clerkPublishableKey = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
+import { getSignOutUrl } from '@/lib/auth';
+
+// Redirect to id.asimov.nexus for sign out (uses Clerk)
+const returnUrl = Astro.url.searchParams.get('returnUrl') || Astro.url.origin;
+const signOutUrl = getSignOutUrl(returnUrl);
+return Astro.redirect(signOutUrl);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Signing Out - ASIMOV.Systems</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script
-      async
-      crossorigin="anonymous"
-      data-clerk-publishable-key={clerkPublishableKey}
-      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
-    ></script>
     <style>
       body {
         margin: 0;
@@ -24,7 +23,10 @@ const clerkPublishableKey = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
         align-items: center;
         justify-content: center;
         background: linear-gradient(to bottom, #0f172a, #020617);
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
       }
       .container {
         text-align: center;
@@ -40,7 +42,9 @@ const clerkPublishableKey = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
         margin-bottom: 1rem;
       }
       @keyframes spin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
       h1 {
         color: white;
@@ -60,34 +64,5 @@ const clerkPublishableKey = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
       <h1>Signing you out...</h1>
       <p>You will be redirected shortly</p>
     </div>
-    
-    <script is:inline define:vars={{ clerkPublishableKey }}>
-      window.addEventListener('load', async function() {
-        try {
-          // Wait for Clerk to load
-          if (window.Clerk) {
-            await window.Clerk.load({
-              publishableKey: clerkPublishableKey
-            });
-            
-            // Sign out and redirect
-            await window.Clerk.signOut();
-            window.location.href = '/';
-          } else {
-            // Fallback if Clerk doesn't load
-            setTimeout(() => {
-              window.location.href = '/';
-            }, 1000);
-          }
-        } catch (error) {
-          console.error('Sign out error:', error);
-          // Redirect anyway after error
-          setTimeout(() => {
-            window.location.href = '/';
-          }, 1000);
-        }
-      });
-    </script>
   </body>
 </html>
-

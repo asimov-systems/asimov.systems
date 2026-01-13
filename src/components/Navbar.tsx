@@ -107,7 +107,7 @@ const Navbar = ({
               </Button>
             ) : (
               <Button variant="outline" size="sm" asChild>
-                <a href="/dashboard">Dashboard</a>
+                <a href="/sign-out">Sign Out</a>
               </Button>
             )}
             <Button asChild size="sm">
@@ -167,7 +167,7 @@ const Navbar = ({
                       </Button>
                     ) : (
                       <Button variant="outline" asChild>
-                        <a href="/dashboard">Dashboard</a>
+                        <a href="/sign-out">Sign Out</a>
                       </Button>
                     )}
                     <Button asChild>

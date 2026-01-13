@@ -43,7 +43,7 @@ export async function getUserProfile(clerkId: string): Promise<UserProfile | nul
     clerkId: user.clerk_id,
     email: user.email,
     createdAt: user.created_at,
-    reservedNames: (names || []).map(n => ({
+    reservedNames: (names || []).map((n) => ({
       id: n.id,
       name: n.name,
       reservedAt: n.reserved_at,
@@ -54,10 +54,7 @@ export async function getUserProfile(clerkId: string): Promise<UserProfile | nul
   };
 }
 
-export async function createUserProfile(
-  clerkId: string,
-  email: string
-): Promise<UserProfile> {
+export async function createUserProfile(clerkId: string, email: string): Promise<UserProfile> {
   const { data, error } = await supabase
     .from('users')
     .insert({
@@ -141,11 +138,7 @@ export async function reserveName(
   }
 
   // Get user ID and check if they already have VIP status
-  const { data: user } = await supabase
-    .from('users')
-    .select('id')
-    .eq('clerk_id', clerkId)
-    .single();
+  const { data: user } = await supabase.from('users').select('id').eq('clerk_id', clerkId).single();
 
   if (!user) {
     return { error: 'User not found' };
@@ -198,11 +191,9 @@ export async function getReservedNames(clerkId: string): Promise<ReservedName[]>
 }
 
 export async function getAllReservedNames(): Promise<string[]> {
-  const { data } = await supabase
-    .from('reserved_names')
-    .select('name');
+  const { data } = await supabase.from('reserved_names').select('name');
 
-  return (data || []).map(row => row.name);
+  return (data || []).map((row) => row.name);
 }
 
 // Admin function to manually assign a blacklisted name to a user
@@ -225,11 +216,7 @@ export async function assignBlacklistedName(
   }
 
   // Get user ID
-  const { data: user } = await supabase
-    .from('users')
-    .select('id')
-    .eq('clerk_id', clerkId)
-    .single();
+  const { data: user } = await supabase.from('users').select('id').eq('clerk_id', clerkId).single();
 
   if (!user) {
     return { error: 'User not found' };
@@ -267,4 +254,3 @@ export async function assignBlacklistedName(
     paymentId: data.payment_id || undefined
   };
 }
-

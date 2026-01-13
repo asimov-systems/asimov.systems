@@ -6,7 +6,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
+  DialogTitle
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -23,7 +23,15 @@ interface VipUpgradeModalProps {
   initialUsername?: string;
 }
 
-function CheckoutForm({ username, onSuccess, isVip = true }: { username: string; onSuccess: () => void; isVip?: boolean }) {
+function CheckoutForm({
+  username,
+  onSuccess,
+  isVip = true
+}: {
+  username: string;
+  onSuccess: () => void;
+  isVip?: boolean;
+}) {
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
@@ -44,9 +52,9 @@ function CheckoutForm({ username, onSuccess, isVip = true }: { username: string;
       const { error: submitError } = await stripe.confirmPayment({
         elements,
         confirmParams: {
-          return_url: `${window.location.origin}/dashboard?payment=success`,
+          return_url: `${window.location.origin}/dashboard?payment=success`
         },
-        redirect: 'if_required',
+        redirect: 'if_required'
       });
 
       if (submitError) {
@@ -58,14 +66,14 @@ function CheckoutForm({ username, onSuccess, isVip = true }: { username: string;
         await fetch('/api/reserve-name', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: username, isVip }),
+          body: JSON.stringify({ name: username, isVip })
         });
-        
+
         setTimeout(() => {
           onSuccess();
         }, 2000);
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred');
     } finally {
       setLoading(false);
@@ -80,10 +88,9 @@ function CheckoutForm({ username, onSuccess, isVip = true }: { username: string;
         </div>
         <h3 className="mb-2 text-xl font-semibold text-white">Payment Successful!</h3>
         <p className="text-slate-400">
-          {isVip 
-            ? 'Welcome to VIP membership 🎉' 
-            : `Your username ${username}.asimov.id is now reserved! 🎉`
-          }
+          {isVip
+            ? 'Welcome to VIP membership 🎉'
+            : `Your username ${username}.asimov.id is now reserved! 🎉`}
         </p>
       </div>
     );
@@ -92,13 +99,9 @@ function CheckoutForm({ username, onSuccess, isVip = true }: { username: string;
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <PaymentElement />
-      
-      {error && (
-        <div className="rounded-lg bg-red-500/10 p-3 text-sm text-red-500">
-          {error}
-        </div>
-      )}
-      
+
+      {error && <div className="rounded-lg bg-red-500/10 p-3 text-sm text-red-500">{error}</div>}
+
       <Button
         type="submit"
         disabled={!stripe || loading}
@@ -115,21 +118,27 @@ function CheckoutForm({ username, onSuccess, isVip = true }: { username: string;
             Pay $100 & Upgrade to VIP
           </>
         ) : (
-          <>
-            Pay $50 & Reserve Username
-          </>
+          <>Pay $50 & Reserve Username</>
         )}
       </Button>
     </form>
   );
 }
 
-export function VipUpgradeModal({ open, onClose, onSuccess, isVip = true, initialUsername = '' }: VipUpgradeModalProps) {
+export function VipUpgradeModal({
+  open,
+  onClose,
+  onSuccess,
+  isVip = true,
+  initialUsername = ''
+}: VipUpgradeModalProps) {
   const [username, setUsername] = useState(initialUsername);
   const [isChecking, setIsChecking] = useState(false);
   const [isAvailable, setIsAvailable] = useState<boolean | null>(null);
   const [clientSecret, setClientSecret] = useState('');
-  const [step, setStep] = useState<'username' | 'payment'>(initialUsername ? 'username' : 'username');
+  const [step, setStep] = useState<'username' | 'payment'>(
+    initialUsername ? 'username' : 'username'
+  );
 
   useEffect(() => {
     if (!open) {
@@ -142,7 +151,7 @@ export function VipUpgradeModal({ open, onClose, onSuccess, isVip = true, initia
       setIsAvailable(null);
     }
   }, [open, initialUsername]);
-  
+
   useEffect(() => {
     // If we have an initial username, check it and potentially go straight to payment
     if (initialUsername && open) {
@@ -189,11 +198,11 @@ export function VipUpgradeModal({ open, onClose, onSuccess, isVip = true, initia
       const response = await fetch('/api/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: username, isVip }),
+        body: JSON.stringify({ name: username, isVip })
       });
 
       const data = await response.json();
-      
+
       if (data.clientSecret) {
         setClientSecret(data.clientSecret);
         setStep('payment');
@@ -215,14 +224,18 @@ export function VipUpgradeModal({ open, onClose, onSuccess, isVip = true, initia
           </DialogTitle>
           <DialogDescription className="text-slate-300">
             {step === 'username'
-              ? isVip ? 'Choose your premium VIP username' : 'Choose your username'
-              : isVip ? 'Complete your payment to unlock VIP features' : 'Complete your payment to reserve your username'}
+              ? isVip
+                ? 'Choose your premium VIP username'
+                : 'Choose your username'
+              : isVip
+                ? 'Complete your payment to unlock VIP features'
+                : 'Complete your payment to reserve your username'}
           </DialogDescription>
         </DialogHeader>
 
         {step === 'username' && (
           <div className="space-y-6">
-              <div className="space-y-2">
+            <div className="space-y-2">
               <Label htmlFor="vip-username" className="text-slate-200">
                 {isVip ? 'VIP Username' : 'Username'}
               </Label>
@@ -236,20 +249,21 @@ export function VipUpgradeModal({ open, onClose, onSuccess, isVip = true, initia
                   maxLength={30}
                 />
                 {isChecking && (
-                  <Loader2 className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 animate-spin text-orange-500" />
+                  <Loader2 className="absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 animate-spin text-orange-500" />
                 )}
                 {!isChecking && isAvailable === true && (
-                  <CheckCircle2 className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-green-500" />
+                  <CheckCircle2 className="absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-green-500" />
                 )}
                 {!isChecking && isAvailable === false && (
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-red-500">
+                  <span className="absolute top-1/2 right-3 -translate-y-1/2 text-xs text-red-500">
                     Taken
                   </span>
                 )}
               </div>
               {username && (
                 <p className="text-sm text-slate-400">
-                  Your {isVip ? 'VIP ' : ''}ID: <span className="text-orange-500">{username}.asimov.id</span>
+                  Your {isVip ? 'VIP ' : ''}ID:{' '}
+                  <span className="text-orange-500">{username}.asimov.id</span>
                 </p>
               )}
             </div>
@@ -333,9 +347,9 @@ export function VipUpgradeModal({ open, onClose, onSuccess, isVip = true, initia
                     colorPrimary: '#f97316',
                     colorBackground: '#0f172a',
                     colorText: '#ffffff',
-                    colorDanger: '#ef4444',
-                  },
-                },
+                    colorDanger: '#ef4444'
+                  }
+                }
               }}
             >
               <CheckoutForm username={username} onSuccess={onSuccess} isVip={isVip} />
@@ -354,4 +368,3 @@ export function VipUpgradeModal({ open, onClose, onSuccess, isVip = true, initia
     </Dialog>
   );
 }
-

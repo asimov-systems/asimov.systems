@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "npm run lint && npm run format:check",
-    "prepare": "node -e \"try { require('husky').install() } catch (e) { if (e.code !== 'MODULE_NOT_FOUND') throw e }\"",
+    "prepare": "husky install || true",
     "setup:data": "mkdir -p data && echo '{\"users\":{},\"reservedNames\":{}}' > data/database.json",
     "stripe:listen": "stripe listen --forward-to localhost:4321/api/stripe-webhook"
   },
@@ -21,7 +21,6 @@
     "@astrojs/node": "^9.4.0",
     "@astrojs/react": "^4.3.0",
     "@clerk/astro": "^2.16.7",
-    "@clerk/clerk-react": "^5.58.1",
     "@hookform/resolvers": "^5.2.1",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-avatar": "^1.1.10",
