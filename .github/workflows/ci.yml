@@ -13,6 +13,3 @@ jobs:
     with:
       skip-tests: true
     secrets: inherit
-    env:
-      PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_CLERK_PUBLISHABLE_KEY }}
-      ENVIRONMENT: prod
