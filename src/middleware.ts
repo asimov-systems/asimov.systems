@@ -11,7 +11,7 @@ export const onRequest = clerkMiddleware((auth, context) => {
 
   // If user is not authenticated and trying to access protected route
   if (!userId && isProtectedRoute(context.request)) {
-    // Redirect to id.asimov.nexus for authentication/login UI
+    // Redirect to id.asimov.systems for authentication/login UI
     const returnUrl = encodeURIComponent(context.request.url);
     const authUrl = getAuthUrl(returnUrl);
     return context.redirect(authUrl);

@@ -2,7 +2,7 @@
  * UserMenu Component for Cross-Site Authentication
  *
  * Displays:
- * - Sign In button when user is not authenticated (redirects to id.asimov.nexus)
+ * - Sign In button when user is not authenticated (opens sign-in modal)
  * - User avatar, username, and dropdown menu when authenticated
  * - Dropdown includes: Profile link, Account Settings link, and Sign Out
  */
@@ -12,12 +12,18 @@ import { useState, useRef, useEffect } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, User as UserIcon } from 'lucide-react';
+import { getIdAuthUrl, isAuthEnabled } from '@/lib/config';
+import { SignInModal } from './SignInModal';
 
 export function UserMenu() {
   const { user, isLoaded } = useUser();
   const { signOut } = useClerk();
   const [isOpen, setIsOpen] = useState(false);
+  const [showSignInModal, setShowSignInModal] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Check if authentication UI is enabled (after hooks)
+  const authEnabled = isAuthEnabled();
 
   // Debug: Log authentication state
   useEffect(() => {
@@ -55,26 +61,26 @@ export function UserMenu() {
     }
   };
 
-  // Get sign-in URL - use local sign-in page
-  const getSignInUrl = () => {
-    const returnUrl = encodeURIComponent(window.location.href);
-    return `/sign-in?returnUrl=${returnUrl}`;
-  };
+  // Hide authentication UI if not enabled
+  if (!authEnabled) {
+    return null;
+  }
 
   // Loading state
   if (!isLoaded) {
     return <div className="h-8 w-8 animate-pulse rounded-full bg-slate-200" />;
   }
 
-  // Not authenticated - show sign in button
+  // Not authenticated - show sign in button with modal
   if (!user) {
     return (
-      <Button variant="outline" size="sm" asChild>
-        <a href={getSignInUrl()}>
+      <>
+        <Button variant="outline" size="sm" onClick={() => setShowSignInModal(true)}>
           <UserIcon className="mr-1 size-4" />
           Sign In
-        </a>
-      </Button>
+        </Button>
+        <SignInModal open={showSignInModal} onOpenChange={setShowSignInModal} />
+      </>
     );
   }
 
@@ -86,7 +92,7 @@ export function UserMenu() {
         ? user.emailAddresses[0].emailAddress.split('@')[0]
         : user.username || 'User';
 
-  const nexusUrl = import.meta.env.PUBLIC_NEXUS_AUTH_URL || 'https://id.asimov.nexus';
+  const idUrl = getIdAuthUrl();
 
   // Authenticated - show user menu
   return (
@@ -125,14 +131,14 @@ export function UserMenu() {
           </div>
 
           <a
-            href={`${nexusUrl}/profile?returnUrl=${encodeURIComponent(window.location.href)}`}
+            href={`${idUrl}/profile?returnUrl=${encodeURIComponent(window.location.href)}`}
             className="block px-4 py-2 text-sm text-slate-700 transition hover:bg-slate-100"
             onClick={() => setIsOpen(false)}
           >
             My Profile
           </a>
           <a
-            href={`${nexusUrl}?returnUrl=${encodeURIComponent(window.location.href)}`}
+            href={`${idUrl}?returnUrl=${encodeURIComponent(window.location.href)}`}
             className="block px-4 py-2 text-sm text-slate-700 transition hover:bg-slate-100"
             onClick={() => setIsOpen(false)}
           >

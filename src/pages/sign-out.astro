@@ -1,7 +1,7 @@
 ---
 import { getSignOutUrl } from '@/lib/auth';
 
-// Redirect to id.asimov.nexus for sign out (uses Clerk)
+// Redirect to id.asimov.systems for sign out (uses Clerk)
 const returnUrl = Astro.url.searchParams.get('returnUrl') || Astro.url.origin;
 const signOutUrl = getSignOutUrl(returnUrl);
 return Astro.redirect(signOutUrl);
