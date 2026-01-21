@@ -8,8 +8,28 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  project-build-test:
-    uses: asimov-protocol/.github/.github/workflows/npm-ci.yml@v1.0
-    with:
-      skip-tests: true
-    secrets: inherit
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_CLERK_PUBLISHABLE_KEY }}
+      ENVIRONMENT: prod
+      PUBLIC_ID_AUTH_URL: https://id.asimov.systems
+      PUBLIC_ENABLE_AUTH: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
