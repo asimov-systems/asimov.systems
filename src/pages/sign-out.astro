@@ -1,0 +1,68 @@
+---
+import { getSignOutUrl } from '@/lib/auth';
+
+// Redirect to id.asimov.systems for sign out (uses Clerk)
+const returnUrl = Astro.url.searchParams.get('returnUrl') || Astro.url.origin;
+const signOutUrl = getSignOutUrl(returnUrl);
+return Astro.redirect(signOutUrl);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Signing Out - ASIMOV.Systems</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, #0f172a, #020617);
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+      }
+      .container {
+        text-align: center;
+      }
+      .spinner {
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        border: 4px solid #f97316;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 1rem;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      h1 {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 0 0.5rem 0;
+      }
+      p {
+        color: #94a3b8;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="spinner"></div>
+      <h1>Signing you out...</h1>
+      <p>You will be redirected shortly</p>
+    </div>
+  </body>
+</html>

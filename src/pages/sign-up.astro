@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/main.astro';
+import { SignUp } from '@clerk/astro/components';
+
+const title = 'Sign Up - ASIMOV.Systems';
+const description = 'Create your ASIMOV account';
+
+// Get return URL if provided, otherwise redirect to home after sign up
+const returnUrl = Astro.url.searchParams.get('returnUrl') || '/';
+---
+
+<Layout title={title} description={description}>
+  <div class="flex min-h-screen items-center justify-center bg-white px-4 py-16">
+    <div class="w-full max-w-md">
+      <div class="mb-8 text-center">
+        <h1 class="mb-2 text-4xl font-bold text-black">Join ASIMOV</h1>
+        <p class="text-slate-600">Create your ASIMOV account</p>
+      </div>
+      <SignUp afterSignUpUrl={returnUrl} redirectUrl={returnUrl} />
+    </div>
+  </div>
+</Layout>

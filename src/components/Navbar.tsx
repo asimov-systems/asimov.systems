@@ -17,6 +17,8 @@ import {
   NavigationMenuTrigger
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { ClerkProvider } from '@/components/ClerkProvider';
+import { UserMenu } from '@/components/UserMenu';
 import { socialLinks } from '@/lib/consts';
 
 interface MenuItem {
@@ -42,6 +44,7 @@ interface Navbar1Props {
       target?: string;
     };
   };
+  isSignedIn?: boolean; // Deprecated - UserMenu handles auth state client-side
 }
 
 const Navbar = ({
@@ -72,7 +75,8 @@ const Navbar = ({
   ],
   rightMenu = {
     asimov: { title: 'ASIMOV', url: 'https://getasimov.ai', target: '_blank' }
-  }
+  },
+  isSignedIn: _isSignedIn = false // Deprecated - UserMenu handles auth state client-side
 }: Navbar1Props) => {
   return (
     <section className="py-4">
@@ -90,12 +94,15 @@ const Navbar = ({
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" asChild>
               <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer">
                 <FaXTwitter className="size-4" />
               </a>
             </Button>
+            <ClerkProvider>
+              <UserMenu />
+            </ClerkProvider>
             <Button asChild size="sm">
               <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
                 {rightMenu.asimov.title}
@@ -144,6 +151,9 @@ const Navbar = ({
                         </Button>
                       ))}
                     </div>
+                    <ClerkProvider>
+                      <UserMenu />
+                    </ClerkProvider>
                     <Button asChild>
                       <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
                         {rightMenu.asimov.title}

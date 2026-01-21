@@ -72,11 +72,8 @@ const Footer = ({
       ]
     }
   ],
-  copyright = '© 2025 ASIMOV Systems Inc.'
-  // bottomLinks = [
-  //   { text: 'Terms and Conditions', url: '#' },
-  //   { text: 'Privacy Policy', url: '#' }
-  // ]
+  copyright = '© 2025 ASIMOV Systems Inc.',
+  bottomLinks = [{ text: 'Privacy Policy', url: '/privacy' }]
 }: FooterProps) => {
   return (
     <section className="py-32">
@@ -108,13 +105,13 @@ const Footer = ({
           </div>
           <div className="text-muted-foreground mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium md:flex-row md:items-center">
             <p>{copyright}</p>
-            {/* <ul className="flex gap-4">
+            <ul className="flex gap-4">
               {bottomLinks.map((link, linkIdx) => (
                 <li key={linkIdx} className="hover:text-primary underline">
                   <a href={link.url}>{link.text}</a>
                 </li>
               ))}
-            </ul> */}
+            </ul>
           </div>
         </footer>
       </div>
