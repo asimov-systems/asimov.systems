@@ -6,8 +6,13 @@ on:
   pull_request:
     branches: ['master']
     types: [opened, synchronize, reopened]
+
 jobs:
   project-build-test:
     uses: asimov-protocol/.github/.github/workflows/npm-ci.yml@v1.0
     with:
       skip-tests: true
+    secrets: inherit
+    env:
+      PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_CLERK_PUBLISHABLE_KEY }}
+      ENVIRONMENT: prod
