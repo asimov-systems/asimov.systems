@@ -1,7 +1,9 @@
 import { Shield, CheckCircle, FileCheck } from 'lucide-react';
 
+import { Button } from '@/components/ui/button';
 import { Globe } from '@/components/magicui/globe';
 import { Meteors } from '@/components/magicui/meteors';
+import { idJoinWaitlistUrl } from '@/lib/consts';
 
 const Highlight = ({
   children,
@@ -23,16 +25,24 @@ const Hero = () => {
             Our mission is to take our customers from <br />
             <i>cognitive overload to cognitive clarity.</i>
           </h1>
+          <p className="text-muted-foreground max-w-2xl text-center text-sm md:text-base">
+            <strong className="text-foreground">ASIMOV Personal Intelligence (PI)</strong>
+            —privacy-first personal intelligence over your data—powered by the{' '}
+            <strong className="text-foreground">ASIMOV Protocol</strong>.
+          </p>
+          <Button asChild className="mt-4">
+            <a
+              href={idJoinWaitlistUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2"
+            >
+              Join early access
+            </a>
+          </Button>
 
           <Meteors number={30} />
 
-          {/* <Button
-            variant="secondary"
-            className="group text-md mt-10 flex w-fit items-center justify-center gap-2 rounded-full px-4 py-1 tracking-tight"
-          >
-            Get Started
-            <ArrowRight className="size-4 -rotate-45 transition-all ease-out group-hover:ml-3 group-hover:rotate-0" />
-          </Button> */}
           <div className="relative h-115 w-full overflow-y-clip">
             <Globe className="translate-y-40 scale-175" />
           </div>

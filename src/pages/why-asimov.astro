@@ -1,0 +1,120 @@
+---
+import Layout from '@/layouts/main.astro';
+import { idJoinWaitlistUrl } from '@/lib/consts';
+
+const title = 'Why ASIMOV - Architecture & privacy | ASIMOV Systems';
+const description =
+  'How ASIMOV works: public and personal storage physically separated, your Personal Context Graph, and inferential connections—privacy-first personal intelligence.';
+const canonicalUrl = 'https://asimov.systems/why-asimov';
+---
+
+<Layout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://asimov.systems/og-image.png" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ASIMOV_Protocol" />
+  </Fragment>
+
+  <section class="py-20 lg:py-32">
+    <div class="container mx-auto px-4 lg:px-6">
+      <header class="mx-auto max-w-3xl text-center">
+        <p class="text-muted-foreground text-sm font-semibold tracking-wide uppercase">
+          Why ASIMOV
+        </p>
+        <h1 class="font-calSans mt-2 text-3xl font-bold md:text-4xl lg:text-5xl">
+          How we give you clarity without compromising your data
+        </h1>
+        <p class="text-muted-foreground mt-4 text-lg">
+          Public and personal storage are physically separated. The ASIMOV PI suite uses both to
+          build your context graph and inferential connections—without exposing your private data to
+          the shared layer.
+        </p>
+      </header>
+
+      <figure class="border-border bg-card/50 mx-auto mt-12 max-w-4xl rounded-xl border p-4 md:p-6">
+        <img
+          src="/assets/AsimovPIdatadiagram.png"
+          alt="ASIMOV PI architecture: public data sources and ingestion pipeline to cloud cache; your personal cache (private data) combined and linked into your Personal Context Graph; ASIMOV Intelligence Tools output."
+          class="w-full rounded-lg"
+          width="1200"
+          height="800"
+        />
+        <figcaption class="text-muted-foreground mt-3 text-center text-sm">
+          Public and personal storage, combined and linked into your Personal Context Graph,
+          powering ASIMOV Intelligence Tools.
+        </figcaption>
+      </figure>
+
+      <div
+        class="border-border bg-card/50 mx-auto mt-16 max-w-3xl space-y-12 rounded-xl border p-6 md:p-10"
+      >
+        <div>
+          <h2 class="text-lg font-semibold">1. Public side</h2>
+          <p class="text-muted-foreground mt-2 max-w-3xl text-base">
+            Public data sources (websites, social networks, public APIs, news and events) feed into
+            an ingestion pipeline. That pipeline fills the ASIMOV Cloud Cache—a shared public
+            storage layer. Everyone benefits from the same useful context (e.g. identity
+            recognition, public knowledge).
+          </p>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">2. Your side</h2>
+          <p class="text-muted-foreground mt-2 max-w-3xl text-base">
+            When you sign up and get a name, we create your personal storage—the ASIMOV Personal
+            Cache. It is physically separate from the public storage. Only your private data lives
+            here (contacts, private socials, files). Public and personal storage servers are
+            physically separated.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">3. Combined and linked</h2>
+          <p class="text-muted-foreground mt-2 max-w-3xl text-base">
+            The system combines and links public cache and your personal cache (without mixing the
+            underlying stores). That produces your Personal Context Graph—one place where your
+            private data and what exists in the cloud are connected for you.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">4. ASIMOV Personal Intelligence tools</h2>
+          <p class="text-muted-foreground mt-2 max-w-3xl text-base">
+            The ASIMOV suite of Personal Intelligence tools (smart search, AI insights,
+            recommendations, identity recognition) runs on that graph. The system creates
+            inferential connections between your personal data and what’s already in the cloud—so
+            you get powerful, contextual intelligence while your private data stays in your personal
+            storage.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-muted-foreground mx-auto mt-10 max-w-3xl text-center text-base italic">
+        One line: Public and personal storage servers are physically separated; the PI suite uses
+        both to build your context graph and inferential connections, without exposing your private
+        data to the shared layer.
+      </p>
+
+      <div class="mt-16 flex flex-wrap justify-center gap-4">
+        <a
+          href="/product"
+          class="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center justify-center rounded-md px-6 text-sm font-medium"
+        >
+          Explore ASIMOV PI
+        </a>
+        <a
+          href={idJoinWaitlistUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-input bg-background hover:bg-accent inline-flex h-10 items-center justify-center rounded-md border px-6 text-sm font-medium"
+        >
+          Join waitlist
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

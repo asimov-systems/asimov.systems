@@ -1,0 +1,120 @@
+---
+import Layout from '@/layouts/main.astro';
+import { socialLinks } from '@/lib/consts';
+
+const title = 'Build on ASIMOV - Protocol & ecosystem | ASIMOV Systems';
+const description =
+  'Build on the ASIMOV Protocol: APIs, runtimes, marketplace, provenance. SDKs, CLI, and ecosystem for verifiable AI and personal intelligence.';
+const canonicalUrl = 'https://asimov.systems/build';
+
+const repoLinks = [
+  {
+    name: 'asimov-platform',
+    href: 'https://github.com/asimov-platform',
+    description: 'Organization and core repos'
+  },
+  {
+    name: 'asimov.rs',
+    href: 'https://github.com/asimov-platform/asimov.rs',
+    description: 'Rust runtime and tooling'
+  },
+  {
+    name: 'asimov-cli',
+    href: 'https://github.com/asimov-platform/asimov-cli',
+    description: 'CLI for developers'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://asimov.systems/og-image.png" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ASIMOV_Protocol" />
+  </Fragment>
+
+  <section class="py-20 lg:py-32">
+    <div class="container mx-auto px-4 lg:px-6">
+      <header class="mx-auto max-w-3xl text-center">
+        <p class="text-muted-foreground text-sm font-semibold tracking-wide uppercase">
+          Build on ASIMOV
+        </p>
+        <h1 class="font-calSans mt-2 text-3xl font-bold md:text-4xl lg:text-5xl">
+          ASIMOV Protocol
+        </h1>
+        <p class="text-muted-foreground mt-4 text-lg">
+          The full ecosystem for others to build on: APIs, runtimes, marketplace, and provenance.
+          &quot;Build on ASIMOV.&quot;
+        </p>
+      </header>
+
+      <div
+        class="border-border bg-card/50 mx-auto mt-16 max-w-3xl rounded-xl border p-6 text-center md:p-10"
+      >
+        <h2 class="text-xl font-semibold md:text-2xl">Ecosystem for builders</h2>
+        <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-base leading-relaxed">
+          ASIMOV Protocol provides the infrastructure that powers ASIMOV Personal Intelligence
+          (PI)—and it’s designed so others can build their own applications, integrations, and
+          services on top. Verifiable knowledge, structured data, and privacy-first design.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-16 max-w-3xl text-center">
+        <h2 class="text-lg font-semibold">GitHub &amp; repos</h2>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center">
+          {
+            repoLinks.map((repo, i) => (
+              <span>
+                {i > 0 ? <span class="text-muted-foreground mx-1 select-none">·</span> : null}
+                <a
+                  href={repo.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={repo.description}
+                  class="text-primary font-medium hover:underline"
+                >
+                  {repo.name}
+                </a>
+              </span>
+            ))
+          }
+        </div>
+        <p class="text-muted-foreground mt-2 text-sm">
+          Organization &amp; core · Rust runtime · CLI
+        </p>
+        <div class="flex justify-center">
+          <a
+            href={socialLinks.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border-input bg-background hover:bg-accent mt-6 inline-flex h-10 items-center justify-center rounded-md border px-6 text-sm font-medium"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="border-border bg-card/50 mx-auto mt-20 max-w-3xl rounded-xl border p-6 text-center md:p-10"
+      >
+        <h2 class="text-xl font-semibold">Docs &amp; specs</h2>
+        <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-base">
+          Technical documentation and specifications are available at{' '}
+          <a
+            href="https://asimov-specs.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-primary hover:underline">asimov-specs.github.io</a
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,121 @@
+---
+import Layout from '@/layouts/main.astro';
+import { idJoinWaitlistUrl } from '@/lib/consts';
+
+const title = 'Product - ASIMOV Personal Intelligence | ASIMOV Systems';
+const description =
+  'ASIMOV Personal Intelligence (PI): a privacy-first layer that unifies your data—instant access, traceable answers, one private workspace. Powered by ASIMOV Protocol.';
+const canonicalUrl = 'https://asimov.systems/product';
+---
+
+<Layout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://asimov.systems/og-image.png" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://asimov.systems/og-image.png" />
+    <meta name="twitter:site" content="@ASIMOV_Protocol" />
+  </Fragment>
+
+  <section class="py-20 lg:py-32">
+    <div class="container mx-auto px-4 lg:px-6">
+      <header class="mx-auto max-w-3xl text-center">
+        <h1 class="font-calSans text-3xl font-bold md:text-4xl lg:text-5xl">
+          ASIMOV Personal Intelligence
+        </h1>
+        <p class="text-muted-foreground mt-4 text-lg">
+          Our first product on the ASIMOV Protocol—privacy-first personal intelligence over your
+          unified data. &quot;Palantir in your pocket.&quot;
+        </p>
+      </header>
+
+      <div
+        class="border-border bg-card/50 mx-auto mt-16 max-w-3xl rounded-xl border p-6 text-center md:p-10"
+      >
+        <h2 class="text-xl font-semibold md:text-2xl">Personal Intelligence, defined</h2>
+        <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-base leading-relaxed">
+          A privacy-first intelligence layer that unifies and contextualizes everything you
+          know—making it instantly accessible and protected, so you never lose focus, control, or
+          trust in your data.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-16 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="border-border rounded-lg border p-6">
+          <h3 class="font-semibold">Instant access to everything</h3>
+          <p class="text-muted-foreground mt-2 text-sm">
+            Find any email, chat, meeting note, file, or document in seconds. No more digging or
+            asking your team.
+          </p>
+        </div>
+        <div class="border-border rounded-lg border p-6">
+          <h3 class="font-semibold">Your answers, your way</h3>
+          <p class="text-muted-foreground mt-2 text-sm">
+            Ask any question about your projects, relationships, or priorities—and get fast,
+            executive-level insights.
+          </p>
+        </div>
+        <div class="border-border rounded-lg border p-6">
+          <h3 class="font-semibold">One private workspace</h3>
+          <p class="text-muted-foreground mt-2 text-sm">
+            All your communications and files are secure, searchable, and connected. Your data stays
+            in your control.
+          </p>
+        </div>
+        <div class="border-border rounded-lg border p-6">
+          <h3 class="font-semibold">A smarter workflow</h3>
+          <p class="text-muted-foreground mt-2 text-sm">
+            Keep using the tools you already rely on—Slack, Gmail, Telegram, Obsidian, Outlook, and
+            more. ASIMOV connects them all.
+          </p>
+        </div>
+        <div class="border-border rounded-lg border p-6">
+          <h3 class="font-semibold">Plug-and-play setup</h3>
+          <p class="text-muted-foreground mt-2 text-sm">
+            Install in seconds. Connect your apps—no complex onboarding, no new logins.
+          </p>
+        </div>
+        <div class="border-border rounded-lg border p-6">
+          <h3 class="font-semibold">Built for individuals and teams</h3>
+          <p class="text-muted-foreground mt-2 text-sm">
+            Start with your own personal space and grow into shared vaults and team dashboards while
+            protecting your privacy.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="border-border bg-card/50 mx-auto mt-16 max-w-3xl rounded-xl border p-6 text-center md:p-10"
+      >
+        <h2 class="text-xl font-semibold">Knowledge Vaults</h2>
+        <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-base">
+          Create dedicated vaults for projects or clients. Link info across apps instantly, with
+          full context and traceability, within your own private vault.
+        </p>
+      </div>
+
+      <div class="mt-16 flex flex-wrap justify-center gap-4">
+        <a
+          href={idJoinWaitlistUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center justify-center rounded-md px-6 text-sm font-medium"
+        >
+          Join early access
+        </a>
+        <a
+          href="/how-it-works"
+          class="border-input bg-background hover:bg-accent inline-flex h-10 items-center justify-center rounded-md border px-6 text-sm font-medium"
+        >
+          How it works
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

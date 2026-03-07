@@ -1,5 +1,5 @@
 import { Logo, LogoImage } from '@/components/shadcnblocks/logo';
-import { socialLinks, calendarLinks } from '@/lib/consts';
+import { socialLinks, calendarLinks, idJoinWaitlistUrl } from '@/lib/consts';
 
 interface MenuItem {
   title: string;
@@ -34,23 +34,19 @@ const Footer = ({
   tagline = '#BuildOnTruth',
   menuItems = [
     {
-      title: 'Product',
+      title: 'ASIMOV PI',
       links: [
-        { text: 'Overview', url: 'https://getasimov.ai', target: '_blank' }
-        // { text: 'Pricing', url: '#' },
-        // { text: 'Marketplace', url: '#' },
-        // { text: 'Features', url: '#' },
-        // { text: 'Integrations', url: '#' },
-        // { text: 'Pricing', url: '#' }
+        { text: 'Overview', url: '/product' },
+        { text: 'Why ASIMOV', url: '/why-asimov' },
+        { text: 'How it works', url: '/how-it-works' }
       ]
     },
     {
       title: 'Company',
       links: [
-        // { text: 'About', url: 'https://www.asimovprotocol.org/about', target: '_blank' },
-        // { text: 'Team', url: '#' },
+        { text: 'Build on ASIMOV', url: '/build' },
         { text: 'Blog', url: 'https://asimov.blog', target: '_blank' },
-        // { text: 'Careers', url: '#' },
+        { text: 'For investors', url: '/investors' },
         { text: 'Contact', url: '/contact' },
         { text: 'Events', url: calendarLinks.sfEvents, target: '_blank' }
       ]
@@ -58,9 +54,10 @@ const Footer = ({
     {
       title: 'Resources',
       links: [
-        { text: 'Docs', url: 'https://asimov-specs.github.io', target: '_blank' }
-        // { text: 'Sales', url: '#' },
-        // { text: 'Advertise', url: '#' }
+        { text: 'FAQ', url: '/faq' },
+        { text: 'Join waitlist', url: idJoinWaitlistUrl, target: '_blank' },
+        { text: 'Docs', url: 'https://asimov-specs.github.io', target: '_blank' },
+        { text: 'Privacy Policy', url: '/privacy' }
       ]
     },
     {
@@ -72,8 +69,11 @@ const Footer = ({
       ]
     }
   ],
-  copyright = '© 2025 ASIMOV Systems Inc.',
-  bottomLinks = [{ text: 'Privacy Policy', url: '/privacy' }]
+  copyright = '© 2025 ASIMOV Systems Inc.'
+  // bottomLinks = [
+  //   { text: 'Terms and Conditions', url: '#' },
+  //   { text: 'Privacy Policy', url: '#' }
+  // ]
 }: FooterProps) => {
   return (
     <section className="py-32">
@@ -105,13 +105,13 @@ const Footer = ({
           </div>
           <div className="text-muted-foreground mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium md:flex-row md:items-center">
             <p>{copyright}</p>
-            <ul className="flex gap-4">
+            {/* <ul className="flex gap-4">
               {bottomLinks.map((link, linkIdx) => (
                 <li key={linkIdx} className="hover:text-primary underline">
                   <a href={link.url}>{link.text}</a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </footer>
       </div>

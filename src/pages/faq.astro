@@ -1,0 +1,109 @@
+---
+import Layout from '@/layouts/main.astro';
+import { idJoinWaitlistUrl } from '@/lib/consts';
+
+const title = 'FAQ - ASIMOV Systems';
+const description =
+  'Frequently asked questions about ASIMOV Personal Intelligence, the ASIMOV Protocol, privacy, credits, and how to join.';
+const canonicalUrl = 'https://asimov.systems/faq';
+
+const faqs = [
+  {
+    q: 'How is ASIMOV different from chatbots or note apps?',
+    a: 'ASIMOV Personal Intelligence (PI) unifies and contextualizes all your data—emails, chats, files, notes—in one private workspace. You interrogate your own data in plain English and get traceable answers. It’s not a single app or a chatbot; it’s a privacy-first intelligence layer that connects the tools you already use.'
+  },
+  {
+    q: 'Will my data ever leave my device or be sold?',
+    a: 'No. We’re privacy by design. Your private data lives in your personal storage (ASIMOV Personal Cache), physically separate from shared public infrastructure. We don’t sell your data.'
+  },
+  {
+    q: 'Is it available now?',
+    a: 'We’re in early access. Join the waitlist at id.asimov.systems to get access as we roll out.'
+  },
+  {
+    q: 'How do the credits and tokens work?',
+    a: 'Every action—integrating data, searching, contributing, referring—can earn credits. Early users have a stake in the ecosystem and future premium features. Details are available when you join.'
+  },
+  {
+    q: 'Can I use ASIMOV with my team?',
+    a: 'Yes. Start with your own personal space and grow into shared vaults, team dashboards, and enterprise features while keeping privacy at every step.'
+  },
+  {
+    q: 'Which platforms and apps are supported?',
+    a: 'Gmail, Outlook, Slack, Telegram, Obsidian, Notion, Dropbox, Google Drive, and more. We keep adding integrations.'
+  },
+  {
+    q: 'Is it simple to set up?',
+    a: 'Yes. Plug-and-play setup: install in seconds, connect your apps, no complex onboarding or new logins.'
+  },
+  {
+    q: 'What’s the difference between ASIMOV Protocol and ASIMOV Personal Intelligence (PI)?',
+    a: 'ASIMOV Protocol is the full ecosystem for builders—APIs, runtimes, marketplace, provenance. ASIMOV Personal Intelligence (PI) is our product on top of that: the privacy-first personal intelligence layer we’re raising investment for. Think “Build on ASIMOV” for the Protocol; “Palantir in your pocket” for PI.'
+  },
+  {
+    q: 'Where do I sign up or manage my account?',
+    a: 'Sign-up, waitlist, and account management (your name, profile, personal data) live at id.asimov.systems. Use “Join waitlist” or “Dashboard” from this site to get there.'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://asimov.systems/og-image.png" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ASIMOV_Protocol" />
+  </Fragment>
+
+  <section class="py-20 lg:py-32">
+    <div class="container mx-auto max-w-3xl px-4 lg:px-6">
+      <header class="text-center">
+        <p class="text-muted-foreground text-sm font-semibold tracking-wide uppercase">FAQ</p>
+        <h1 class="font-calSans mt-2 text-3xl font-bold md:text-4xl">Frequently asked questions</h1>
+        <p class="text-muted-foreground mt-4 text-lg">
+          Everything you need to know about ASIMOV. Can't find what you're looking for? Join our
+          community or contact us.
+        </p>
+      </header>
+
+      <div class="mt-12 space-y-2">
+        {
+          faqs.map((item) => (
+            <details class="group border-border bg-card/50 rounded-lg border [&_summary]:list-none">
+              <summary class="hover:bg-muted/50 flex cursor-pointer items-center justify-between gap-4 p-4 font-medium md:p-5">
+                {item.q}
+                <span
+                  class="text-muted-foreground shrink-0 transition group-open:rotate-180"
+                  aria-hidden="true"
+                >
+                  ▼
+                </span>
+              </summary>
+              <div class="text-muted-foreground border-border border-t px-4 pt-2 pb-4 text-sm leading-relaxed md:px-5 md:pt-2 md:pb-5">
+                {item.a}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+
+      <div class="mt-16 text-center">
+        <p class="text-muted-foreground">Want early access?</p>
+        <a
+          href={idJoinWaitlistUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 inline-flex h-10 items-center justify-center rounded-md px-6 text-sm font-medium"
+        >
+          Join waitlist
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,109 @@
+---
+import Layout from '@/layouts/main.astro';
+import { idJoinWaitlistUrl } from '@/lib/consts';
+
+const title = 'How it works - ASIMOV Personal Intelligence | ASIMOV Systems';
+const description =
+  'Connect your accounts, get a unified secure view, interrogate your data, and get traceable answers. Your journey through your data with ASIMOV PI.';
+const canonicalUrl = 'https://asimov.systems/how-it-works';
+---
+
+<Layout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://asimov.systems/og-image.png" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ASIMOV_Protocol" />
+  </Fragment>
+
+  <section class="py-20 lg:py-32">
+    <div class="container mx-auto px-4 lg:px-6">
+      <header class="mx-auto max-w-3xl text-center">
+        <p class="text-muted-foreground text-sm font-semibold tracking-wide uppercase">
+          How it works
+        </p>
+        <h1 class="font-calSans mt-2 text-3xl font-bold md:text-4xl lg:text-5xl">
+          Journey through your data
+        </h1>
+        <p class="text-muted-foreground mt-4 text-lg">
+          Four steps from scattered sources to traceable answers—powered by ASIMOV Personal
+          Intelligence on the ASIMOV Protocol.
+        </p>
+      </header>
+
+      <ol class="mx-auto mt-16 max-w-3xl space-y-12 md:space-y-16">
+        <li class="flex gap-6 md:gap-10">
+          <span
+            class="bg-primary text-primary-foreground flex size-12 shrink-0 items-center justify-center rounded-full text-lg font-bold md:size-14 md:text-xl"
+            >1</span
+          >
+          <div>
+            <h2 class="text-xl font-semibold md:text-2xl">Connect your accounts</h2>
+            <p class="text-muted-foreground mt-2 max-w-2xl">
+              Gmail, Outlook, Slack, Telegram, Obsidian, Notion, Dropbox… and more. Link the apps
+              you already use.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-6 md:gap-10">
+          <span
+            class="bg-primary text-primary-foreground flex size-12 shrink-0 items-center justify-center rounded-full text-lg font-bold md:size-14 md:text-xl"
+            >2</span
+          >
+          <div>
+            <h2 class="text-xl font-semibold md:text-2xl">ASIMOV builds a unified, secure view</h2>
+            <p class="text-muted-foreground mt-2 max-w-2xl">
+              See all your conversations, files, meetings, and notes in one place. Your data stays
+              under your control.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-6 md:gap-10">
+          <span
+            class="bg-primary text-primary-foreground flex size-12 shrink-0 items-center justify-center rounded-full text-lg font-bold md:size-14 md:text-xl"
+            >3</span
+          >
+          <div>
+            <h2 class="text-xl font-semibold md:text-2xl">Get started and explore</h2>
+            <p class="text-muted-foreground mt-2 max-w-2xl">
+              Use your own familiar interface to interrogate your data. Ask in plain English and get
+              answers you can trust.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-6 md:gap-10">
+          <span
+            class="bg-primary text-primary-foreground flex size-12 shrink-0 items-center justify-center rounded-full text-lg font-bold md:size-14 md:text-xl"
+            >4</span
+          >
+          <div>
+            <h2 class="text-xl font-semibold md:text-2xl">Never hunt for context again</h2>
+            <p class="text-muted-foreground mt-2 max-w-2xl">
+              Get actionable and traceable answers—instant recall to uncover lost insights. Every
+              answer ties back to its source.
+            </p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="border-border bg-card/50 mt-20 rounded-xl border p-6 text-center md:p-10">
+        <h2 class="text-xl font-semibold md:text-2xl">Ready to get started?</h2>
+        <p class="text-muted-foreground mt-2">Join early access and connect your first accounts.</p>
+        <a
+          href={idJoinWaitlistUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-primary text-primary-foreground hover:bg-primary/90 mt-6 inline-flex h-10 items-center justify-center rounded-md px-6 text-sm font-medium"
+        >
+          Join waitlist
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

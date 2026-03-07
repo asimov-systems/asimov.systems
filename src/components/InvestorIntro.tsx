@@ -1,6 +1,7 @@
 import { Hash } from 'lucide-react';
 
-// import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Button } from '@/components/ui/button';
+import { idJoinInvestorUrl } from '@/lib/consts';
 
 const InvestorIntro = () => {
   return (
@@ -11,9 +12,12 @@ const InvestorIntro = () => {
             <Hash className="fill-primary h-6 w-auto" />
             BuildOnTruth
           </div>
-          <h2 className="text-center text-3xl font-semibold lg:text-4xl">
-            Investor Form – ASIMOV Systems
-          </h2>
+          <h2 className="text-center text-3xl font-semibold lg:text-4xl">For investors</h2>
+          <p className="text-muted-foreground mt-2 max-w-2xl text-center text-base lg:text-lg">
+            &quot;Palantir in your pocket&quot;—privacy-first personal intelligence. ASIMOV Personal
+            Intelligence (PI) is our first product on the ASIMOV Protocol and our revenue driver;
+            the Protocol is the infrastructure.
+          </p>
           {/* <p className="text-center text-muted-foreground lg:text-lg">
             Join a global network of thought leaders, product developers,
           </p> */}
@@ -38,30 +42,32 @@ const InvestorIntro = () => {
             We&apos;re looking to partner with investors who share our long-term vision and values.
           </p>
           <p className="text-muted-foreground mt-6">
-            With limited space for investors in this strategic/pre-seed round, this short 2 minute
-            form helps us understand your background, investment focus, and potential strategic fit.
-            It ensures we can have the right conversation, with the right people, at the right time.
-          </p>
-          <p className="text-muted-foreground mt-6">
-            Considering our privacy-first principle, your information stays explicitly private and
-            confidential but helps us move faster in assessing fit and opportunity.
+            Sign up through our join system below—same flow as the main waitlist, but we&apos;ll
+            know you came from the investor page so we have what we need to reach out. If we need
+            any extra details from investors, we may collect them there.
           </p>
           <p className="text-muted-foreground mt-6">
             The race for AI dominance is on but only a handful of companies will define the future.
-            ASIMOV Systems is one of them.
-          </p>
-          <p className="text-muted-foreground mt-6">
-            This is a chance to be part of what could become one of the most valuable intelligence
-            infrastructures of the decade.
-          </p>
-          <p className="text-muted-foreground mt-6">
-            We appreciate your time and interest—let’s #BuildOnTruth.
+            ASIMOV Systems is one of them. We appreciate your time and interest—let&apos;s
+            #BuildOnTruth.
           </p>
           <p className="text-muted-foreground mt-6">
             Gratefully,
             <br />
             Talal Thabet - Commercial Founder
           </p>
+          <div className="mt-10 flex justify-center">
+            <Button asChild size="lg">
+              <a
+                href={idJoinInvestorUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                Join as investor
+              </a>
+            </Button>
+          </div>
           {/* <div className="mt-6 flex gap-4">
             <Avatar className="size-14 rounded-full ring-1 ring-input">
               <AvatarImage

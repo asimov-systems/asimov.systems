@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ClientRouter } from 'astro:transitions';
+import { clerkClient } from '@clerk/astro/server';
 
 export interface Props {
   title?: string;
@@ -14,9 +15,21 @@ const {
   description = 'Tools for thinking better, working faster, and cutting through the noise. Built for people who want more clarity and less chaos. AI that remembers what matters and respects your data.'
 } = Astro.props;
 
-// Check auth status server-side
+// Check auth status server-side; when signed in, pass userName for navbar
 const auth = Astro.locals.auth();
 const isSignedIn = !!auth.userId;
+let userName: string | undefined;
+let userImageUrl: string | undefined;
+if (isSignedIn && auth.userId) {
+  try {
+    const user = await clerkClient(Astro).users.getUser(auth.userId);
+    const email = user.emailAddresses[0]?.emailAddress ?? '';
+    userName = user.firstName?.trim() || (email ? email.split('@')[0] : undefined) || 'Account';
+    userImageUrl = user.imageUrl;
+  } catch {
+    userName = 'Account';
+  }
+}
 ---
 
 <html lang="en">
@@ -78,7 +91,7 @@ const isSignedIn = !!auth.userId;
       data-website-id="bb1d9d85-eb5b-4b47-9e01-0c2083a05187"></script>
   </head>
   <body>
-    <Navbar isSignedIn={isSignedIn} client:load />
+    <Navbar isSignedIn={isSignedIn} userName={userName} userImageUrl={userImageUrl} client:load />
     <main>
       <slot />
     </main>

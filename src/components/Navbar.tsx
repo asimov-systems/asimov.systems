@@ -1,4 +1,5 @@
-import { Menu } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { LogOut, Menu, User } from 'lucide-react';
 import { FaXTwitter, FaLinkedin, FaGithub } from 'react-icons/fa6';
 
 import {
@@ -17,9 +18,7 @@ import {
   NavigationMenuTrigger
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { ClerkProvider } from '@/components/ClerkProvider';
-import { UserMenu } from '@/components/UserMenu';
-import { socialLinks } from '@/lib/consts';
+import { socialLinks, idAsimovSystemsUrl, idJoinWaitlistUrl } from '@/lib/consts';
 
 interface MenuItem {
   title: string;
@@ -37,14 +36,9 @@ interface Navbar1Props {
     alt: string;
   };
   menu?: MenuItem[];
-  rightMenu?: {
-    asimov: {
-      title: string;
-      url: string;
-      target?: string;
-    };
-  };
-  isSignedIn?: boolean; // Deprecated - UserMenu handles auth state client-side
+  isSignedIn?: boolean;
+  userName?: string;
+  userImageUrl?: string;
 }
 
 const Navbar = ({
@@ -55,29 +49,40 @@ const Navbar = ({
   },
   menu = [
     {
-      title: 'Platform',
-      url: 'https://asimov.sh',
-      target: '_blank'
+      title: 'ASIMOV PI',
+      url: '/product',
+      items: [
+        { title: 'Overview', url: '/product' },
+        { title: 'Why ASIMOV', url: '/why-asimov' },
+        { title: 'How it works', url: '/how-it-works' }
+      ]
     },
-    {
-      title: 'Blog',
-      url: 'https://asimov.blog',
-      target: '_blank'
-    },
-    {
-      title: 'Team',
-      url: '/team'
-    },
-    {
-      title: 'Investors',
-      url: '/investors'
-    }
+    { title: 'Build on ASIMOV', url: '/build' },
+    { title: 'Blog', url: 'https://asimov.blog', target: '_blank' },
+    { title: 'For investors', url: '/investors' },
+    { title: 'Join waitlist', url: idJoinWaitlistUrl, target: '_blank' }
   ],
-  rightMenu = {
-    asimov: { title: 'ASIMOV', url: 'https://getasimov.ai', target: '_blank' }
-  },
-  isSignedIn: _isSignedIn = false // Deprecated - UserMenu handles auth state client-side
+  isSignedIn = false,
+  userName,
+  userImageUrl
 }: Navbar1Props) => {
+  const [creditBalance, setCreditBalance] = useState<number | null | 'loading'>('loading');
+
+  useEffect(() => {
+    if (!isSignedIn) {
+      setCreditBalance(null);
+      return;
+    }
+    fetch('/api/credit-balance')
+      .then((res) => res.json())
+      .then((data: { balance: number | null }) =>
+        setCreditBalance(typeof data.balance === 'number' ? data.balance : null)
+      )
+      .catch(() => setCreditBalance(null));
+  }, [isSignedIn]);
+
+  const dashboardUrl = `${idAsimovSystemsUrl}/dashboard`;
+
   return (
     <section className="py-4">
       <div className="container mx-auto px-4 lg:px-6">
@@ -100,14 +105,74 @@ const Navbar = ({
                 <FaXTwitter className="size-4" />
               </a>
             </Button>
-            <ClerkProvider>
-              <UserMenu />
-            </ClerkProvider>
-            <Button asChild size="sm">
-              <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
-                {rightMenu.asimov.title}
-              </a>
-            </Button>
+            {!isSignedIn ? (
+              <Button variant="outline" size="sm" asChild>
+                <a href="/sign-in">
+                  <User className="mr-1 size-4" />
+                  Sign In
+                </a>
+              </Button>
+            ) : (
+              <>
+                {creditBalance !== 'loading' && creditBalance !== null && (
+                  <span className="text-muted-foreground hidden text-sm sm:inline">
+                    {creditBalance} credits
+                  </span>
+                )}
+                <NavigationMenu>
+                  <NavigationMenuList className="gap-0">
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger
+                        className="data-[state=open]:bg-accent flex h-9 items-center gap-1.5 bg-transparent px-2"
+                        aria-label="Account menu"
+                      >
+                        {userImageUrl ? (
+                          <img
+                            src={userImageUrl}
+                            alt=""
+                            className="size-6 rounded-full"
+                            width={24}
+                            height={24}
+                          />
+                        ) : (
+                          <User className="size-5" />
+                        )}
+                        {userName && (
+                          <span className="hidden text-sm font-medium sm:inline">{userName}</span>
+                        )}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="min-w-[10rem]">
+                        <ul className="flex flex-col gap-0 p-1">
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <a
+                                href={dashboardUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:bg-accent focus:bg-accent flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-sm outline-none"
+                              >
+                                Dashboard
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <a
+                                href="/sign-out"
+                                className="hover:bg-accent focus:bg-accent flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-sm outline-none"
+                              >
+                                <LogOut className="size-4" />
+                                Sign out
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </>
+            )}
           </div>
         </nav>
 
@@ -151,14 +216,57 @@ const Navbar = ({
                         </Button>
                       ))}
                     </div>
-                    <ClerkProvider>
-                      <UserMenu />
-                    </ClerkProvider>
-                    <Button asChild>
-                      <a href={rightMenu.asimov.url} target={rightMenu.asimov.target}>
-                        {rightMenu.asimov.title}
-                      </a>
-                    </Button>
+                    {!isSignedIn ? (
+                      <Button variant="outline" asChild>
+                        <a href="/sign-in">
+                          <User className="mr-1 size-4" />
+                          Sign In
+                        </a>
+                      </Button>
+                    ) : (
+                      <>
+                        {userName && (
+                          <div className="flex items-center gap-2">
+                            {userImageUrl ? (
+                              <img
+                                src={userImageUrl}
+                                alt=""
+                                className="size-6 rounded-full"
+                                width={24}
+                                height={24}
+                              />
+                            ) : null}
+                            <span className="text-foreground text-sm font-medium">{userName}</span>
+                          </div>
+                        )}
+                        {creditBalance !== 'loading' && creditBalance !== null && (
+                          <p className="text-muted-foreground text-sm">{creditBalance} credits</p>
+                        )}
+                        <div className="flex flex-col gap-2">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            asChild
+                            className="w-full justify-center"
+                          >
+                            <a href={dashboardUrl} target="_blank" rel="noopener noreferrer">
+                              Dashboard
+                            </a>
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            asChild
+                            className="w-full justify-center gap-2"
+                          >
+                            <a href="/sign-out" className="text-muted-foreground">
+                              <LogOut className="size-4" />
+                              Sign out
+                            </a>
+                          </Button>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               </SheetContent>
