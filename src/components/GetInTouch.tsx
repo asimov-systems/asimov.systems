@@ -10,8 +10,8 @@ const GetInTouch = () => {
         <div className="text-center">
           <h1 className="mb-7 text-4xl font-bold md:text-6xl">Join Us on the Journey</h1>
           <p className="text-muted-foreground mt-4 text-sm">
-            Whether you&apos;re an investor, a developer, or a future user seeking cognitive
-            clarity, we&apos;d love to hear from you.
+            Investing in PI, building on Protocol, or joining early access at live events? We&apos;d
+            love to hear from you.
           </p>
         </div>
         <div className="mt-28 grid gap-16 md:grid-cols-2">
@@ -19,8 +19,7 @@ const GetInTouch = () => {
             <MessagesSquare className="mb-5 h-8 w-auto" />
             <p className="mb-2 font-bold md:text-xl">Contact Us</p>
             <p className="text-muted-foreground mb-6 text-sm md:text-base">
-              Need help or have questions? Our support team is here for you 24/7. Feel free to reach
-              out via email.
+              Questions about early access, events, or the product? Our team is here to help.
             </p>
             <a href="/contact" className="font-semibold underline">
               Contact support
@@ -30,8 +29,8 @@ const GetInTouch = () => {
             <Users className="mb-5 h-8 w-auto" />
             <p className="mb-2 font-bold md:text-xl">Investor Relations</p>
             <p className="text-muted-foreground mb-6 text-sm md:text-base">
-              Interested in investment opportunities or want to learn more about our token launch?
-              Connect with our investor relations team for detailed information.
+              PI at live events, Protocol marketplace arc, credit economy, and staged roadmap. Join
+              the investor track or request the deck.
             </p>
             <a href="/investors" className="font-semibold underline">
               Investor portal
@@ -41,8 +40,8 @@ const GetInTouch = () => {
             <Briefcase className="mb-5 h-8 w-auto" />
             <p className="mb-2 font-bold md:text-xl">Talent</p>
             <p className="text-muted-foreground mb-6 text-sm md:text-base">
-              Interested in joining our team? We&apos;re always looking for talented individuals who
-              share our vision for trustworthy AI. Send us your resume and let&apos;s talk.
+              Building Personal Intelligence and verifiable knowledge infrastructure. Send your
+              resume if you share our vision.
             </p>
             <a href="mailto:talent@asimov.systems" className="font-semibold underline">
               Join our team
@@ -52,8 +51,7 @@ const GetInTouch = () => {
             <Share2 className="mb-5 h-8 w-auto" />
             <p className="mb-2 font-bold md:text-xl">Follow us</p>
             <p className="text-muted-foreground mb-6 text-sm md:text-base">
-              Follow us on social media to stay updated with the latest news, insights, and
-              developments from ASIMOV Systems.
+              News on PI, event launches, and Protocol updates from ASIMOV Systems.
             </p>
             <div className="flex gap-4">
               {[

@@ -2,9 +2,47 @@
 import Layout from '@/layouts/main.astro';
 import { idJoinWaitlistUrl } from '@/lib/consts';
 
+const eventFeatures = [
+  {
+    title: "Let's Connect",
+    body: 'Selfie connect at events: instantly link a face to your relationship graph with full context.'
+  },
+  {
+    title: 'Scan the Room',
+    body: "Camera context retrieval. Discover who's in the room and what you should know before you approach."
+  },
+  {
+    title: 'Who introduced me?',
+    body: 'Trace introductions and history across your network, not scattered across apps.'
+  },
+  {
+    title: 'What did we discuss?',
+    body: "Last meet, next person to speak to, which event they'll attend. Ask your graph, not your memory."
+  }
+];
+
+const experiencePillars = [
+  {
+    title: 'Relationship graph you own',
+    body: 'PI gives you ownership of your network: context graphs, not black-box prediction. Local-first, privacy by design.'
+  },
+  {
+    title: 'Live event networking',
+    body: "Where we're focusing first: conferences and meetups. Mobile prototype with face/speaker recognition and real-time context."
+  },
+  {
+    title: 'Credit economy',
+    body: 'Introductions and connections earn credits. A ledger today that informs token economics when the network is ready.'
+  },
+  {
+    title: 'Path to marketplace',
+    body: 'Live events → traction → PI expansion → network effects → decentralized marketplace for verifiable knowledge.'
+  }
+];
+
 const title = 'Product - ASIMOV Personal Intelligence | ASIMOV Systems';
 const description =
-  'ASIMOV Personal Intelligence (PI): a privacy-first layer that unifies your data—instant access, traceable answers, one private workspace. Powered by ASIMOV Protocol.';
+  'ASIMOV PI: own your relationship graph at live events. Selfie connect, scan the room, context retrieval. Privacy-first Personal Intelligence powered by ASIMOV Protocol.';
 const canonicalUrl = 'https://asimov.systems/product';
 ---
 
@@ -25,13 +63,19 @@ const canonicalUrl = 'https://asimov.systems/product';
 
   <section class="py-20 lg:py-32">
     <div class="container mx-auto px-4 lg:px-6">
+      <p
+        class="text-muted-foreground mx-auto max-w-3xl text-center text-sm font-semibold tracking-wide uppercase"
+      >
+        ASIMOV PI · Personal Intelligence
+      </p>
       <header class="mx-auto max-w-3xl text-center">
-        <h1 class="font-calSans text-3xl font-bold md:text-4xl lg:text-5xl">
-          ASIMOV Personal Intelligence
+        <h1 class="font-calSans mt-2 text-3xl font-bold md:text-4xl lg:text-5xl">
+          Own your relationship graph
         </h1>
-        <p class="text-muted-foreground mt-4 text-lg">
-          Our first product on the ASIMOV Protocol—privacy-first personal intelligence over your
-          unified data. &quot;Palantir in your pocket.&quot;
+        <p class="text-foreground mt-4 text-lg">
+          ASIMOV Personal Intelligence starts at live networking: conferences and events, with a
+          mobile prototype built for wow moments. The longer arc is a decentralized marketplace for
+          structured, verifiable knowledge on the ASIMOV Protocol.
         </p>
       </header>
 
@@ -40,63 +84,54 @@ const canonicalUrl = 'https://asimov.systems/product';
       >
         <h2 class="text-xl font-semibold md:text-2xl">Personal Intelligence, defined</h2>
         <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-base leading-relaxed">
-          A privacy-first intelligence layer that unifies and contextualizes everything you
-          know—making it instantly accessible and protected, so you never lose focus, control, or
-          trust in your data.
+          A new category, as essential as the smartphone. PI unifies your relationship graph and the
+          intelligence on top: who introduced you, what you last discussed, who to speak to next,
+          and where your network will be. Intelligence belongs to the individual.
         </p>
       </div>
 
-      <div class="mx-auto mt-16 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="border-border rounded-lg border p-6">
-          <h3 class="font-semibold">Instant access to everything</h3>
-          <p class="text-muted-foreground mt-2 text-sm">
-            Find any email, chat, meeting note, file, or document in seconds. No more digging or
-            asking your team.
-          </p>
+      <div class="mx-auto mt-16 max-w-3xl">
+        <h2 class="text-center text-2xl font-semibold md:text-3xl">Event networking prototype</h2>
+        <p class="text-muted-foreground mt-3 text-center text-sm">
+          Invite-only early access. Validating at conferences and meetups.
+        </p>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2">
+          {
+            eventFeatures.map((feature) => (
+              <div class="border-border rounded-lg border p-6">
+                <h3 class="font-semibold">{feature.title}</h3>
+                <p class="text-muted-foreground mt-2 text-sm leading-relaxed">{feature.body}</p>
+              </div>
+            ))
+          }
         </div>
-        <div class="border-border rounded-lg border p-6">
-          <h3 class="font-semibold">Your answers, your way</h3>
-          <p class="text-muted-foreground mt-2 text-sm">
-            Ask any question about your projects, relationships, or priorities—and get fast,
-            executive-level insights.
-          </p>
-        </div>
-        <div class="border-border rounded-lg border p-6">
-          <h3 class="font-semibold">One private workspace</h3>
-          <p class="text-muted-foreground mt-2 text-sm">
-            All your communications and files are secure, searchable, and connected. Your data stays
-            in your control.
-          </p>
-        </div>
-        <div class="border-border rounded-lg border p-6">
-          <h3 class="font-semibold">A smarter workflow</h3>
-          <p class="text-muted-foreground mt-2 text-sm">
-            Keep using the tools you already rely on—Slack, Gmail, Telegram, Obsidian, Outlook, and
-            more. ASIMOV connects them all.
-          </p>
-        </div>
-        <div class="border-border rounded-lg border p-6">
-          <h3 class="font-semibold">Plug-and-play setup</h3>
-          <p class="text-muted-foreground mt-2 text-sm">
-            Install in seconds. Connect your apps—no complex onboarding, no new logins.
-          </p>
-        </div>
-        <div class="border-border rounded-lg border p-6">
-          <h3 class="font-semibold">Built for individuals and teams</h3>
-          <p class="text-muted-foreground mt-2 text-sm">
-            Start with your own personal space and grow into shared vaults and team dashboards while
-            protecting your privacy.
-          </p>
+      </div>
+
+      <div class="mx-auto mt-20 max-w-5xl">
+        <h2 class="text-center text-2xl font-semibold md:text-3xl">Built for the real world</h2>
+        <p class="text-muted-foreground mx-auto mt-3 max-w-2xl text-center text-base">
+          Context graphs with verifiable provenance, not statistical guesswork.
+        </p>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2">
+          {
+            experiencePillars.map((pillar) => (
+              <div class="border-border rounded-lg border p-6">
+                <h3 class="font-semibold">{pillar.title}</h3>
+                <p class="text-muted-foreground mt-2 text-sm leading-relaxed">{pillar.body}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
 
       <div
         class="border-border bg-card/50 mx-auto mt-16 max-w-3xl rounded-xl border p-6 text-center md:p-10"
       >
-        <h2 class="text-xl font-semibold">Knowledge Vaults</h2>
+        <h2 class="text-xl font-semibold">Beyond events</h2>
         <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-base">
-          Create dedicated vaults for projects or clients. Link info across apps instantly, with
-          full context and traceability, within your own private vault.
+          Email, chat, CRM, and notes will connect into your graph over time. Today we start where
+          networks form in the room, with selfie connect, scan the room, and camera context
+          retrieval.
         </p>
       </div>
 
@@ -114,6 +149,18 @@ const canonicalUrl = 'https://asimov.systems/product';
           class="border-input bg-background hover:bg-accent inline-flex h-10 items-center justify-center rounded-md border px-6 text-sm font-medium"
         >
           How it works
+        </a>
+        <a
+          href="/build"
+          class="border-input bg-background hover:bg-accent inline-flex h-10 items-center justify-center rounded-md border px-6 text-sm font-medium"
+        >
+          Build on ASIMOV Protocol
+        </a>
+        <a
+          href="/investors"
+          class="border-input bg-background hover:bg-accent inline-flex h-10 items-center justify-center rounded-md border px-6 text-sm font-medium"
+        >
+          For investors →
         </a>
       </div>
     </div>

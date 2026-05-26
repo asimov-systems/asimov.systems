@@ -4,21 +4,21 @@ import { Separator } from '@/components/ui/separator';
 
 const integrartions = [
   {
-    title: 'Verifiable Knowledge Graphs',
+    title: 'Context Graphs',
     description:
-      'Grounding AI in facts, not hallucinations. Every response is rooted in structured, provable data, delivering clarity and context you can trust.',
+      'Not just statistical prediction: structured relationship and knowledge graphs that preserve who, what, when, and where. The intelligence layer on top of your network.',
     icon: Network
   },
   {
-    title: 'Cryptographic Provenance',
+    title: 'Verifiable Provenance',
     description:
-      'On-chain proof of reasoning and source integrity. Every step, every reference is transparent, audit-ready, and tamper-proof.',
+      'Every connection and contribution traceable. Cryptographic integrity for structured knowledge, the substrate for a fair data marketplace.',
     icon: Shield
   },
   {
-    title: 'Modular Agent Workflows',
+    title: 'Local-First Privacy',
     description:
-      'Flexible systems that orchestrate tasks with logic and oversight. Automation is powerful—but humans stay in command.',
+      'Privacy by design. Your relationship graph and personal context stay under your control while the Protocol powers shared, verifiable public knowledge.',
     icon: Workflow
   }
 ];
@@ -31,11 +31,15 @@ const Solution = () => {
           <h1 className="text-center text-4xl font-semibold text-balance lg:col-span-2 lg:text-left lg:text-5xl">
             The Solution:
             <br />
-            Built for Speed, Trust, and Clarity
+            PI Today, Marketplace Tomorrow
           </h1>
           <p className="text-muted-foreground text-center text-lg lg:col-span-2 lg:text-left">
-            ASIMOV isn&apos;t another black-box AI. We&apos;re engineering intelligence that is
-            fast, verifiable, and always under human control.
+            The marketplace emerges from real usage.{' '}
+            <strong className="text-foreground font-medium">ASIMOV PI</strong> is built first for
+            live event networking, with a relationship graph you own. The{' '}
+            <strong className="text-foreground font-medium">ASIMOV Protocol</strong> is the longer
+            arc: decentralized infrastructure for structured, verifiable knowledge where
+            intelligence belongs to the individual.
           </p>
         </div>
         <Separator className="mt-8 mb-12" />

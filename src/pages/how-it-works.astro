@@ -2,9 +2,36 @@
 import Layout from '@/layouts/main.astro';
 import { idJoinWaitlistUrl } from '@/lib/consts';
 
+const built = [
+  'Platform architecture and PI design',
+  'Mobile prototype for event networking',
+  'Selfie connect, scan the room, camera context retrieval',
+  'Credit ledger for introductions and connections'
+];
+
+const workingOn = [
+  'Invite-only validation at conferences and events',
+  'Face and speaker recognition in prototype',
+  'Relationship graph queries (who, what, where next)'
+];
+
+const coming = [
+  'Broader app integrations into your graph',
+  'Expanded event and network coverage',
+  'Token economics informed by credit velocity'
+];
+
+const roadmap = [
+  { step: 'Product release', detail: 'PI at live events, early access' },
+  { step: 'Traction', detail: 'Design partners, network effects at conferences' },
+  { step: 'Institutional equity', detail: 'Scale PI and Protocol infrastructure' },
+  { step: 'Token economics', detail: 'Credits inform token design from real usage' },
+  { step: 'TGE', detail: 'When network activity and lead-investor readiness align; no fixed date' }
+];
+
 const title = 'How it works - ASIMOV Personal Intelligence | ASIMOV Systems';
 const description =
-  'Connect your accounts, get a unified secure view, interrogate your data, and get traceable answers. Your journey through your data with ASIMOV PI.';
+  'Built, working on, and coming: ASIMOV PI roadmap from live event networking to decentralized marketplace. Join early access.';
 const canonicalUrl = 'https://asimov.systems/how-it-works';
 ---
 
@@ -29,72 +56,59 @@ const canonicalUrl = 'https://asimov.systems/how-it-works';
           How it works
         </p>
         <h1 class="font-calSans mt-2 text-3xl font-bold md:text-4xl lg:text-5xl">
-          Journey through your data
+          From live events to marketplace
         </h1>
         <p class="text-muted-foreground mt-4 text-lg">
-          Four steps from scattered sources to traceable answers—powered by ASIMOV Personal
-          Intelligence on the ASIMOV Protocol.
+          ASIMOV PI starts at live networking (conferences and meetups), then compounds into a
+          decentralized marketplace for verifiable knowledge on the ASIMOV Protocol.
         </p>
       </header>
 
-      <ol class="mx-auto mt-16 max-w-3xl space-y-12 md:space-y-16">
-        <li class="flex gap-6 md:gap-10">
-          <span
-            class="bg-primary text-primary-foreground flex size-12 shrink-0 items-center justify-center rounded-full text-lg font-bold md:size-14 md:text-xl"
-            >1</span
-          >
-          <div>
-            <h2 class="text-xl font-semibold md:text-2xl">Connect your accounts</h2>
-            <p class="text-muted-foreground mt-2 max-w-2xl">
-              Gmail, Outlook, Slack, Telegram, Obsidian, Notion, Dropbox… and more. Link the apps
-              you already use.
-            </p>
-          </div>
-        </li>
-        <li class="flex gap-6 md:gap-10">
-          <span
-            class="bg-primary text-primary-foreground flex size-12 shrink-0 items-center justify-center rounded-full text-lg font-bold md:size-14 md:text-xl"
-            >2</span
-          >
-          <div>
-            <h2 class="text-xl font-semibold md:text-2xl">ASIMOV builds a unified, secure view</h2>
-            <p class="text-muted-foreground mt-2 max-w-2xl">
-              See all your conversations, files, meetings, and notes in one place. Your data stays
-              under your control.
-            </p>
-          </div>
-        </li>
-        <li class="flex gap-6 md:gap-10">
-          <span
-            class="bg-primary text-primary-foreground flex size-12 shrink-0 items-center justify-center rounded-full text-lg font-bold md:size-14 md:text-xl"
-            >3</span
-          >
-          <div>
-            <h2 class="text-xl font-semibold md:text-2xl">Get started and explore</h2>
-            <p class="text-muted-foreground mt-2 max-w-2xl">
-              Use your own familiar interface to interrogate your data. Ask in plain English and get
-              answers you can trust.
-            </p>
-          </div>
-        </li>
-        <li class="flex gap-6 md:gap-10">
-          <span
-            class="bg-primary text-primary-foreground flex size-12 shrink-0 items-center justify-center rounded-full text-lg font-bold md:size-14 md:text-xl"
-            >4</span
-          >
-          <div>
-            <h2 class="text-xl font-semibold md:text-2xl">Never hunt for context again</h2>
-            <p class="text-muted-foreground mt-2 max-w-2xl">
-              Get actionable and traceable answers—instant recall to uncover lost insights. Every
-              answer ties back to its source.
-            </p>
-          </div>
-        </li>
-      </ol>
+      <div class="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-3">
+        <div class="border-border bg-card/50 rounded-xl border p-6">
+          <h2 class="text-lg font-semibold text-green-600 dark:text-green-400">Built</h2>
+          <ul class="text-muted-foreground mt-4 space-y-2 text-sm">
+            {built.map((item) => <li>· {item}</li>)}
+          </ul>
+        </div>
+        <div class="border-border bg-card/50 rounded-xl border p-6">
+          <h2 class="text-lg font-semibold text-amber-600 dark:text-amber-400">Working on</h2>
+          <ul class="text-muted-foreground mt-4 space-y-2 text-sm">
+            {workingOn.map((item) => <li>· {item}</li>)}
+          </ul>
+        </div>
+        <div class="border-border bg-card/50 rounded-xl border p-6">
+          <h2 class="text-lg font-semibold text-blue-600 dark:text-blue-400">Coming</h2>
+          <ul class="text-muted-foreground mt-4 space-y-2 text-sm">
+            {coming.map((item) => <li>· {item}</li>)}
+          </ul>
+        </div>
+      </div>
+
+      <div class="mx-auto mt-20 max-w-3xl">
+        <h2 class="text-center text-2xl font-semibold md:text-3xl">Roadmap</h2>
+        <ol class="mt-10 space-y-6">
+          {
+            roadmap.map((item, i) => (
+              <li class="border-border flex gap-6 border-b pb-6 last:border-0">
+                <span class="bg-primary text-primary-foreground flex size-10 shrink-0 items-center justify-center rounded-full text-sm font-bold">
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 class="font-semibold">{item.step}</h3>
+                  <p class="text-muted-foreground mt-1 text-sm">{item.detail}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
 
       <div class="border-border bg-card/50 mt-20 rounded-xl border p-6 text-center md:p-10">
-        <h2 class="text-xl font-semibold md:text-2xl">Ready to get started?</h2>
-        <p class="text-muted-foreground mt-2">Join early access and connect your first accounts.</p>
+        <h2 class="text-xl font-semibold md:text-2xl">Ready to join?</h2>
+        <p class="text-muted-foreground mt-2">
+          Invite-only early access for event networking. Be part of the credit economy from day one.
+        </p>
         <a
           href={idJoinWaitlistUrl}
           target="_blank"

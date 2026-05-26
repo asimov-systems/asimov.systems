@@ -92,17 +92,18 @@ const Backers = () => {
   return (
     <section className="py-32">
       <div className="container mx-auto flex flex-col items-center px-4 text-center lg:px-6">
-        <h1 className="text-foreground my-6 text-lg font-semibold tracking-tight">
-          BACKERS & TRACTION
-        </h1>
+        <p className="text-muted-foreground my-6 text-sm font-semibold tracking-wide">
+          BACKERS &amp; VALIDATION
+        </p>
 
         <h2 className="my-6 text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
-          Accelerated by the Best. Backed by Visionaries
+          Selected by dAGI. Backed by visionaries.
         </h2>
 
         <p className="text-muted-foreground max-w-[600px] tracking-[-0.32px]">
-          Our journey has been shaped and validated by top-tier accelerators, strategic investors,
-          and advisors who share our vision for the future of AI and Web3.
+          ASIMOV was selected for the dAGI Accelerator (Delphi Labs, Cyber Fund), 8 of 500+ teams.
+          Strategic investors and advisors who share our vision for Personal Intelligence, context
+          graphs, and a decentralized marketplace for verifiable knowledge.
         </p>
       </div>
 

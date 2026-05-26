@@ -4,45 +4,61 @@ import { idJoinWaitlistUrl } from '@/lib/consts';
 
 const title = 'FAQ - ASIMOV Systems';
 const description =
-  'Frequently asked questions about ASIMOV Personal Intelligence, the ASIMOV Protocol, privacy, credits, and how to join.';
+  'FAQ: ASIMOV PI vs Protocol, event networking, credit economy, token timing, privacy, and early access.';
 const canonicalUrl = 'https://asimov.systems/faq';
 
 const faqs = [
   {
-    q: 'How is ASIMOV different from chatbots or note apps?',
-    a: 'ASIMOV Personal Intelligence (PI) unifies and contextualizes all your data—emails, chats, files, notes—in one private workspace. You interrogate your own data in plain English and get traceable answers. It’s not a single app or a chatbot; it’s a privacy-first intelligence layer that connects the tools you already use.'
+    q: 'What is ASIMOV Personal Intelligence (PI)?',
+    a: "ASIMOV PI is Personal Intelligence, a new category as essential as the smartphone. It gives you ownership of your relationship graph with intelligence on top: who introduced you, what you last discussed, who to speak to next, and which event they'll attend. We're building first for live networking at conferences and events."
   },
   {
-    q: 'Will my data ever leave my device or be sold?',
-    a: 'No. We’re privacy by design. Your private data lives in your personal storage (ASIMOV Personal Cache), physically separate from shared public infrastructure. We don’t sell your data.'
+    q: 'What is ASIMOV Protocol, and how is it different from PI?',
+    a: 'ASIMOV Protocol is the longer-arc infrastructure: decentralized marketplace for structured, verifiable knowledge, with cryptographic provenance. ASIMOV PI is the product people use first; real usage builds the marketplace. Builders work on Protocol; users start with PI.'
+  },
+  {
+    q: 'Why start with events and conferences?',
+    a: "Networks form in the room. We're starting with live event networking, where relationship decay hurts most. The mobile prototype focuses on selfie connect, scan the room, camera context retrieval, and discovering who's there. Invite-only early access as we validate with design partners."
+  },
+  {
+    q: 'When is the token / TGE?',
+    a: 'There is no fixed TGE date. Credits reward introductions and connections today via a centralized ledger that informs future token design. TGE follows real network activity, credit velocity, and lead-investor readiness, after product release, traction, and institutional equity milestones.'
+  },
+  {
+    q: 'How does the credit economy work?',
+    a: 'Introductions compensate attention; connections earn credits. Early users participate in a credit ledger that maps to future token economics. This is the precursor to fair attribution in a decentralized marketplace, not a promise of immediate token value.'
+  },
+  {
+    q: 'Is my data private? What does local-first mean?',
+    a: 'Privacy by design. Your relationship graph lives in personal storage (ASIMOV Personal Cache), physically separate from shared public infrastructure. Local-first means your graph stays under your control; the Protocol handles verifiable public knowledge without exposing your private data to the shared layer.'
+  },
+  {
+    q: 'What can I ask my relationship graph?',
+    a: 'Who introduced me? When did we last meet? What did we discuss? Who should I speak to next? Which event will they attend? These are the questions PI is built to answer, starting at live events and expanding to your full digital network over time.'
   },
   {
     q: 'Is it available now?',
-    a: 'We’re in early access. Join the waitlist at id.asimov.systems to get access as we roll out.'
+    a: "We're in invite-only early access for event networking (prototype phase). Join the waitlist at id.asimov.systems to request access as we roll out at conferences and meetups."
   },
   {
-    q: 'How do the credits and tokens work?',
-    a: 'Every action—integrating data, searching, contributing, referring—can earn credits. Early users have a stake in the ecosystem and future premium features. Details are available when you join.'
+    q: 'What has ASIMOV built so far?',
+    a: 'Platform architecture, PI design, mobile prototype, event networking features (selfie connect, scan the room, context retrieval), and a credit ledger. Selected for dAGI Accelerator (Delphi Labs, Cyber Fund), 8 of 500+ teams.'
   },
   {
-    q: 'Can I use ASIMOV with my team?',
-    a: 'Yes. Start with your own personal space and grow into shared vaults, team dashboards, and enterprise features while keeping privacy at every step.'
+    q: 'Where do I sign up?',
+    a: 'Sign-up, waitlist, and account management live at id.asimov.systems. Use Join waitlist from this site for early access, or the investor track at /investors for investment interest.'
   },
   {
-    q: 'Which platforms and apps are supported?',
-    a: 'Gmail, Outlook, Slack, Telegram, Obsidian, Notion, Dropbox, Google Drive, and more. We keep adding integrations.'
+    q: 'Is ASIMOV open source?',
+    a: 'The ASIMOV Protocol ecosystem includes open repos on GitHub (asimov-platform, asimov.rs, asimov-cli). ASIMOV PI is the product layer. See Build on ASIMOV for developer resources.'
   },
   {
-    q: 'Is it simple to set up?',
-    a: 'Yes. Plug-and-play setup: install in seconds, connect your apps, no complex onboarding or new logins.'
+    q: 'What is the path to the marketplace?',
+    a: 'Live events → traction → capital → PI expansion → network effects → decentralized marketplace for structured, verifiable knowledge. Intelligence belongs to the individual; the marketplace emerges from real usage.'
   },
   {
-    q: 'What’s the difference between ASIMOV Protocol and ASIMOV Personal Intelligence (PI)?',
-    a: 'ASIMOV Protocol is the full ecosystem for builders—APIs, runtimes, marketplace, provenance. ASIMOV Personal Intelligence (PI) is our product on top of that: the privacy-first personal intelligence layer we’re raising investment for. Think “Build on ASIMOV” for the Protocol; “Palantir in your pocket” for PI.'
-  },
-  {
-    q: 'Where do I sign up or manage my account?',
-    a: 'Sign-up, waitlist, and account management (your name, profile, personal data) live at id.asimov.systems. Use “Join waitlist” or “Dashboard” from this site to get there.'
+    q: 'Where do I get help?',
+    a: 'Contact support at asimov.systems/contact, or join the waitlist community through id.asimov.systems for early-access updates.'
   }
 ];
 ---
@@ -67,8 +83,8 @@ const faqs = [
         <p class="text-muted-foreground text-sm font-semibold tracking-wide uppercase">FAQ</p>
         <h1 class="font-calSans mt-2 text-3xl font-bold md:text-4xl">Frequently asked questions</h1>
         <p class="text-muted-foreground mt-4 text-lg">
-          Everything you need to know about ASIMOV. Can't find what you're looking for? Join our
-          community or contact us.
+          ASIMOV PI, Protocol, credits, privacy, and early access. Can't find what you're looking
+          for? Contact us or join the waitlist.
         </p>
       </header>
 

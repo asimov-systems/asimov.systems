@@ -2,13 +2,13 @@ import { cn } from '@/lib/utils';
 
 const topItems = [
   {
-    title: 'Your favorite AI now sees the whole picture:',
+    title: 'Who introduced me?',
     description:
-      'ASIMOV’s PI enriches answers by supplying verified, cross-app context and source links.',
+      'Your relationship graph remembers introductions, context, and history, so you never walk into a room cold.',
     images: [
       {
         src: '/proof-in-action/favorite-ai.jpg',
-        alt: 'Issue template interface',
+        alt: 'Relationship context in ASIMOV PI',
         className: 'aspect-495/186 max-w-lg rounded-xl grayscale'
       }
     ],
@@ -17,9 +17,9 @@ const topItems = [
     fade: [''] as string[]
   },
   {
-    title: 'Connects all your siloed apps - ',
+    title: 'Live at events: ',
     description:
-      'such as email, Telegram, Slack, CRM’s, note takers, calendars -  and even paywalled external sources (e.g. Crunchbase) - for unified context.',
+      "Conferences and meetups are where we're focusing first. Mobile prototype: face and speaker recognition, context retrieval, scan the room, selfie connect.",
     images: [
       {
         src: '/icons/gmail_logo.svg',
@@ -43,7 +43,7 @@ const topItems = [
       },
       {
         src: '/icons/outlook_logo.svg',
-        alt: 'Figma logo'
+        alt: 'Outlook logo'
       },
       {
         src: '/icons/dropbox_logo.svg',
@@ -51,7 +51,7 @@ const topItems = [
       },
       {
         src: '/icons/google_drive_logo.svg',
-        alt: 'GoogleDrive logo'
+        alt: 'Google Drive logo'
       }
     ],
     className:
@@ -62,12 +62,12 @@ const topItems = [
 
 const bottomItems = [
   {
-    title: 'No cloud uploads:',
-    description: 'Privacy is built-in.',
+    title: 'Selfie connect:',
+    description: 'Instant connection at events: one photo, linked context in your graph.',
     images: [
       {
         src: '/proof-in-action/no-cloud-uploads.jpg',
-        alt: 'Graveyard interface',
+        alt: 'Selfie connect at events',
         className: 'aspect-305/280 rounded-t-xl max-w-[305px]'
       }
     ],
@@ -76,12 +76,12 @@ const bottomItems = [
     fade: ['bottom'] as string[]
   },
   {
-    title: 'Works instantly - ',
-    description: 'no setup headaches, just sync, connect, and go.',
+    title: 'Scan the room: ',
+    description: "Camera context retrieval. Discover who's in the room before you approach.",
     images: [
       {
         src: '/proof-in-action/works-instantly.jpg',
-        alt: 'Task discussions interface',
+        alt: 'Scan the room feature',
         className: 'aspect-320/153 rounded-xl'
       }
     ],
@@ -90,12 +90,13 @@ const bottomItems = [
     fade: ['']
   },
   {
-    title: 'Real clarity, not just automation:',
-    description: 'See exactly where facts came from, in your chosen AI’s interface.',
+    title: 'What did we last discuss?',
+    description:
+      "Last meet, next person to speak to, which event they'll attend. Intelligence on your graph, not scattered apps.",
     images: [
       {
         src: '/proof-in-action/real-clarity.jpg',
-        alt: 'Notifications interface',
+        alt: 'Conversation context retrieval',
         className: 'aspect-305/280 rounded-t-xl max-w-[305px]'
       }
     ],
@@ -110,15 +111,16 @@ function ProofInAction() {
     <section className="py-32">
       <div className="container mx-auto px-4 lg:px-6">
         <h2 className="text-center text-3xl font-semibold tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-          Proof in Action: ASIMOV&apos;s Personal Intelligence
+          ASIMOV PI in Action
         </h2>
 
         <p className="text-muted-foreground mt-8 text-center text-lg md:mt-12 lg:mt-20">
-          Our first flagship product, available for waitlist now.
+          Built first for live networking at conferences and events. Invite-only early access as we
+          validate with design partners.
         </p>
 
         <h2 className="mt-8 text-center text-xl font-semibold tracking-tight text-balance sm:text-2xl md:mt-12 md:text-3xl lg:mt-20 lg:text-4xl">
-          ASIMOV&apos;s PI enhances the AI you already use - no need to switch assistants.
+          Ask your graph the questions that matter
         </h2>
 
         <div className="mt-8 md:mt-12 lg:mt-20">

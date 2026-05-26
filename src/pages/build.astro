@@ -2,9 +2,9 @@
 import Layout from '@/layouts/main.astro';
 import { socialLinks } from '@/lib/consts';
 
-const title = 'Build on ASIMOV - Protocol & ecosystem | ASIMOV Systems';
+const title = 'Build on ASIMOV - Protocol & marketplace | ASIMOV Systems';
 const description =
-  'Build on the ASIMOV Protocol: APIs, runtimes, marketplace, provenance. SDKs, CLI, and ecosystem for verifiable AI and personal intelligence.';
+  'Build on ASIMOV Protocol: decentralized marketplace for structured, verifiable knowledge. APIs, provenance, OSS repos. PI creates usage; Protocol is the arc.';
 const canonicalUrl = 'https://asimov.systems/build';
 
 const repoLinks = [
@@ -23,6 +23,13 @@ const repoLinks = [
     href: 'https://github.com/asimov-platform/asimov-cli',
     description: 'CLI for developers'
   }
+];
+
+const marketplacePath = [
+  'ASIMOV PI at live events (real usage)',
+  'Traction and network effects',
+  'PI expansion across relationship data',
+  'Decentralized marketplace for verifiable knowledge'
 ];
 ---
 
@@ -50,20 +57,36 @@ const repoLinks = [
           ASIMOV Protocol
         </h1>
         <p class="text-muted-foreground mt-4 text-lg">
-          The full ecosystem for others to build on: APIs, runtimes, marketplace, and provenance.
-          &quot;Build on ASIMOV.&quot;
+          Decentralized infrastructure for structured, verifiable knowledge: a marketplace where
+          intelligence belongs to the individual. ASIMOV PI creates real usage; the Protocol is how
+          that usage compounds into network effects and fair attribution.
         </p>
       </header>
 
       <div
         class="border-border bg-card/50 mx-auto mt-16 max-w-3xl rounded-xl border p-6 text-center md:p-10"
       >
-        <h2 class="text-xl font-semibold md:text-2xl">Ecosystem for builders</h2>
+        <h2 class="text-xl font-semibold md:text-2xl">Vision</h2>
         <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-base leading-relaxed">
-          ASIMOV Protocol provides the infrastructure that powers ASIMOV Personal Intelligence
-          (PI)—and it’s designed so others can build their own applications, integrations, and
-          services on top. Verifiable knowledge, structured data, and privacy-first design.
+          A decentralized data marketplace for structured, verifiable knowledge. Context graphs with
+          cryptographic provenance, not black-box prediction. Builders integrate APIs, runtimes, and
+          marketplace primitives; users start with PI at live events.
         </p>
+      </div>
+
+      <div class="mx-auto mt-16 max-w-3xl">
+        <h2 class="text-center text-lg font-semibold">Path to marketplace</h2>
+        <ol class="text-muted-foreground mt-6 space-y-3 text-center text-sm">
+          {
+            marketplacePath.map((step, i) => (
+              <li>
+                <span class="text-foreground font-medium">
+                  {i + 1}. {step}
+                </span>
+              </li>
+            ))
+          }
+        </ol>
       </div>
 
       <div class="mx-auto mt-16 max-w-3xl text-center">
@@ -114,6 +137,12 @@ const repoLinks = [
             class="text-primary hover:underline">asimov-specs.github.io</a
           >.
         </p>
+        <a
+          href="/product"
+          class="border-input bg-background hover:bg-accent mt-6 inline-flex h-10 items-center justify-center rounded-md border px-6 text-sm font-medium"
+        >
+          Explore ASIMOV PI →
+        </a>
       </div>
     </div>
   </section>

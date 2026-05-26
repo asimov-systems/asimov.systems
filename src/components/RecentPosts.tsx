@@ -78,8 +78,8 @@ const RecentPosts = () => {
                   !<br />
                   <br />
                   Michael Färber showed how Knowledge Graphs + LLMs can unlock evidence-based
-                  insights from millions of papers — paving the way for smarter, more trustworthy
-                  AI. 🚀
+                  insights from millions of papers, paving the way for smarter, more trustworthy AI.
+                  🚀
                   <a href="https://t.co/XQpj7Yd4ko">https://t.co/XQpj7Yd4ko</a>
                   <a href="https://twitter.com/hashtag/KnowledgeGraphs?src=hash&amp;ref_src=twsrc%5Etfw">
                     #KnowledgeGraphs

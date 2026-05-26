@@ -31,7 +31,7 @@ const Footer = ({
     alt: 'ASIMOV.SYSTEMS logo',
     url: '/'
   },
-  tagline = '#BuildOnTruth',
+  tagline = 'Personal Intelligence · ASIMOV Protocol · #BuildOnTruth',
   menuItems = [
     {
       title: 'ASIMOV PI',

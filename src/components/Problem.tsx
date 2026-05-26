@@ -1,12 +1,5 @@
 'use client';
-import {
-  AudioLines,
-  TrendingDown,
-  Clock,
-  Database,
-  AlertTriangle,
-  CheckCircle
-} from 'lucide-react';
+import { Users, Link2, Clock, Database, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const Highlight = ({
   children,
@@ -30,18 +23,17 @@ const Problem = () => {
               Why the World Needs ASIMOV
             </h1>
             <p className="text-muted-foreground mt-6 text-lg">
-              THE PROBLEM – THE AI TRUST AND CLARITY GAP
+              THE PROBLEM: FRAGMENTED TOOLS, LOST CONTEXT
             </p>
             <div className="border-muted2 mt-12 flex gap-14 border-t">
               <div className="mt-12 space-y-8">
-                {/* Key Statistics */}
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <TrendingDown className="text-destructive mt-1 size-6 flex-shrink-0" />
+                    <Users className="text-destructive mt-1 size-6 flex-shrink-0" />
                     <div>
                       <p className="text-lg">
-                        <Highlight>Gartner predicts 40% of enterprise</Highlight> abandoned AI due
-                        to lack of trust/auditability by 2026.
+                        <Highlight>Relationship decay:</Highlight> introductions, meetings, and
+                        follow-ups scatter across email, chat, and CRM. None of them own your graph.
                       </p>
                     </div>
                   </div>
@@ -50,33 +42,35 @@ const Problem = () => {
                     <Clock className="text-destructive mt-1 size-6 flex-shrink-0" />
                     <div>
                       <p className="text-lg">
-                        <Highlight>&ldquo;Professionals spend 30% of their day</Highlight> verifying
-                        and searching for information.&rdquo;
+                        <Highlight>Context is lost</Highlight> between events. Who did you meet?
+                        What did you discuss? Who should you talk to next?
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Problem Points */}
                 <div className="border-muted space-y-4 border-l-2 pl-4">
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="mt-1 size-4 flex-shrink-0 text-amber-500" />
                     <p className="text-muted-foreground">
-                      AI is everywhere, but trust is rare. Black-box answers are now the norm.
+                      AI predicts, but doesn&apos;t remember your network. Black-box answers without
+                      your relationship graph.
                     </p>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="mt-1 size-4 flex-shrink-0 text-amber-500" />
+                    <Link2 className="mt-1 size-4 flex-shrink-0 text-amber-500" />
                     <p className="text-muted-foreground">
-                      Information overload costs billions in lost time and poor decisions.
+                      Too many siloed apps. None unify, explain, or prove who you know and why it
+                      matters.
                     </p>
                   </div>
 
                   <div className="flex items-start gap-3">
                     <Database className="mt-1 size-4 flex-shrink-0 text-amber-500" />
                     <p className="text-muted-foreground">
-                      Too many siloed apps - none unify, explain, or prove.
+                      Big tech monetizes your attention. Intelligence should belong to the
+                      individual, not platforms.
                     </p>
                   </div>
                 </div>
@@ -114,18 +108,17 @@ const Problem = () => {
               <div className="bg-muted col-[1/3] overflow-hidden rounded-3xl">
                 <div className="p-5 xl:p-7">
                   <div className="flex gap-7">
-                    <div className="text-foreground text-4xl leading-none xl:text-7xl">100%</div>
+                    <div className="text-foreground text-4xl leading-none xl:text-7xl">PI</div>
                     <CheckCircle className="stroke-foreground h-9 w-9 xl:h-14 xl:w-14" />
                   </div>
                   <p className="text-foreground mt-3 text-xs md:text-sm xl:mt-7 xl:text-xl">
-                    Verifiable{' '}
-                    <span className="text-muted-2-foreground font-bold">AI provenance</span> with
-                    ASIMOV transparency
+                    <span className="text-muted-2-foreground font-bold">Personal Intelligence</span>{' '}
+                    : own your relationship graph
                   </p>
                 </div>
               </div>
               <div className="bg-muted col-[2/3] row-[-3/-1] flex h-full w-full items-center justify-center overflow-hidden rounded-3xl">
-                <AudioLines className="stroke-foreground mx-auto size-16 xl:size-27" />
+                <Users className="stroke-foreground mx-auto size-16 xl:size-27" />
               </div>
               <div className="bg-muted relative col-[3/4] row-[2/4] rounded-3xl">
                 <div className="h-full w-full overflow-hidden rounded-3xl">
@@ -135,18 +128,6 @@ const Problem = () => {
                     className="size-full object-cover object-center"
                   />
                 </div>
-                <svg
-                  className="fill-muted-foreground absolute -right-10 -bottom-20 w-12 rotate-45 xl:-right-14 xl:-bottom-24 xl:w-16"
-                  viewBox="0 0 90 184"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M82.3024 182.601C81.9706 183.654 80.8475 184.239 79.794 183.908C61.988 178.3 44.3459 170.161 28.8638 159.628C27.9867 159.032 27.0952 158.433 26.1953 157.829C19.3285 153.217 11.9733 148.278 6.79983 141.399C1.60997 134.499 0.117312 128.254 1.83895 122.43C2.6984 119.522 4.32632 116.846 6.49378 114.34C5.35517 113.106 4.35358 111.733 3.52901 110.202C0.650361 104.857 -0.218529 98.5344 0.0443264 92.3589C0.307769 86.1696 1.71314 79.9869 3.52802 74.7987C6.69986 65.7313 12.4429 58.6702 19.6577 53.195C12.3683 47.5787 9.48814 39.1289 10.8726 29.8393C12.4961 18.9454 20.6761 11.4583 29.4427 6.62192C30.6367 5.96323 31.853 5.36019 33.0898 4.81414C32.6941 4.2623 32.3003 3.71906 31.9081 3.18775C31.2521 2.29908 31.4407 1.04688 32.3294 0.390874C33.218 -0.265116 34.4702 -0.0765027 35.1262 0.812169C35.7502 1.65741 36.3517 2.49315 36.9405 3.3212C40.0542 2.27675 43.2795 1.57898 46.5911 1.24683C46.6891 1.237 46.7946 1.226 46.9069 1.2143C47.9181 1.10892 49.4784 0.946293 50.9907 1.06971C52.6143 1.20221 54.7929 1.707 56.0859 3.59542C57.7733 6.05985 57.6463 9.09276 56.7901 11.555C55.9341 14.0168 54.2062 16.3578 52.0068 17.5835C49.5695 18.9417 47.2092 19.1616 45.0203 18.356C42.9436 17.5916 41.279 15.9963 39.9217 14.2581C38.3955 12.3034 36.9096 10.2152 35.4536 8.1518C34.067 8.73156 32.7065 9.38967 31.3749 10.1243C23.0707 14.7056 16.1837 21.3381 14.8289 30.4289C13.5775 38.8256 16.3089 46.1012 23.1133 50.7625C25.3554 49.2979 27.7094 47.964 30.1477 46.7504C38.4925 42.5968 47.3718 40.5021 56.4215 39.4065L56.6665 39.3768C62.6119 38.6565 70.4082 37.7119 76.8537 39.8042C78.4687 40.3284 80.1229 41.2783 81.2992 42.6776C82.5177 44.1272 83.2123 46.067 82.7269 48.2956C82.2241 50.6043 80.7223 52.4194 79.1373 53.7643C77.5359 55.1229 75.6762 56.1504 74.1276 56.8586C66.8292 60.1963 58.4963 61.2743 50.803 61.3583C41.5426 61.4595 31.7569 60.2088 23.2355 55.5241C15.9695 60.7389 10.3301 67.4678 7.30368 76.1195C5.59322 81.0092 4.28448 86.8017 4.04071 92.5291C3.79633 98.2704 4.62711 103.806 7.05067 108.305C7.66677 109.449 8.41725 110.498 9.28332 111.46C10.7025 110.137 12.2604 108.858 13.9176 107.613C19.0542 103.753 25.1603 101.362 30.9 99.1141C31.9728 98.6939 33.0328 98.2788 34.0713 97.86C44.8345 93.5196 54.5514 90.7828 66.1479 90.2536C73.0985 89.9364 80.1661 91.5085 85.7372 96.3378C87.9729 98.2757 89.3101 100.449 89.7945 102.77C90.2767 105.08 89.8719 107.333 88.9817 109.369C87.2323 113.37 83.5007 116.81 79.8943 119.046C67.1806 126.927 52.1165 127.684 38.0675 125.998C32.5974 125.342 25.6204 124.358 19.2411 122.116C15.756 120.891 12.3561 119.258 9.45526 117.031C7.61589 119.173 6.33377 121.335 5.67485 123.564C4.42421 127.794 5.29376 132.742 9.99659 138.995C14.7347 145.295 21.485 149.836 28.4179 154.501C29.3147 155.104 30.2147 155.71 31.1137 156.321C46.2316 166.606 63.5108 174.586 80.9955 180.092C82.049 180.424 82.6341 181.547 82.3024 182.601ZM12.2732 114.144C14.6418 115.885 17.4723 117.254 20.5675 118.342C26.4986 120.427 33.0943 121.373 38.544 122.027C52.2124 123.667 66.1958 122.831 77.7867 115.646C81.015 113.645 84.0131 110.748 85.3166 107.767C85.9528 106.311 86.1552 104.911 85.8789 103.587C85.6048 102.274 84.8178 100.834 83.1172 99.3603C78.5409 95.3933 72.5898 93.9638 66.3302 94.2495C55.3243 94.7517 46.0648 97.3365 35.5673 101.57C34.451 102.02 33.3389 102.457 32.2355 102.89C26.491 105.145 20.9813 107.309 16.3204 110.811C14.835 111.927 13.4829 113.036 12.2732 114.144ZM27.0739 52.996C34.3044 56.4253 42.561 57.4481 50.7594 57.3586C58.1681 57.2777 65.8758 56.2339 72.4641 53.2209C73.8174 52.6021 75.3239 51.754 76.5494 50.7142C77.7911 49.6606 78.5768 48.5544 78.8186 47.4444C79.0025 46.5997 78.7792 45.8962 78.2372 45.2514C77.6531 44.5565 76.7044 43.9612 75.6187 43.6087C70.0866 41.8129 63.1142 42.6254 56.9023 43.3775C48.1375 44.4386 39.7384 46.4448 31.9301 50.3313C30.2579 51.1636 28.6366 52.0507 27.0739 52.996ZM39.3592 6.74785C40.562 8.44837 41.77 10.1257 43.0745 11.7963C44.2391 13.2879 45.3417 14.2119 46.4019 14.6021C47.3499 14.9511 48.4962 14.9607 50.0597 14.0894C51.2263 13.4392 52.4054 11.9857 53.012 10.2413C53.6183 8.4975 53.5095 6.91275 52.7854 5.85524C52.5467 5.5067 51.9551 5.16172 50.6653 5.05646C49.547 4.9652 48.3598 5.08681 47.3096 5.19439C47.2017 5.20545 47.0952 5.21636 46.9903 5.22687C44.3846 5.48822 41.8363 5.99839 39.3592 6.74785Z"
-                  />
-                </svg>
               </div>
               <div className="col-[-2/-1] row-[-1/-2]">
                 <div className="flex w-full items-center gap-3">

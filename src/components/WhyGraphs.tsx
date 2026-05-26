@@ -4,33 +4,33 @@ const WhyGraphs = () => {
   const features = [
     {
       icon: <Network />,
-      title: 'Structured Data',
-      description: 'Structures data for real context and meaning'
+      title: 'Context Graphs',
+      description: 'Relationship and knowledge graphs, not flat predictions'
     },
     {
       icon: <Eye />,
-      title: 'Transparent AI',
-      description: 'Makes AI reasoning transparent'
+      title: 'Transparent Reasoning',
+      description: 'See how connections and insights are derived'
     },
     {
       icon: <Award />,
       title: 'Fair Attribution',
-      description: 'Enables attribution and fair rewards'
+      description: 'Credit introductions and compensate attention'
     },
     {
       icon: <ShieldCheck />,
-      title: 'Error Reduction',
-      description: 'Reduces hallucinations and errors'
+      title: 'Verifiable Knowledge',
+      description: 'Structured data with cryptographic provenance'
     },
     {
       icon: <TrendingUp />,
-      title: 'Verifiable Markets',
-      description: 'Unlocks new markets for verifiable AI'
+      title: 'Network Effects',
+      description: 'Usage compounds into a decentralized marketplace'
     },
     {
       icon: <Sparkles />,
-      title: 'Next-Gen Innovation',
-      description: 'For the next wave of AI innovation.'
+      title: 'Personal Intelligence',
+      description: 'A category as essential as the smartphone'
     }
   ];
 
@@ -39,11 +39,12 @@ const WhyGraphs = () => {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex flex-col gap-4">
           <h2 className="text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">
-            Why Knowledge Graphs?
+            Why Context Graphs?
           </h2>
           <p className="text-muted-foreground max-w-prose text-base md:text-lg">
-            These tech pillars make verifiable knowledge possible. But what do we really mean by a
-            &lsquo;knowledge graph&rsquo; - and why does it matter?
+            These pillars power the ASIMOV Protocol and the Personal Context Graph behind ASIMOV PI.
+            Context graphs are how we move beyond black-box AI to intelligence you own: who
+            introduced you, what you discussed, and where your network is heading next.
           </p>
         </div>
 
