@@ -3,21 +3,22 @@ import Layout from '../layouts/main.astro';
 import { Hero } from '@/components/Hero';
 import { Problem } from '@/components/Problem';
 import { Solution } from '@/components/Solution';
+import { PiTeaser } from '@/components/PiTeaser';
+import { EcosystemLaunch } from '@/components/EcosystemLaunch';
 import { Social } from '@/components/Social';
-import { ProofInAction } from '@/components/ProofInAction';
 import { WhyGraphs } from '@/components/WhyGraphs';
 import { Ethos } from '@/components/Ethos';
 import { Team } from '@/components/Team';
 import { Brands } from '@/components/Brands';
 import { Backers } from '@/components/Backers';
 import { Resources } from '@/components/Resources';
-// import { RecentPosts } from '@/components/RecentPosts';
 import { TGE } from '@/components/TGE';
 import { GetInTouch } from '@/components/GetInTouch';
+import { StickyWaitlistCta } from '@/components/StickyWaitlistCta';
 
-const title = 'ASIMOV Systems | Personal Intelligence & Protocol';
+const title = 'ASIMOV Systems | Context-graph AI, PI & Protocol';
 const description =
-  'ASIMOV PI: own your relationship graph at conferences and events. Context graphs, verifiable provenance, credit economy. Path to decentralized marketplace on ASIMOV Protocol.';
+  'ASIMOV Systems: a small team building context-graph-based Personal Intelligence and open protocol infrastructure. Early access for ASIMOV PI at live events. Explore the Protocol ecosystem.';
 const canonicalUrl = 'https://asimov.systems/';
 ---
 
@@ -37,22 +38,23 @@ const canonicalUrl = 'https://asimov.systems/';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://asimov.systems/og-image.png" />
-    <meta name="twitter:image:alt" content="ASIMOV Systems | Personal Intelligence & Protocol" />
+    <meta name="twitter:image:alt" content="ASIMOV Systems | Context-graph AI, PI & Protocol" />
     <meta name="twitter:site" content="@ASIMOV_Protocol" />
   </Fragment>
 
   <Hero client:load />
   <Problem />
   <Solution />
-  <Social />
-  <ProofInAction />
   <WhyGraphs />
+  <PiTeaser />
+  <EcosystemLaunch />
+  <Social />
   <Ethos client:load />
-  <Brands client:load />
   <Team />
   <Backers client:load />
+  <Brands client:load />
   <Resources />
-  <!-- <RecentPosts client:load /> -->
   <TGE />
   <GetInTouch />
+  <StickyWaitlistCta client:load />
 </Layout>

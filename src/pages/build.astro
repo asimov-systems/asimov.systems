@@ -2,9 +2,9 @@
 import Layout from '@/layouts/main.astro';
 import { socialLinks } from '@/lib/consts';
 
-const title = 'Build on ASIMOV - Protocol & marketplace | ASIMOV Systems';
+const title = 'Build on ASIMOV | Protocol & community';
 const description =
-  'Build on ASIMOV Protocol: decentralized marketplace for structured, verifiable knowledge. APIs, provenance, OSS repos. PI creates usage; Protocol is the arc.';
+  'Build on ASIMOV Protocol: context graphs, provenance, OSS repos, and a community of teams exploring the ecosystem, including momentum from Frontier Towers in San Francisco.';
 const canonicalUrl = 'https://asimov.systems/build';
 
 const repoLinks = [
@@ -51,26 +51,41 @@ const marketplacePath = [
     <div class="container mx-auto px-4 lg:px-6">
       <header class="mx-auto max-w-3xl text-center">
         <p class="text-muted-foreground text-sm font-semibold tracking-wide uppercase">
-          Build on ASIMOV
+          Build on ASIMOV?
         </p>
         <h1 class="font-calSans mt-2 text-3xl font-bold md:text-4xl lg:text-5xl">
-          ASIMOV Protocol
+          Protocol, community, marketplace arc
         </h1>
         <p class="text-muted-foreground mt-4 text-lg">
-          Decentralized infrastructure for structured, verifiable knowledge: a marketplace where
-          intelligence belongs to the individual. ASIMOV PI creates real usage; the Protocol is how
-          that usage compounds into network effects and fair attribution.
+          ASIMOV Protocol is decentralized infrastructure for structured, verifiable knowledge. PI
+          creates real usage at live events; builders extend context graphs, provenance, and
+          marketplace primitives on open repos and specs.
         </p>
       </header>
 
+      <div class="border-border bg-card/50 mx-auto mt-16 max-w-3xl rounded-xl border p-6 md:p-10">
+        <h2 class="text-center text-xl font-semibold md:text-2xl">Community</h2>
+        <p
+          class="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-base leading-relaxed"
+        >
+          Teams are exploring what to build on the Protocol: context graphs, attribution, and
+          verifiable data products. Recent interest followed time at{' '}
+          <strong class="text-foreground font-medium">Frontier Towers</strong> in San Francisco, where
+          founders and builders share the same building and compare notes on what ships next.
+        </p>
+        <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-sm">
+          Partner names and project links will be listed here as collaborations are confirmed.
+        </p>
+      </div>
+
       <div
-        class="border-border bg-card/50 mx-auto mt-16 max-w-3xl rounded-xl border p-6 text-center md:p-10"
+        class="border-border bg-card/50 mx-auto mt-12 max-w-3xl rounded-xl border p-6 text-center md:p-10"
       >
         <h2 class="text-xl font-semibold md:text-2xl">Vision</h2>
         <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-base leading-relaxed">
           A decentralized data marketplace for structured, verifiable knowledge. Context graphs with
-          cryptographic provenance, not black-box prediction. Builders integrate APIs, runtimes, and
-          marketplace primitives; users start with PI at live events.
+          cryptographic provenance, not black-box prediction. Users start with PI at live events;
+          builders integrate APIs, runtimes, and marketplace primitives.
         </p>
       </div>
 
@@ -141,7 +156,7 @@ const marketplacePath = [
           href="/product"
           class="border-input bg-background hover:bg-accent mt-6 inline-flex h-10 items-center justify-center rounded-md border px-6 text-sm font-medium"
         >
-          Explore ASIMOV PI →
+          Explore ASIMOV PI
         </a>
       </div>
     </div>

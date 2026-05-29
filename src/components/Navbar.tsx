@@ -100,6 +100,11 @@ const Navbar = ({
             </div>
           </div>
           <div className="flex items-center gap-2">
+            <Button size="sm" className="hidden sm:inline-flex" asChild>
+              <a href={idJoinWaitlistUrl} target="_blank" rel="noopener noreferrer">
+                Join early access
+              </a>
+            </Button>
             <Button variant="ghost" size="sm" asChild>
               <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer">
                 <FaXTwitter className="size-4" />
@@ -216,6 +221,11 @@ const Navbar = ({
                         </Button>
                       ))}
                     </div>
+                    <Button asChild className="w-full">
+                      <a href={idJoinWaitlistUrl} target="_blank" rel="noopener noreferrer">
+                        Join early access
+                      </a>
+                    </Button>
                     {!isSignedIn ? (
                       <Button variant="outline" asChild>
                         <a href="/sign-in">
